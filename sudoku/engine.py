@@ -5,23 +5,34 @@
 #   3.1. if the agent tries to place a number in a position where a number already exists, its not an error but an exception.
 #   3.2. maybe also remember errors per game for the last x games?
 
-import sudoku_boards
+import sudoku.boards as boards
+from sudoku.exceptions import InvalidNumberError, CellAlreadyFilledError
 
 class SudokuEngine:
     # TODO: add function to reset board
-    # TODO: instead of generic Exceptions, add specific ones to that they can be caught easier
+    # TODO: use numpy arrays instead of matrixes?? do we want that or not?
     """A sudoku game engine that supports 9x9 boards."""
     _board = []
     _visualize_game = False
     _errors = 0
 
     def __init__(self, difficulty = "medium", visualize_game = False, custom_board = None):
+        """Initializes a new instance of this class.
+        
+            Parameters
+            ----------
+            difficulty: str
+                TODO
+            visualize_game: bool
+                Whether to visualize the board in the console after every move.
+            custom_board: list[list[int]]
+                A custom sudoku board to use instead of a random one."""
         self._visualize_game = visualize_game
         if custom_board is not None:
             self._board = custom_board
         else:
             # TODO: use difficulty parameter to generate random board according to difficulty??
-            self._board = sudoku_boards.get_medium_board()
+            self._board = boards.get_medium_board()
 
     def next(self, row: int, column: int, number: int) -> tuple[list[list[int]], bool, bool]:
         """Handles the game logic.
@@ -44,10 +55,10 @@ class SudokuEngine:
             bool
                 Whether the placement was successful."""
         if number < 1 or number > 9:
-            raise Exception(f"Provided number {number} is not in allowed range of 1-9!")
+            raise InvalidNumberError(f"Provided number {number} is not in allowed range of 1-9!")
         current_num = self._board[row][column]
         if current_num != 0:
-            raise Exception(f"Can't override existing value of {current_num} in row {row} column {column}!")
+            raise CellAlreadyFilledError(row, column, current_num)
         success = self.__place_number(row, column, number)
         if self._visualize_game:
             self.__visualize()
@@ -91,7 +102,7 @@ class SudokuEngine:
         return True
 
     def __visualize(self):
-        """Pretty-print the Sudoku board in the console with 3x3 blocks."""
+        """Pretty-print the sudoku board in the console with 3x3 blocks."""
         for i, row in enumerate(self._board):
             if i % 3 == 0:
                 print("+=======+=======+=======+")
@@ -104,7 +115,3 @@ class SudokuEngine:
             row_str += "|"
             print(row_str)
         print("+=======+=======+=======+")
-
-if __name__ == "__main__":
-    board = SudokuEngine()
-    _, _, success = board.next(0,0,7)
