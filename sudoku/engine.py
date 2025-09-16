@@ -16,7 +16,7 @@ class SudokuEngine:
     _visualize_game = False
     _errors = 0
 
-    def __init__(self, difficulty = "medium", visualize_game = False, custom_board = None):
+    def __init__(self, visualize_game = False, custom_board = None):
         """Initializes a new instance of this class.
         
             Parameters
@@ -31,8 +31,7 @@ class SudokuEngine:
         if custom_board is not None:
             self._board = custom_board
         else:
-            # TODO: use difficulty parameter to generate random board according to difficulty??
-            self._board = boards.get_medium_board()
+            self._board = boards.get_random_board()
 
     def next(self, row: int, column: int, number: int) -> tuple[list[list[int]], bool, bool]:
         """Handles the game logic.
