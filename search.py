@@ -7,11 +7,12 @@ def sudoku(matrix=None):
     
     # check the row and column is 9*9
     if len(matrix) != 9 or any(len(row) != 9 for row in matrix):
-        raise ValueError("Matrix must be 9x9")
+        raise ValueError("Matrix must be 9x9, plz check your input")
     
     return matrix
 
 
+# this is use to check the specific number at position is valid
 def is_valid(matrix, row, column, num):
     if num in matrix[row]:
         return False
@@ -26,6 +27,33 @@ def is_valid(matrix, row, column, num):
                 return False
     
     return True
+
+# this is use to check the whole matrix is valid
+def check_valid(matrix):
+    # Check rows
+    for row in matrix:
+        if sum(row) != 45:
+            return False
+    
+    # Check columns
+    for j in range(9):
+        column_sum = sum(matrix[i][j] for i in range(9))
+        if column_sum != 45:
+            return False
+    
+    # Check 3x3 boxes
+    for box_row in range(3):
+        for box_col in range(3):
+            box_sum = 0
+            for i in range(3):
+                for j in range(3):
+                    box_sum += matrix[box_row * 3 + i][box_col * 3 + j]
+            if box_sum != 45:
+                return False
+    
+    return True
+
+
 
 '''
 Recursively solve the sudoku puzzle
@@ -54,63 +82,42 @@ def DFS(matrix):
                 return False
     return True
 
-def check_valid(matrix):
-    # Check rows
-    for row in matrix:
-        if sum(row) != 45:
-            return False
-    
-    # Check columns
-    for j in range(9):
-        column_sum = sum(matrix[i][j] for i in range(9))
-        if column_sum != 45:
-            return False
-    
-    # Check 3x3 boxes
-    for box_row in range(3):
-        for box_col in range(3):
-            box_sum = 0
-            for i in range(3):
-                for j in range(3):
-                    box_sum += matrix[box_row * 3 + i][box_col * 3 + j]
-            if box_sum != 45:
-                return False
-    
-    return True
 
 '''test the DFS function'''
-# if __name__ == "__main__":
-#     matrix = [
-#         [5, 3, 0, 0, 7, 0, 0, 0, 0],
-#         [6, 0, 0, 1, 9, 5, 0, 0, 0],
-#         [0, 9, 8, 0, 0, 0, 0, 6, 0],
-#         [8, 0, 0, 0, 6, 0, 0, 0, 3],
-#         [4, 0, 0, 8, 0, 3, 0, 0, 1],
-#         [7, 0, 0, 0, 2, 0, 0, 0, 6],
-#         [0, 6, 0, 0, 0, 0, 2, 8, 0],
-#         [0, 0, 0, 4, 1, 9, 0, 0, 5],
-#         [0, 0, 0, 0, 8, 0, 0, 7, 9]
-#     ]
+if __name__ == "__main__":
+    matrix = [
+        [5, 3, 0, 0, 7, 0, 0, 0, 0],
+        [6, 0, 0, 1, 9, 5, 0, 0, 0],
+        [0, 9, 8, 0, 0, 0, 0, 6, 0],
+        [8, 0, 0, 0, 6, 0, 0, 0, 3],
+        [4, 0, 0, 8, 0, 3, 0, 0, 1],
+        [7, 0, 0, 0, 2, 0, 0, 0, 6],
+        [0, 6, 0, 0, 0, 0, 2, 8, 0],
+        [0, 0, 0, 4, 1, 9, 0, 0, 5],
+        [0, 0, 0, 0, 8, 0, 0, 7, 9]
+    ]
     
-#     print("Original matrix:")
-#     for row in matrix:
-#         print(row)
+    print("Original matrix:")
+    for row in matrix:
+        print(row)
+
+    sudoku(matrix)
     
-#     import copy
-#     filled_matrix = copy.deepcopy(matrix)
+    import copy
+    filled_matrix = copy.deepcopy(matrix)
     
-#     start_time = time.time()
-#     success = DFS(filled_matrix)
-#     end_time = time.time()
-#     elapsed_time = end_time - start_time
+    start_time = time.time()
+    success = DFS(filled_matrix)
+    end_time = time.time()
+    elapsed_time = end_time - start_time
     
-#     print(f"\nSudoku solved: {success}")
-#     print(f"Time taken: {elapsed_time:.6f} seconds")
+    print(f"\nSudoku solved: {success}")
+    print(f"Time taken: {elapsed_time:.6f} seconds")
     
-#     if success:
-#         print("\nFilled matrix:")
-#         for row in filled_matrix:
-#             print(row)
-#         print("\nIs filled matrix valid?", check_valid(filled_matrix))
-#     else:
-#         print("No solution found for this Sudoku puzzle")
+    if success:
+        print("\nFilled matrix:")
+        for row in filled_matrix:
+            print(row)
+        print("\nIs filled matrix valid?", check_valid(filled_matrix))
+    else:
+        print("No solution found for this Sudoku puzzle")
