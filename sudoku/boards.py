@@ -1,3 +1,4 @@
+# medium boards have 36-38 filled cells.
 medium_board_1 = [
     [0,2,0,0,0,0,0,3,1],
     [7,0,0,0,0,3,0,0,0],
@@ -21,7 +22,6 @@ medium_board_2 = [
     [0,5,0,7,0,0,8,0,1]
 ]
 
-
 medium_board_3 = [
     [0,0,5,0,0,0,2,1,0],
     [1,9,6,2,8,4,7,5,3],
@@ -34,6 +34,7 @@ medium_board_3 = [
     [0,1,3,0,4,0,0,0,0]
 ]
 
+# hard boards have 32 filled cells.
 hard_board_1 = [
     [6,8,0,3,7,0,0,0,0],
     [3,0,7,0,0,1,0,6,0],
@@ -70,6 +71,7 @@ hard_board_3 = [
     [7,9,4,6,5,2,0,0,0]
 ]
 
+# extreme boards have 22-23 filled cells.
 extreme_board_1 = [
     [3,4,0,0,0,1,0,0,0],
     [0,2,0,0,0,9,0,0,0],
