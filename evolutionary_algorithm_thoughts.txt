@@ -23,3 +23,24 @@
 # What would be parameter tuning in this context?
 # We could tune the mutation rate (how many mutations per individual per generation)
 # We could also tune the population size (how many individuals to keep in the population)
+
+------------
+
+Problem with the selection:
+- if we only select the best parents, we might run into local maxima where all of the boards lead to no solution
+
+How do we keep mutating?
+- if we only mutate every parent excatly once we will get a decrease in population as some mutations will place invalid numbers
+- so we also have to distinguish between invalid numbers and the fitness funtion staying the same
+- is it allowed to only mutate to a valid number?
+- we could choose random boards to mutate, BUT that could lead to the initial board being discarded and creating offspring of only
+    unsolvable boards
+        - how do we guarentee that at least one board in the population is solvable? Increase the population?
+- I think we need to change the fitness function
+- only caring about unqiue numbers placed completely disregards if the path we are on leads to the goal or not
+- or also need to consider how many possible number placements we have left and heavily punish paths leading to a dead end
+        - maybe something like unique numbers placed + possible unique numbers to place
+- that should help keep the solution in at every point
+- What about the selection? We shouldn't exclusively select the best individuals of a generation right? (at least in the beginning)
+- Use some form of simulated annealing where instead of choosing the next number it helps us decide what boards to take with us 
+    into the next generation (but how to guarentee best solution is there by chance?) Only using the best individuals?
