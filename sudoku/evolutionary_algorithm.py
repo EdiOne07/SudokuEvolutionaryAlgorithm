@@ -1,0 +1,25 @@
+# Just writing out my thoughts here for before actually starting the implementation
+# engine.py already handles the initialization of the board and the game logic
+# it also already defines the solution representation (a 2D list of integers) and the goal state
+
+# for the evolutionary algorithm, we need to define the evolutionary operators (selection, crossover, mutation)
+
+# the selection will be done based on the fitness function/heuristic that Eddie has defiened (number of placed numbers)
+# because we are trying to find the optimal soulution, we will only select parents that have a higher fitness than the current best solution
+
+# How do we get new individuals?
+# Crossover doesn't make much sense because there is not really a benefit in combining two solutions to get a better one
+# Also, crossover could change the fixed numbers in the board, which is not allowed
+# Instead, we will only use mutation to get new individuals
+# Mutation should be done by randomly changing a 0 in the board to a number between 1 and 9
+# Changing existing numbers will never lead to a better solution, so we will not do that
+
+# How many individuals do we want to keep in the population?
+# Does it make sense to keep all the individuals that have a higher fitness than the current best solution?
+# That would lead to exponential growth of the population size in the beginning and large time and space complexity (and would just behave like a breadth-first search)
+# Instead, we should only keep a fixed number of individuals in the population
+# For lack of information right now, we will just keep the best 100 individuals in the population
+
+# What would be parameter tuning in this context?
+# We could tune the mutation rate (how many mutations per individual per generation)
+# We could also tune the population size (how many individuals to keep in the population)
