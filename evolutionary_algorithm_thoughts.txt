@@ -51,6 +51,11 @@ Meeting:
 - initialize the solution randomly (randomly completely filled out boards)
 - heuristic to tell how good a board is
 - somehow need to tell which numbers are at the right spot (isValid by Hoaran)
+--> either crossover tiles randomly (not checking valid numbers), or only taking correct numbers BUT then watch the computational time. Needs to be fast
+(Try both but start with random crossover)
 - select 90% best and 10% random
 - keep the valid numbers of both parents and randomly mutate all of the "wrong" numbers
 - crossover parents randomly
+
+Run the algorithm several times to see if it is actually good (at least 25x)
+DFS as baseline for now to compare (should not work on hard examples anymore or be much worse)
