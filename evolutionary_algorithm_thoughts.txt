@@ -44,3 +44,13 @@ How do we keep mutating?
 - What about the selection? We shouldn't exclusively select the best individuals of a generation right? (at least in the beginning)
 - Use some form of simulated annealing where instead of choosing the next number it helps us decide what boards to take with us 
     into the next generation (but how to guarentee best solution is there by chance?) Only using the best individuals?
+
+-------------
+
+Meeting:
+- initialize the solution randomly (randomly completely filled out boards)
+- heuristic to tell how good a board is
+- somehow need to tell which numbers are at the right spot (isValid by Hoaran)
+- select 90% best and 10% random
+- keep the valid numbers of both parents and randomly mutate all of the "wrong" numbers
+- crossover parents randomly
