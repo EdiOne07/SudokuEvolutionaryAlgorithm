@@ -9,7 +9,7 @@ class SudokuEvolutionaryAlgorithm:
     _initial_board: Sudoku
     _population_size: int
     _mutation_rate: int
-    _generations: int
+    _generation: int
     _population: list[Sudoku]
     _solution: Sudoku
 
@@ -28,7 +28,7 @@ class SudokuEvolutionaryAlgorithm:
         self._initial_board = initial_board
         self._population_size = population_size
         self._mutation_rate = mutation_rate
-        self._generations = 0
+        self._generation = 0
         self._solution = None
 
     def __initialize_population(self):
@@ -42,6 +42,7 @@ class SudokuEvolutionaryAlgorithm:
 
             randomly_filled_board.update_score()
             self._population.append(randomly_filled_board)
+        print("Initial population created.")
 
     def __solution_found(self) -> bool:
         """Checks whether a solution has been found in the current population.
@@ -67,7 +68,7 @@ class SudokuEvolutionaryAlgorithm:
             If false is returned, a solution has been found.
         """
         if self.__solution_found():
-            print(f"Solution found in generation {self._generations}!")
+            print(f"Solution found in generation {self._generation}!")
             return False
 
         # Selection
@@ -92,8 +93,8 @@ class SudokuEvolutionaryAlgorithm:
             next_generation.append(child)
         
         self._population = next_generation
-        self._generations += 1
-        print(f"Generation {self._generations} created.")
+        self._generation += 1
+        print(f"Generation {self._generation} created.")
         return True
 
     def __crossover(self, parent1: Sudoku, parent2: Sudoku) -> Sudoku:
@@ -145,7 +146,14 @@ class SudokuEvolutionaryAlgorithm:
 
     def solve(self) -> Sudoku:
         """Solves the sudoku puzzle using an evolutionary algorithm."""
-        pass
+        self.__initialize_population()
+        while self.__create_next_generation():
+            pass
+        return self._solution
 
 if __name__ == "__main__":
-    pass
+    initial_board = Sudoku(boards.board1)
+    evolutionary_algorithm = SudokuEvolutionaryAlgorithm(initial_board, population_size=100, mutation_rate=1)
+    solution = evolutionary_algorithm.solve()
+    print("Solution:")
+    print(solution.visualize())

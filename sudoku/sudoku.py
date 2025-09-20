@@ -79,3 +79,18 @@ class Sudoku:
     def update_score(self):
         """Updates the current heuristic score of the board."""
         self._score = heuristic.heuristic_score(self._board)
+
+    def visualize(self):
+        """Pretty-print the sudoku board in the console with 3x3 blocks."""
+        for i, row in enumerate(self._board):
+            if i % 3 == 0:
+                print("+=======+=======+=======+")
+            row_str = ""
+            for j, num in enumerate(row):
+                if j % 3 == 0:
+                    row_str += "| "
+                cell = str(num) if num != 0 else "."
+                row_str += cell + " "
+            row_str += "|"
+            print(row_str)
+        print("+=======+=======+=======+")
