@@ -1,6 +1,8 @@
+import heuristic
 class Sudoku:
     """A class to represent a Sudoku board."""
     _board: list[list[int]]
+    _score: int
 
     def __init__(self, board: list[list[int]]):
         """Initializes a new instance of a Sudoku board.
@@ -11,6 +13,7 @@ class Sudoku:
                 The sudoku board to use.
         """
         self._board = board
+        self._score = heuristic.heuristic_score(board)
 
     def get_board(self) -> list[list[int]]:
         """Returns the current state of the board.
@@ -62,3 +65,17 @@ class Sudoku:
                     return False
         
         return True
+    
+    def get_score(self) -> int:
+        """Returns the current heuristic score of the board.
+        
+        Returns
+        -------
+        int
+            The current heuristic score of the board.
+        """
+        return self._score
+    
+    def update_score(self):
+        """Updates the current heuristic score of the board."""
+        self._score = heuristic.heuristic_score(self._board)
