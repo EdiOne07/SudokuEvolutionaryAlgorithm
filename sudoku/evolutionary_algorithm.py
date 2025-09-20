@@ -1,12 +1,11 @@
 import sudoku.boards as boards
 from sudoku.sudoku import Sudoku
-import heuristic
 import random
 
 
 class SudokuEvolutionaryAlgorithm:
     """A sudoku solver that uses an evolutionary algorithm to solve the puzzle."""
-    _initial_board: Sudoku
+    _initial_sudoku: Sudoku
     _population_size: int
     _mutation_rate: int
     _generation: int
@@ -25,23 +24,24 @@ class SudokuEvolutionaryAlgorithm:
             mutation_rate: int
                 The number of possible mutations on each child when generating the next generation.
         """
-        self._initial_board = initial_board
+        self._initial_sudoku = initial_board
         self._population_size = population_size
         self._mutation_rate = mutation_rate
         self._generation = 0
         self._solution = None
+        self._population = []
 
     def __initialize_population(self):
         """Creates the initial population for generation 0."""     
         for _ in range(self._population_size):
-            randomly_filled_board = Sudoku(self._initial_board)
+            randomly_filled_sudoku = Sudoku(self._initial_sudoku._board)
             for i in range(9):
                 for j in range(9):
-                    if randomly_filled_board[i][j] == 0:
-                        randomly_filled_board[i][j] = random.randint(1, 9)
+                    if randomly_filled_sudoku._board[i][j] == 0:
+                        randomly_filled_sudoku._board[i][j] = random.randint(1, 9)
 
-            randomly_filled_board.update_score()
-            self._population.append(randomly_filled_board)
+            randomly_filled_sudoku.update_score()
+            self._population.append(randomly_filled_sudoku)
         print("Initial population created.")
 
     def __solution_found(self) -> bool:
@@ -76,12 +76,13 @@ class SudokuEvolutionaryAlgorithm:
         self._population.sort(key=lambda x: x.get_score(), reverse=True)
         top_parents = self._population[:int(self._population_size * 0.2)]
         
-        next_generation = list[Sudoku]
+        next_generation = []
         for i in range(int(self._population_size * 0.8)):
             parent1 = random.choice(top_parents)
             parent2 = random.choice(top_parents)
             child = self.__crossover(parent1, parent2)
             child = self.__mutate(child)
+            child.update_score()
             next_generation.append(child)
         
         # 20% of the all population creates 20% of the next generation
@@ -90,6 +91,7 @@ class SudokuEvolutionaryAlgorithm:
             parent2 = random.choice(self._population)
             child = self.__crossover(parent1, parent2)
             child = self.__mutate(child)
+            child.update_score()
             next_generation.append(child)
         
         self._population = next_generation
@@ -112,10 +114,10 @@ class SudokuEvolutionaryAlgorithm:
         Sudoku
             The child created from the two parents.
         """
-        child = Sudoku(self._initial_board)
+        child = Sudoku(self._initial_sudoku._board)
         for row in range(9):
             for column in range(9):
-                if self._initial_board[row][column] != 0:
+                if self._initial_sudoku._board[row][column] != 0:
                     continue
                 if random.random() < 0.5:
                     child[row][column] = parent1[row][column]
@@ -133,15 +135,15 @@ class SudokuEvolutionaryAlgorithm:
         individual: Sudoku
             The individual to mutate.
         """
-        positions = list[tuple[int]]
+        positions = []
         for mutation in range(self._mutation_rate):
             position = random.randint(0, 80)
             position_tuple = [position // 9, position % 9]
-            if self._initial_board[position_tuple[0]][position_tuple[1]] == 0:
+            if self._initial_sudoku._board[position_tuple[0]][position_tuple[1]] == 0:
                 positions.append(position_tuple)
             # Else don't mutate for now I guess?
         for position in positions:
-            individual[position[0]][position[1]] = random.randint(1, 9)
+            individual._board[position[0]][position[1]] = random.randint(1, 9)
         return individual
 
     def solve(self) -> Sudoku:
@@ -152,7 +154,7 @@ class SudokuEvolutionaryAlgorithm:
         return self._solution
 
 if __name__ == "__main__":
-    initial_board = Sudoku(boards.board1)
+    initial_board = Sudoku(boards.get_random_board())
     evolutionary_algorithm = SudokuEvolutionaryAlgorithm(initial_board, population_size=100, mutation_rate=1)
     solution = evolutionary_algorithm.solve()
     print("Solution:")
