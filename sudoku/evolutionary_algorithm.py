@@ -8,12 +8,12 @@ class SudokuEvolutionaryAlgorithm:
     """A sudoku solver that uses an evolutionary algorithm to solve the puzzle."""
     _initial_board: Sudoku
     _population_size: int
-    _mutation_rate: float
+    _mutation_rate: int
     _generations: int
     _population: list[Sudoku]
     _solution: Sudoku
 
-    def __init__(self, initial_board: Sudoku, population_size: int = 100, mutation_rate: float = 0.01):
+    def __init__(self, initial_board: Sudoku, population_size: int = 100, mutation_rate: int = 1):
         """Initializes the evolutionary algorithm class.
         
             Parameters
@@ -22,8 +22,8 @@ class SudokuEvolutionaryAlgorithm:
                 The initial sudoku game board to use.
             population_size: int
                 The size of the population.
-            mutation_rate: float
-                The mutation rate.
+            mutation_rate: int
+                The number of mutations to perform on each child when generating the next generation.
         """
         self._initial_board = initial_board
         self._population_size = population_size
@@ -72,9 +72,55 @@ class SudokuEvolutionaryAlgorithm:
         # Selection
         # Top 20% of population creates 80% of next generation
         # 20% of the all population creates 20% of the next generation
-        self._population.sort(key=lambda x: x.get_score(), reverse=True)   
+        self._population.sort(key=lambda x: x.get_score(), reverse=True)
+        top_parents = self._population[:int(self._population_size * 0.2)]
         
-        return True           
+        next_generation = list[Sudoku]
+        for i in range(int(self._population_size * 0.8)):
+            parent1 = random.choice(top_parents)
+            parent2 = random.choice(top_parents)
+            child = self.__crossover(parent1, parent2)
+
+            next_generation.append(child)
+
+        
+        return True
+
+    def __crossover(self, parent1: Sudoku, parent2: Sudoku) -> Sudoku:
+        """Performs crossover between two parents to create a child.
+
+        Parameters
+        ----------
+        parent1: Sudoku
+            The first parent.
+        parent2: Sudoku
+            The second parent.
+
+        Returns
+        -------
+        Sudoku
+            The child created from the two parents.
+        """
+        child = Sudoku(self._initial_board)
+        for row in range(9):
+            for column in range(9):
+                if self._initial_board[row][column] != 0:
+                    continue
+                if random.random() < 0.5:
+                    child[row][column] = parent1[row][column]
+                else:
+                    child[row][column] = parent2[row][column]
+        return child    
+
+    def __mutate(self, individual: Sudoku):
+        """Randomly mutates an individual in the population.
+
+        Parameters
+        ----------
+        individual: Sudoku
+            The individual to mutate.
+        """
+           
 
 
     def solve(self) -> Sudoku:
