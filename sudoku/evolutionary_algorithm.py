@@ -12,19 +12,19 @@ class SudokuEvolutionaryAlgorithm:
     _population: list[Sudoku]
     _solution: Sudoku
 
-    def __init__(self, initial_board: Sudoku, population_size: int = 100, mutation_rate: int = 1):
+    def __init__(self, initial_sudoku: Sudoku, population_size: int = 100, mutation_rate: int = 1):
         """Initializes the evolutionary algorithm class.
         
             Parameters
             ----------
-            initial_board: list[list[int]]
+            initial_sudoku: list[list[int]]
                 The initial sudoku game board to use.
             population_size: int
                 The size of the population.
             mutation_rate: int
                 The number of possible mutations on each child when generating the next generation.
         """
-        self._initial_sudoku = initial_board
+        self._initial_sudoku = initial_sudoku
         self._population_size = population_size
         self._mutation_rate = mutation_rate
         self._generation = 0
@@ -154,6 +154,9 @@ class SudokuEvolutionaryAlgorithm:
         return self._solution
 
 if __name__ == "__main__":
+    # TODO: Visualize first 5 generations and find out what is happening
+    # TODO: Fix running the program
+    # Currently run my going into the root folder and running python -m sudoku.evolutionary_algorithm
     initial_board = Sudoku(boards.get_random_board())
     evolutionary_algorithm = SudokuEvolutionaryAlgorithm(initial_board, population_size=100, mutation_rate=1)
     solution = evolutionary_algorithm.solve()
