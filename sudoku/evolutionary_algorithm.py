@@ -35,11 +35,11 @@ class SudokuEvolutionaryAlgorithm:
     def __initialize_population(self):
         """Creates the initial population for generation 0."""     
         for _ in range(self._population_size):
-            randomly_filled_sudoku = Sudoku(copy.deepcopy(self._initial_sudoku._board))
+            randomly_filled_sudoku = Sudoku(copy.deepcopy(self._initial_sudoku.board))
             for i in range(9):
                 for j in range(9):
-                    if randomly_filled_sudoku._board[i][j] == 0:
-                        randomly_filled_sudoku._board[i][j] = random.randint(1, 9)
+                    if randomly_filled_sudoku.board[i][j] == 0:
+                        randomly_filled_sudoku.board[i][j] = random.randint(1, 9)
 
             randomly_filled_sudoku.update_score()
             self._population.append(randomly_filled_sudoku)
@@ -115,15 +115,15 @@ class SudokuEvolutionaryAlgorithm:
         Sudoku
             The child created from the two parents.
         """
-        child = Sudoku(copy.deepcopy(self._initial_sudoku._board))
+        child = Sudoku(copy.deepcopy(self._initial_sudoku.board))
         for row in range(9):
             for column in range(9):
-                if self._initial_sudoku._board[row][column] != 0:
+                if self._initial_sudoku.board[row][column] != 0:
                     continue
                 if random.random() < 0.5:
-                    child._board[row][column] = parent1._board[row][column]
+                    child.board[row][column] = parent1.board[row][column]
                 else:
-                    child._board[row][column] = parent2._board[row][column]
+                    child.board[row][column] = parent2.board[row][column]
         return child    
 
     def __mutate(self, individual: Sudoku) -> Sudoku:
@@ -140,11 +140,11 @@ class SudokuEvolutionaryAlgorithm:
         for mutation in range(self._mutation_rate):
             position = random.randint(0, 80)
             position_tuple = [position // 9, position % 9]
-            if self._initial_sudoku._board[position_tuple[0]][position_tuple[1]] == 0:
+            if self._initial_sudoku.board[position_tuple[0]][position_tuple[1]] == 0:
                 positions.append(position_tuple)
             # Else don't mutate for now I guess?
         for position in positions:
-            individual._board[position[0]][position[1]] = random.randint(1, 9)
+            individual.board[position[0]][position[1]] = random.randint(1, 9)
         return individual
 
     def solve(self) -> Sudoku:

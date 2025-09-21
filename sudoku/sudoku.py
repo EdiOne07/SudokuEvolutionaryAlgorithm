@@ -1,7 +1,7 @@
 class Sudoku:
     """A class to represent a Sudoku board."""
-    _board: list[list[int]]
-    _score: int
+    board: list[list[int]]
+    score: int
 
     def __init__(self, board: list[list[int]]):
         """Initializes a new instance of a Sudoku board.
@@ -11,18 +11,8 @@ class Sudoku:
             board: list[list[int]]
                 The sudoku board to use.
         """
-        self._board = board
-        self._score = 0
-    
-    def set_board(self, board: list[list[int]]):
-        """Sets the current state of the board.
-        
-            Parameters
-            ----------
-            board: list[list[int]]
-                The new state of the board.
-        """
-        self._board = board
+        self.board = board
+        self.score = 0
 
     def check_goal_state(self) -> bool:
         """Check whether the current state is a goal state.
@@ -33,13 +23,13 @@ class Sudoku:
             Whether the current state is a goal state."""
         
         # Check rows
-        for row in self._board:
+        for row in self.board:
             if sum(row) != 45:
                 return False
         
         # Check columns
         for j in range(9):
-            column_sum = sum(self._board[i][j] for i in range(9))
+            column_sum = sum(self.board[i][j] for i in range(9))
             if column_sum != 45:
                 return False
         
@@ -49,7 +39,7 @@ class Sudoku:
                 box_sum = 0
                 for i in range(3):
                     for j in range(3):
-                        box_sum += self._board[box_row * 3 + i][box_col * 3 + j]
+                        box_sum += self.board[box_row * 3 + i][box_col * 3 + j]
                 if box_sum != 45:
                     return False
         
@@ -63,11 +53,11 @@ class Sudoku:
         int
             The current heuristic score of the board.
         """
-        return self._score
+        return self.score
     
     def update_score(self):
         """Updates the current heuristic score of the board."""
-        self._score = self.__heuristic_score()
+        self.score = self.__heuristic_score()
 
     def __heuristic_score(self) -> int:
         '''
@@ -80,10 +70,10 @@ class Sudoku:
         block_number=[]
         for i in range(9):
             for j in range(9):
-                if self._board[i][j] != 0:
-                    row_number.append(self._board[i][j])
-                if self._board[j][i] != 0:
-                    column_number.append(self._board[j][i])
+                if self.board[i][j] != 0:
+                    row_number.append(self.board[i][j])
+                if self.board[j][i] != 0:
+                    column_number.append(self.board[j][i])
             score=score+len(set(row_number))+len(set(column_number))
             row_number.clear()
             column_number.clear()
@@ -91,8 +81,8 @@ class Sudoku:
             for box_column in range(0,9,3):
                 for i in range(3):
                     for j in range(3):
-                        if self._board[box_row+i][box_column+j] != 0:
-                            block_number.append(self._board[box_row+i][box_column+j])
+                        if self.board[box_row+i][box_column+j] != 0:
+                            block_number.append(self.board[box_row+i][box_column+j])
                 score=score+len(set(block_number))
                 block_number.clear()
         print("Score calculated:", score)
@@ -100,7 +90,7 @@ class Sudoku:
 
     def visualize(self):
         """Pretty-print the sudoku board in the console with 3x3 blocks."""
-        for i, row in enumerate(self._board):
+        for i, row in enumerate(self.board):
             if i % 3 == 0:
                 print("+=======+=======+=======+")
             row_str = ""
