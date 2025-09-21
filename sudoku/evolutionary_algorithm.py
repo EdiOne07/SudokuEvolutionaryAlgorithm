@@ -1,5 +1,5 @@
-import sudoku.boards as boards
-from sudoku.sudoku import Sudoku
+import boards
+from sudoku import Sudoku
 import random
 
 
@@ -155,8 +155,6 @@ class SudokuEvolutionaryAlgorithm:
 
 if __name__ == "__main__":
     # TODO: Visualize first 5 generations and find out what is happening
-    # TODO: Fix running the program
-    # Currently run my going into the root folder and running python -m sudoku.evolutionary_algorithm
     initial_board = Sudoku(boards.get_random_board())
     evolutionary_algorithm = SudokuEvolutionaryAlgorithm(initial_board, population_size=100, mutation_rate=1)
     solution = evolutionary_algorithm.solve()
