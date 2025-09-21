@@ -33,6 +33,9 @@ class SudokuEngine:
         else:
             self._board = boards.get_random_board()
 
+    def get_board(self) -> list[list[int]]:
+        return self._board
+
     def next(self, row: int, column: int, number: int) -> tuple[list[list[int]], bool, bool]:
         """Handles the game logic.
 
@@ -114,3 +117,7 @@ class SudokuEngine:
             row_str += "|"
             print(row_str)
         print("+=======+=======+=======+")
+
+if __name__ == "__main__":
+    engine = SudokuEngine()
+    print(engine.get_board())
