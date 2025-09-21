@@ -59,3 +59,16 @@ Meeting:
 
 Run the algorithm several times to see if it is actually good (at least 25x)
 DFS as baseline for now to compare (should not work on hard examples anymore or be much worse)
+
+-------------
+
+First solution achieved:
+- random initialization
+- random crossover between good parents and a small amout of random crossover of all the population
+- randomm mutation of a maximum of n tiles
+
+Not efficient and maybe not even complete
+
+Possible steps to improve
+- only mutate wrong numbers (BUT checking all columns, rows and 3x3 for every tile for every individual is huge computationally)
+- Add logic when crossing over parents? But same thing here, check for valid numbers is so much overhead
