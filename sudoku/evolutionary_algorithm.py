@@ -2,7 +2,7 @@ import boards
 from sudoku import Sudoku
 import random
 import copy
-
+import time
 
 class SudokuEvolutionaryAlgorithm:
     """A sudoku solver that uses an evolutionary algorithm to solve the puzzle."""
@@ -155,9 +155,13 @@ class SudokuEvolutionaryAlgorithm:
         return self._solution
 
 if __name__ == "__main__":
-    # TODO: Visualize first 5 generations and find out what is happening
     initial_board = Sudoku(boards.get_random_board())
-    evolutionary_algorithm = SudokuEvolutionaryAlgorithm(initial_board, population_size=100, mutation_rate=1)
+    evolutionary_algorithm = SudokuEvolutionaryAlgorithm(initial_board, population_size=100, mutation_rate=2)
+    
+    start_time = time.time()
     solution = evolutionary_algorithm.solve()
+    end_time = time.time()
+
     print("Solution:")
     print(solution.visualize())
+    print(f"The evolutionary algoirthm took {end_time - start_time:.2f} seconds to solve this puzzle.")
