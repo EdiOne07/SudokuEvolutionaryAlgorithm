@@ -2,8 +2,6 @@
 Heuristic function that gives a score based on how many unique numbers are present on each row, column and 3x3 block
 WIll be further used in the evolutionary algorithm to determine how close to the ideal solution the board is
 '''
-from sudoku.sudoku import Sudoku
-
 
 class HeuristicMatrix:
     def __init__(self, matrix):
@@ -22,6 +20,7 @@ class HeuristicMatrix:
                     b = (i // 3) * 3 + (j // 3)
                     self.block_set[b].add(self.matrix[i][j])
         self.score+=sum(len(s) for s in self.row_set)+sum(len(s) for s in self.column_set)+ sum(len(s) for s in self.block_set)
+        print(self.score)
     def update(self,i,j,new_value):
         old_value=self.matrix[i][j]
         if old_value==new_value:
@@ -38,6 +37,7 @@ class HeuristicMatrix:
             b = (i // 3) * 3 + (j // 3)
             self.block_set[b].add(new_value)
         self.score += sum(len(s) for s in self.row_set) + sum(len(s) for s in self.column_set) + sum(len(s) for s in self.block_set)
+        print(self.score)
         return self.score
 
 
