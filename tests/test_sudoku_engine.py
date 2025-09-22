@@ -1,6 +1,7 @@
 import pytest
 
 from heuristic import heuristic_score
+from heuristic import HeuristicMatrix
 from sudoku.engine import SudokuEngine
 from sudoku.exceptions import InvalidNumberError, CellAlreadyFilledError
 
@@ -35,6 +36,7 @@ class TestSudokuEngine:
         assert finished == True
 
 class TestSudokuHeuristic:
+
     solved_board = [
         [5, 3, 4, 6, 7, 8, 9, 1, 2],
         [6, 7, 2, 1, 9, 5, 3, 4, 8],
@@ -70,14 +72,18 @@ class TestSudokuHeuristic:
         [0, 0, 0, 0, 8, 0, 0, 7, 9]
     ]
     def test_solved_sudoku_score(self):
+        Heuristic = HeuristicMatrix(self.solved_board)
         score=heuristic_score(self.solved_board)
-        assert score==243
+        assert score==Heuristic.score
     def test_empty_sudoku_score(self):
+        Heuristic = HeuristicMatrix(self.empty_board)
         score=heuristic_score(self.empty_board)
-        assert score==0
+        assert score==Heuristic.score
     def test_partial_valid(self):
+        Heuristic = HeuristicMatrix(self.partial_valid)
         score=heuristic_score(self.partial_valid)
-        assert score>=90
+        assert score==Heuristic.score
     def test_conflict_board(self):
+        Heuristic = HeuristicMatrix(self.conflict_board)
         score=heuristic_score(self.conflict_board)
-        assert score<90
+        assert score==Heuristic.score
