@@ -54,6 +54,7 @@ class SudokuEvolutionaryAlgorithm:
             Whether a solution has been found.
         """
         for individual in self._population:
+            #TODO: Check goal state by max heusistic score instead
             if individual.check_goal_state():
                 self._solution = individual
                 return True

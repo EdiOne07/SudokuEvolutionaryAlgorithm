@@ -72,3 +72,11 @@ Not efficient and maybe not even complete
 Possible steps to improve
 - only mutate wrong numbers (BUT checking all columns, rows and 3x3 for every tile for every individual is huge computationally)
 - Add logic when crossing over parents? But same thing here, check for valid numbers is so much overhead
+
+---------------
+1. Optimize:
+- for loops in the heuristic -> Eddie
+- using a different data structure? -> Hoaran
+
+2. algorithm:
+- heuristic gives set of unique numbers -> only mutate numbers not in the set? -> Moritz
