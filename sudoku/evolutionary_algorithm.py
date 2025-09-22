@@ -41,7 +41,7 @@ class SudokuEvolutionaryAlgorithm:
                     if randomly_filled_sudoku.board[i][j] == 0:
                         randomly_filled_sudoku.board[i][j] = random.randint(1, 9)
 
-            randomly_filled_sudoku.update_score()
+            randomly_filled_sudoku.heuristic_matrix.initialize()
             self._population.append(randomly_filled_sudoku)
         print("Initial population created.")
 
@@ -54,8 +54,7 @@ class SudokuEvolutionaryAlgorithm:
             Whether a solution has been found.
         """
         for individual in self._population:
-            #TODO: Check goal state by max heusistic score instead
-            if individual.check_goal_state():
+            if individual.heuristic_matrix.score == 243:
                 self._solution = individual
                 return True
         return False
@@ -75,7 +74,7 @@ class SudokuEvolutionaryAlgorithm:
 
         # Selection
         # Top 20% of population creates 80% of next generation
-        self._population.sort(key=lambda x: x.get_score(), reverse=True)
+        self._population.sort(key=lambda x: x.heuristic_matrix.score, reverse=True)
         top_parents = self._population[:int(self._population_size * 0.2)]
         
         next_generation = []
@@ -84,7 +83,6 @@ class SudokuEvolutionaryAlgorithm:
             parent2 = random.choice(top_parents)
             child = self.__crossover(parent1, parent2)
             child = self.__mutate(child)
-            child.update_score()
             next_generation.append(child)
         
         # 20% of the all population creates 20% of the next generation
@@ -93,7 +91,6 @@ class SudokuEvolutionaryAlgorithm:
             parent2 = random.choice(self._population)
             child = self.__crossover(parent1, parent2)
             child = self.__mutate(child)
-            child.update_score()
             next_generation.append(child)
         
         self._population = next_generation
@@ -125,6 +122,7 @@ class SudokuEvolutionaryAlgorithm:
                     child.board[row][column] = parent1.board[row][column]
                 else:
                     child.board[row][column] = parent2.board[row][column]
+        child.heuristic_matrix.initialize()
         return child    
 
     def __mutate(self, individual: Sudoku) -> Sudoku:
@@ -138,14 +136,37 @@ class SudokuEvolutionaryAlgorithm:
             The individual to mutate.
         """
         positions = []
+        #     position = random.randint(0, 80)
+        #     position_tuple = [position // 9, position % 9]
+        #     if self._initial_sudoku.board[position_tuple[0]][position_tuple[1]] == 0:
+        #         positions.append(position_tuple)
+        #     # Else don't mutate for now I guess?
+        # for position in positions:
+        #     individual.board[position[0]][position[1]] = random.randint(1, 9)
+        
+
         for mutation in range(self._mutation_rate):
-            position = random.randint(0, 80)
-            position_tuple = [position // 9, position % 9]
-            if self._initial_sudoku.board[position_tuple[0]][position_tuple[1]] == 0:
-                positions.append(position_tuple)
-            # Else don't mutate for now I guess?
-        for position in positions:
-            individual.board[position[0]][position[1]] = random.randint(1, 9)
+            row = random.randint(0, 8)
+            column = random.randint(0, 8)
+            if self._initial_sudoku.board[row][column] == 0:
+                current_number = individual.board[row][column]
+
+                # Count the appearances of the current number
+                row_count = individual.board[row].count(current_number)
+                col_count = [individual.board[row][column] for row in range(9)].count(current_number)
+                block_row = (row // 3) * 3
+                block_col = (column // 3) * 3
+                block_count = [
+                    individual.board[r][c]
+                    for r in range(block_row, block_row + 3)
+                    for c in range(block_col, block_col + 3)
+                ].count(current_number)    
+
+                if row_count > 1 or col_count > 1 or block_count > 1:
+                    # How to figure out which numbers are good candidates to mutate to?
+                    individual.board[row][column] = random.randint(1, 9)
+                    individual.heuristic_matrix.update(row, column, individual.board[row][column])
+
         return individual
 
     def solve(self) -> Sudoku:
@@ -157,7 +178,7 @@ class SudokuEvolutionaryAlgorithm:
 
 if __name__ == "__main__":
     initial_board = Sudoku(boards.get_random_board())
-    evolutionary_algorithm = SudokuEvolutionaryAlgorithm(initial_board, population_size=100, mutation_rate=2)
+    evolutionary_algorithm = SudokuEvolutionaryAlgorithm(initial_board, population_size=100, mutation_rate=5)
     
     start_time = time.time()
     solution = evolutionary_algorithm.solve()

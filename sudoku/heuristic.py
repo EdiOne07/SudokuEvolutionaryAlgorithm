@@ -10,7 +10,7 @@ class HeuristicMatrix:
         self.column_set=[set() for _ in range(9)]
         self.block_set=[set() for _ in range(9)]
         self.score=0
-        self.initialize()
+        #self.initialize()
     def initialize(self):
         for i in range(9):
             for j in range(9):
