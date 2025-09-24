@@ -84,6 +84,7 @@ class SudokuGA:
         block_r, block_c = r // 3 * 3, c // 3 * 3
         return [grid[i][j] for i in range(block_r, block_r + 3) for j in range(block_c, block_c + 3)]
 
+    # fitness calculate the duplicate number in column and block
     def calculate_fitness(self, individual):
         violations = 0
 
