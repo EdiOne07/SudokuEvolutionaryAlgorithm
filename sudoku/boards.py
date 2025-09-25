@@ -116,5 +116,6 @@ def get_test_boards():
             extreme_board_1, extreme_board_2, extreme_board_3]
 
 def get_random_board():
-    # TODO
+    # NOTE: this could be useful to backtrack and make sure that the algorithm only has one solution: http://en.wikipedia.org/wiki/Dancing_Links
+    # ALGORITHM: https://stackoverflow.com/a/7280517/14395043 maybe??
     return medium_board_1
