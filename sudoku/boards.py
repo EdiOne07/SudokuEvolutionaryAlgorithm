@@ -1,3 +1,8 @@
+import copy
+import random
+
+import search as search
+
 # medium boards have 36-38 filled cells.
 medium_board_1 = [
     [0,2,0,0,0,0,0,3,1],
@@ -159,6 +164,42 @@ board_25x25=[
     [0, 0, 0, 20, 0,  0, 0, 0, 21, 0,  0, 0, 0, 22, 0,  0, 0, 0, 23, 0,  0, 0, 0, 24, 0],
     [0, 0, 0, 0, 25,  0, 0, 0, 0, 1,   0, 0, 0, 0, 2,   0, 0, 0, 0, 3,   0, 0, 0, 0, 4]
 ]
+def generate_solved_board(size) -> list[list[int]]:
+    random_board = [[0] * size for _ in range(9)]
+    random_board = search.DFS_random(random_board)
+    return random_board
+def remove_numbers(board,difficulty):
+    size = len(board)
+    puzzle=copy.deepcopy(board)
+    nums_to_delete=(difficulty*size)
+    for num in range(nums_to_delete):
+        r=random.randrange(0,size)
+        c=random.randrange(0,size)
+        puzzle[r][c]=0
+    return puzzle
+def generate_random_board(size) -> list[list[int]]:
+    new_random_board=generate_solved_board(size)
+    temp=copy.deepcopy(new_random_board)
+    remove_numbers(temp,5)
+    if not search.DFS(temp):
+        return None
+    return new_random_board
+
+new_board=generate_random_board(9)
+def visualize_board(board):
+    for i, row in enumerate(board):
+        if i % 3 == 0:
+            print("+=======+=======+=======+")
+        row_str = ""
+        for j, num in enumerate(row):
+            if j % 3 == 0:
+                row_str += "| "
+            cell = str(num) if num != 0 else "."
+            row_str += cell + " "
+        row_str += "|"
+        print(row_str)
+    print("+=======+=======+=======+")
+visualize_board(new_board)
 def get_test_boards():
     """Returns 3 boards per difficulty level with 3 difficulties in total.
     They are only used for testing purposes and not meant for training."""

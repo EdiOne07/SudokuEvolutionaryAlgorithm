@@ -1,3 +1,4 @@
+import random
 import time
 from typing import Annotated
 
@@ -63,26 +64,44 @@ if the number is not valid, backtrack and try the next number
 if all numbers are tried and no solution is found, return False
 if all cells are filled, return True
 '''
-def DFS(matrix):
+def DFS_random(matrix):
     for i in range(9):
         for j in range(9):
             if (matrix[i][j] == 0):
-                for num in range(1, 10):
+                nums=list(range(1,10))
+                nums=random.sample(nums,len(nums))
+                for num in nums:
                     if is_valid(matrix, i, j, num):
                         matrix[i][j] = num
                         
                         # Recursively solve puzzle
-                        if DFS(matrix):
-                            return True
+                        if DFS_random(matrix):
+                            return matrix
                         
                         # Backtrack
                         matrix[i][j] = 0
                 
                 # If no number works, return False
+                return None
+    return matrix
+
+def DFS(matrix):
+    for i in range(9):
+        for j in range(9):
+            if (matrix[i][j] == 0):
+             for num in range(1, 10):
+                matrix[i][j] = num
+                if is_valid(matrix, i, j, num):
+                        matrix[i][j] = num
+
+                        # Recursively solve puzzle
+                        if DFS(matrix):
+                            return True
+
+                        # Backtrack
+                        matrix[i][j] = 0
                 return False
     return True
-
-
 '''test the DFS function'''
 if __name__ == "__main__":
     matrix = [

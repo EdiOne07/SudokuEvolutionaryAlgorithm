@@ -5,8 +5,8 @@
 #   3.1. if the agent tries to place a number in a position where a number already exists, its not an error but an exception.
 #   3.2. maybe also remember errors per game for the last x games?
 
-import sudoku.boards as boards
-from sudoku.exceptions import InvalidNumberError, CellAlreadyFilledError
+import boards as boards
+from exceptions import InvalidNumberError, CellAlreadyFilledError
 
 class SudokuEngine:
     # TODO: add function to reset board
@@ -99,7 +99,6 @@ class SudokuEngine:
                 if self._board[i][j] == 0:
                     return False
         return True
-
     def __visualize(self):
         """Pretty-print the sudoku board in the console with 3x3 blocks."""
         for i, row in enumerate(self._board):
