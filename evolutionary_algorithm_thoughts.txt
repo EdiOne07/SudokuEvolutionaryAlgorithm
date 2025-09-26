@@ -59,3 +59,10 @@ Meeting:
 
 Run the algorithm several times to see if it is actually good (at least 25x)
 DFS as baseline for now to compare (should not work on hard examples anymore or be much worse)
+
+
+
+TODO:
+- todo: not using such a big population size
+- use bigger matrixes for baseline
+- compare our different algorithms with each other
