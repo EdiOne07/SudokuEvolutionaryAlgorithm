@@ -165,8 +165,8 @@ board_25x25=[
     [0, 0, 0, 0, 25,  0, 0, 0, 0, 1,   0, 0, 0, 0, 2,   0, 0, 0, 0, 3,   0, 0, 0, 0, 4]
 ]
 def generate_solved_board(size) -> list[list[int]]:
-    random_board = [[0] * size for _ in range(9)]
-    random_board = search.DFS_random(random_board)
+    random_board = [[0] * size for _ in range(size)]
+    random_board = search.DFS_random(random_board,size)
     return random_board
 def remove_numbers(board,difficulty):
     size = len(board)
@@ -185,7 +185,7 @@ def generate_random_board(size) -> list[list[int]]:
         return None
     return new_random_board
 
-new_board=generate_random_board(9)
+new_board=generate_random_board(25)
 def visualize_board(board):
     for i, row in enumerate(board):
         if i % 3 == 0:

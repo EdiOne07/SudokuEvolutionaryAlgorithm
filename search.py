@@ -1,5 +1,6 @@
 import random
 import time
+import math
 from typing import Annotated
 
 def sudoku(matrix=None):
@@ -15,15 +16,17 @@ def sudoku(matrix=None):
 
 # this is use to check the specific number at position is valid
 def is_valid(matrix, row, column, num):
+    size=len(matrix)
+    box_size=int(math.sqrt(size))
     if num in matrix[row]:
         return False
     
-    if num in [matrix[i][column] for i in range(9)]:
+    if num in [matrix[i][column] for i in range(size)]:
         return False
-    
-    square_row, square_column = 3 * (row // 3), 3 * (column // 3)
-    for i in range(square_row, square_row + 3):
-        for j in range(square_column, square_column + 3):
+
+    square_row, square_column = box_size * (row // box_size), box_size * (column // box_size)
+    for i in range(square_row, square_row + box_size):
+        for j in range(square_column, square_column + box_size):
             if matrix[i][j] == num:
                 return False
     
@@ -64,18 +67,18 @@ if the number is not valid, backtrack and try the next number
 if all numbers are tried and no solution is found, return False
 if all cells are filled, return True
 '''
-def DFS_random(matrix):
-    for i in range(9):
-        for j in range(9):
+def DFS_random(matrix,size):
+    for i in range(size):
+        for j in range(size):
             if (matrix[i][j] == 0):
-                nums=list(range(1,10))
+                nums=list(range(1,size+1))
                 nums=random.sample(nums,len(nums))
                 for num in nums:
                     if is_valid(matrix, i, j, num):
                         matrix[i][j] = num
                         
                         # Recursively solve puzzle
-                        if DFS_random(matrix):
+                        if DFS_random(matrix,size):
                             return matrix
                         
                         # Backtrack
@@ -86,10 +89,10 @@ def DFS_random(matrix):
     return matrix
 
 def DFS(matrix):
-    for i in range(9):
-        for j in range(9):
+    for i in range(len(matrix)):
+        for j in range(len(matrix)):
             if (matrix[i][j] == 0):
-             for num in range(1, 10):
+             for num in range(1, len(matrix)+1):
                 matrix[i][j] = num
                 if is_valid(matrix, i, j, num):
                         matrix[i][j] = num
