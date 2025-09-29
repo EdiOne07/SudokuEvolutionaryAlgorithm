@@ -9,20 +9,35 @@
 
 ---
 
-- This paper tries to find an Evolutionary Algorithm approach to solve scalable (bigger than standard 9x9) Sudokus. 
-(is this just a Genetic Algorithm?)
+- Context
+- Introduce Sudoku and Genetic algorithm very shortly
 
-- It discusses why naive methods fail (hopefully) as the size of the puzzle increases and why an evolutionary algorithm approach is more scalable in the context of solving Sudokus
+- This paper studies the efficiency of solving Sudoku puzzles  with evolutionary algorithm approaches
 
-- The objective is to minimize the time the evolutionary algorithm takes to solve the Sudokus of increasing sizes.
+- Different difficulties for 9x9, increased sizes
 
-- The baseline to compare the performance of the evolutionary algorithm to will be Depth-First Search(DFS). (Maybe add more naive methods or the very basic evolutionary algorithm without any modifications)
+- Additionally, we want to test whether increasing the size of the Sudoku board leads to better performance of evolutionary algorithms compared to naive search algorithms like DFS.
+
+- The performance is compared between evolutionary algorithms of different complexities as well as to Deapth-First Search - a naive optimization algorithm 
+
+- The objective is to draw a conclusion on which approach solves Sudoku more efficiently, both for regular 9x9 Sudoku boards as well as for bigger boards (16x16 and 25x25).
 
 - The document is structured as follows:
 Section 1: Introduction and goal of the paper.
-Section 2: Describes the problem the paper solves in detail + motivation of the evolutionary approach used.
+Section 2: Describes the problem the paper solves in detail (Solving Sudoku) + motivation of the evolutionary approach used.
 Section 3: Describes the algorithm in detail.
 Section 4: Describes the experiments run with the algorithm.
 Section 5: Presents and analyses the results.
 Section 6: Conclusion.
 
+------
+ 
+Traditionally, a Sudoku is a logic based number placement puzzle. The objective of the puzzle is to fill a most commonly 9x9 sized grid with digits so that each column, row and 3x3 subgrid contain all of the digits from 1 to 9.\cite{}
+
+Solving such a puzzle programmatically falls into the category of search and optimization problems. These types of problems can be approached in different ways. One possible approach is depicted by evolutionary algorithms or in this case more specifically, genetic algorithms (GA).\cite{}
+
+Inspired by the process of natural selection, GAs use biologically inspired operators such as selection, crossover and mutation to generate solutions to optimization and search problems.
+
+This paper studies the efficiency of solving Sudoku puzzles with GA approaches. The objective is to compare the performance of different implementations of GAs. These approaches will additionally be compared to the naive search algorithm deapth-first search (DFS). The puzzles explored will be of different difficulties for regular 9x9 grids and bigger 16x16 and 25x25 grids. This way the paper analyzes whether GAs are a viable option for efficiently solving Sudoku boards compared to naive search algorithms as the complexity of the puzzle increases.
+
+This document is organized in the following way. Chapter one describes the objective of this study. Chapter two describes the problem of solving Sudoku puzzles and the motivation of using evolutionary algorithm approaches to solve this type of problem. Chapter three details the algorithm used in this study. The following chapter lays out the setup of the experiments run in this study. Lastly, chapter five present and analyses the results of this paper.
