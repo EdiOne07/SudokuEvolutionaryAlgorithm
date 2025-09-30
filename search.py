@@ -3,6 +3,21 @@ import time
 import math
 from typing import Annotated
 
+'''
+how to solve:
+It's a rule based algorithm, and using backtracking to solve the puzzle.
+core function is DFS and is_valid
+is_valid function validates whether placing the number num at position follows sudoku rules
+DFS using backtracking:
+1. Find first empty cell (0)
+2. Try numbers 1-9 in that cell
+3. For each number, use is_valid to check if it conflicts with existing numbers
+4. If valid: place number and recursively solve rest
+5. If invalid OR recursive call fails: backtrack (reset to 0) and try next number
+6. If no numbers work: return False (dead end)
+7. If all cells filled: return True (solved!)
+'''
+
 def sudoku(matrix=None):
     if matrix is None:
         raise ValueError("Matrix is required")
@@ -92,9 +107,8 @@ def DFS(matrix):
     for i in range(len(matrix)):
         for j in range(len(matrix)):
             if (matrix[i][j] == 0):
-             for num in range(1, len(matrix)+1):
-                matrix[i][j] = num
-                if is_valid(matrix, i, j, num):
+                for num in range(1, len(matrix)+1):
+                    if is_valid(matrix, i, j, num):
                         matrix[i][j] = num
 
                         # Recursively solve puzzle
