@@ -27,8 +27,8 @@ class SudokuGA:
         # Adaptive mutation rate tracking
         self.stagnant_fitness = None  # The fitness value that's causing stagnation
         self.generations_stuck:Annotated[int, "this will count how many generations we've been stuck at this fitness"] = 0
-        self.gen_stuck:Annotated[int, "this is a hyperparameter to adjust the generation stuck times"] = 100 
-        self.pop_stuck:Annotated[int, "this is a hyperparameter to adjust the population stuck times"] = 1000
+        self.gen_stuck:Annotated[int, "this is a hyperparameter to adjust the generation stuck times"] = 80
+        self.pop_stuck:Annotated[int, "this is a hyperparameter to adjust the population stuck times"] = 800
         self.mutation_increase:Annotated[float, "this is a hyperparameter to adjust the mutation increase rate"] = 0.01
         self.scale:Annotated[
             int, 
@@ -276,12 +276,14 @@ class SudokuGA:
 
 
 if __name__ == "__main__":
-    puzzle = boards.hard_board_1
-    PUZZLE_SIZE = 9 
-    POPULATION_SIZE = 1000
-    ELITE_SIZE = 12
-    MUTATION_RATE = 0.15
-    MAX_GENERATIONS = 10000
+    puzzle = boards.generate_random_board(9)
+    print("Sudoku Puzzle:",puzzle)
+    print("-" * 20)
+    PUZZLE_SIZE = 9
+    POPULATION_SIZE = 142
+    ELITE_SIZE = 10
+    MUTATION_RATE = 0.17 # the best mutation rate is 0.23 while we have to give some space for the adaptive mutation rate
+    MAX_GENERATIONS = 100000
 
     ga = SudokuGA(puzzle=puzzle,
                   population_size=POPULATION_SIZE,
