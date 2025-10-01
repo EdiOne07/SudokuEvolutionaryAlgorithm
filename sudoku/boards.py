@@ -180,12 +180,13 @@ def remove_numbers(board,difficulty):
 def generate_random_board(size) -> list[list[int]]:
     new_random_board=generate_solved_board(size)
     temp=copy.deepcopy(new_random_board)
-    remove_numbers(temp,5)
+    temp=remove_numbers(temp,5)
+    new_random_board=copy.deepcopy(temp)
     if not search.DFS(temp):
         return None
     return new_random_board
 
-# new_board=generate_random_board(25)
+new_board=generate_random_board(9)
 def visualize_board(board):
     for i, row in enumerate(board):
         if i % 3 == 0:
@@ -199,7 +200,7 @@ def visualize_board(board):
         row_str += "|"
         print(row_str)
     print("+=======+=======+=======+")
-# visualize_board(new_board)
+visualize_board(new_board)
 def get_test_boards():
     """Returns 3 boards per difficulty level with 3 difficulties in total.
     They are only used for testing purposes and not meant for training."""
