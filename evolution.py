@@ -1,13 +1,28 @@
 import random
 import time
+import logging
 from typing import Annotated
 import sudoku.boards as boards
 import math
+from sudoku_puzzle_generator import SudokuPuzzleGenerator
 
 
-def print_sudoku(board):
-    for row in board:
-        print(" ".join([str(num) for num in row]))
+def print_sudoku(board, title="Sudoku Board"):
+    """Pretty print a Sudoku board with nice formatting."""
+    print(f"\n{title}")
+    print("+=======+=======+=======+")
+    for i, row in enumerate(board):
+        if i % 3 == 0 and i != 0:
+            print("+=======+=======+=======+")
+        row_str = ""
+        for j, num in enumerate(row):
+            if j % 3 == 0:
+                row_str += "| "
+            cell = str(num) if num != 0 else "."
+            row_str += cell + " "
+        row_str += "|"
+        print(row_str)
+    print("+=======+=======+=======+")
 
 
 class SudokuGA:
@@ -24,11 +39,34 @@ class SudokuGA:
         self.given_indices = [(r, c) for r in range(self.puzzle_size) for c in range(self.puzzle_size) if self.puzzle[r][c] != 0]
         self.population = self._initialize_population()
         
+        # Set up logging
+        self.logger = logging.getLogger('SudokuGA')
+        self.logger.setLevel(logging.INFO)
+        
+        # Create file handler
+        log_filename = f'sudoku_ga_log_{int(time.time())}.txt'
+        file_handler = logging.FileHandler(log_filename)
+        file_handler.setLevel(logging.INFO)
+        
+        # Create formatter
+        formatter = logging.Formatter('%(asctime)s - %(message)s', datefmt='%Y-%m-%d %H:%M:%S')
+        file_handler.setFormatter(formatter)
+        
+        # Add handler to logger
+        if not self.logger.handlers:
+            self.logger.addHandler(file_handler)
+        
+        self.logger.info(f"Starting Sudoku GA with parameters:")
+        self.logger.info(f"Population size: {population_size}, Elite size: {elite_size}")
+        self.logger.info(f"Initial mutation rate: {mutation_rate}, Max generations: {max_generations}")
+        self.logger.info(f"Puzzle size: {puzzle_size}x{puzzle_size}")
+        self.logger.info("-" * 50)
+        
         # Adaptive mutation rate tracking
         self.stagnant_fitness = None  # The fitness value that's causing stagnation
         self.generations_stuck:Annotated[int, "this will count how many generations we've been stuck at this fitness"] = 0
-        self.gen_stuck:Annotated[int, "this is a hyperparameter to adjust the generation stuck times"] = 80
-        self.pop_stuck:Annotated[int, "this is a hyperparameter to adjust the population stuck times"] = 800
+        self.gen_stuck:Annotated[int, "this is a hyperparameter to adjust the generation stuck times"] = 50
+        self.pop_stuck:Annotated[int, "this is a hyperparameter to adjust the population stuck times"] = 500
         self.mutation_increase:Annotated[float, "this is a hyperparameter to adjust the mutation increase rate"] = 0.01
         self.scale:Annotated[
             int, 
@@ -73,8 +111,8 @@ class SudokuGA:
             # Adaptive mutation rate adjustments
             if self.generations_stuck >= self.pop_stuck:
                 # Keep some worst individuals from current generation using scale, then regenerate the rest
-                print(f"Generation {generation}: Population stuck for {self.generations_stuck} generations.")
-                print(f"Keeping worst {self.population_size // self.scale} individuals and regenerating the rest")
+                self.logger.info(f"Generation {generation}: Population stuck for {self.generations_stuck} generations.")
+                self.logger.info(f"Keeping worst {self.population_size // self.scale} individuals and regenerating the rest")
                 
                 # Keep worst individuals from current population
                 worst_to_keep = self.population_size // self.scale
@@ -86,7 +124,7 @@ class SudokuGA:
                 # Combine worst kept individuals with new ones
                 self.population = worst_individuals + new_individuals
                 
-                print(f"Resetting mutation rate to {self.original_mutation_rate}")
+                self.logger.info(f"Resetting mutation rate to {self.original_mutation_rate}")
                 self.mutation_rate = self.original_mutation_rate
                 self.stagnant_fitness = None
                 self.generations_stuck = 0
@@ -97,11 +135,12 @@ class SudokuGA:
                 old_mutation_rate = self.mutation_rate
                 # for fixed mutation rate, it's better not to go above 0.3
                 self.mutation_rate = min(0.3, self.mutation_rate + self.mutation_increase) 
-                print(f"Generation {generation}: Fitness stuck for {self.generations_stuck} generations.")
-                print(f"Increasing mutation rate from {old_mutation_rate:.2f} to {self.mutation_rate:.2f}")
+                self.logger.info(f"Generation {generation}: Fitness stuck for {self.generations_stuck} generations.")
+                self.logger.info(f"Increasing mutation rate from {old_mutation_rate:.2f} to {self.mutation_rate:.2f}")
 
             # Check for a solution
             if current_best_fitness == 0:
+                self.logger.info(f"Solution found in generation {generation}!")
                 print(f"Solution found in generation {generation}!")
                 return pop_with_fitness[0][0]
 
@@ -129,10 +168,13 @@ class SudokuGA:
                         next_generation.append(self._mutate(child2))
 
             self.population = next_generation
-            print(f"Generation {generation}: Best Fitness = {current_best_fitness}: Mutation Rate = {self.mutation_rate:.3f}")
-            print("-" * 20)
+            self.logger.info(f"Generation {generation}: Best Fitness = {current_best_fitness}: Mutation Rate = {self.mutation_rate:.3f}")
 
         # If we reach here, max generations exceeded without finding solution
+        self.logger.info(f"Maximum generations ({self.max_generations}) reached!")
+        self.logger.info(f"Algorithm appears to be stuck at local minimum.")
+        self.logger.info(f"Best fitness achieved: {best_fitness_overall} violations")
+        self.logger.info(f"Generations without improvement: {generations_without_improvement}")
         print(f"\nMaximum generations ({self.max_generations}) reached!")
         print(f"Algorithm appears to be stuck at local minimum.")
         print(f"Best fitness achieved: {best_fitness_overall} violations")
@@ -276,8 +318,12 @@ class SudokuGA:
 
 
 if __name__ == "__main__":
-    puzzle = boards.generate_random_board(9)
-    print("Sudoku Puzzle:",puzzle)
+    # puzzle = boards.medium_board_2
+    generator = SudokuPuzzleGenerator()
+    puzzle, solution_original = generator.generate_puzzle(difficulty='medium')
+    
+    print_sudoku(puzzle, "Generated Sudoku Puzzle")
+    print_sudoku(solution_original, "Generated Sudoku Solution")
     print("-" * 20)
     PUZZLE_SIZE = 9
     POPULATION_SIZE = 142
@@ -299,10 +345,9 @@ if __name__ == "__main__":
     if solution is not None:
         final_fitness = ga.calculate_fitness(solution)
         if final_fitness == 0:
-            print("\nPerfect solution found:")
+            print_sudoku(solution, "Perfect Solution Found!")
         else:
-            print(f"\nBest solution found (with {final_fitness} violations):")
-        print_sudoku(solution)
+            print_sudoku(solution, f"Best Solution Found ({final_fitness} violations)")
         print(f"\nFinal Fitness (violations): {final_fitness}")
         
         # Show violation details if there are any violations
