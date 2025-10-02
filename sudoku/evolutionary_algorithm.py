@@ -1,8 +1,42 @@
-import boards
-from sudoku import Sudoku
 import random
 import copy
 import time
+from sudoku import boards
+from sudoku.heuristic import HeuristicMatrix
+
+class Sudoku:
+    """A class to represent a Sudoku board."""
+    board: list[list[int]]
+    score: int
+
+    def __init__(self, board: list[list[int]]):
+        """Initializes a new instance of a Sudoku board.
+        
+            Parameters
+            ----------
+            board: list[list[int]]
+                The sudoku board to use.
+        """
+        self.board = board
+        self.row_sets = []
+        self.column_sets = []
+        self.block_sets = []
+        self.heuristic_matrix=HeuristicMatrix(self.board)
+
+    def visualize(self):
+        """Pretty-print the sudoku board in the console with 3x3 blocks."""
+        for i, row in enumerate(self.board):
+            if i % 3 == 0:
+                print("+=======+=======+=======+")
+            row_str = ""
+            for j, num in enumerate(row):
+                if j % 3 == 0:
+                    row_str += "| "
+                cell = str(num) if num != 0 else "."
+                row_str += cell + " "
+            row_str += "|"
+            print(row_str)
+        print("+=======+=======+=======+")
 
 class SudokuEvolutionaryAlgorithm:
     """A sudoku solver that uses an evolutionary algorithm to solve the puzzle."""
@@ -12,8 +46,9 @@ class SudokuEvolutionaryAlgorithm:
     _generation: int
     _population: list[Sudoku]
     _solution: Sudoku
+    _max_gens: int
 
-    def __init__(self, initial_sudoku: Sudoku, population_size: int = 100, mutation_rate: int = 1):
+    def __init__(self, initial_sudoku: Sudoku, population_size: int = 100, mutation_rate: int = 1, max_gens = 150_000):
         """Initializes the evolutionary algorithm class.
         
             Parameters
@@ -31,6 +66,7 @@ class SudokuEvolutionaryAlgorithm:
         self._generation = 0
         self._solution = None
         self._population = []
+        self._max_gens = max_gens
 
     def __initialize_population(self):
         """Creates the initial population for generation 0."""     
@@ -45,18 +81,19 @@ class SudokuEvolutionaryAlgorithm:
             self._population.append(randomly_filled_sudoku)
         print("Initial population created.")
 
-    def __solution_found(self) -> bool:
-        """Checks whether a solution has been found in the current population.
+    def __sort_and_check(self) -> bool:
+        """Sorts the population and checks whether a solution has been found in the current population.
 
         Returns
         -------
         bool
             Whether a solution has been found.
         """
-        for individual in self._population:
-            if individual.heuristic_matrix.score == 243:
-                self._solution = individual
-                return True
+        self._population.sort(key=lambda x: x.heuristic_matrix.score, reverse=True) 
+        best_individual = self._population[0]
+        if best_individual.heuristic_matrix.score == 243:
+            self._solution = best_individual
+            return True
         return False
     
     def __create_next_generation(self) -> bool:
@@ -68,13 +105,12 @@ class SudokuEvolutionaryAlgorithm:
             Whether the next generation was created.
             If false is returned, a solution has been found.
         """
-        if self.__solution_found():
+        if self.__sort_and_check():
             print(f"Solution found in generation {self._generation}!")
             return False
 
         # Selection
         # Top 20% of population creates 80% of next generation
-        self._population.sort(key=lambda x: x.heuristic_matrix.score, reverse=True)
         top_parents = self._population[:int(self._population_size * 0.2)]
         
         next_generation = []
@@ -172,9 +208,12 @@ class SudokuEvolutionaryAlgorithm:
     def solve(self) -> Sudoku:
         """Solves the sudoku puzzle using an evolutionary algorithm."""
         self.__initialize_population()
-        while self.__create_next_generation():
-            pass
-        return self._solution
+        while self._generation < self._max_gens:
+            if not self.__create_next_generation():
+                return self._solution
+        print(f"No solution found in {self._max_gens}. Returning best individual instead...")
+        self._population.sort(key=lambda x: x.heuristic_matrix.score, reverse=True) 
+        return self._population[0] 
 
 if __name__ == "__main__":
     initial_board = Sudoku(boards.get_random_board())
@@ -184,6 +223,6 @@ if __name__ == "__main__":
     solution = evolutionary_algorithm.solve()
     end_time = time.time()
 
-    print("Solution:")
+    print(f"Final result with a score of {solution.heuristic_matrix.score}:")
     print(solution.visualize())
-    print(f"The evolutionary algoirthm took {end_time - start_time:.2f} seconds to solve this puzzle.")
+    print(f"This run took {end_time - start_time:.2f} seconds.")

@@ -71,14 +71,44 @@ The following sections document these processes and use the Sudoku board shown i
 \label{fig:initial-sudoku}
 \end{figure}
 
+\pagebreak % TODO: make sure this is properly formatted, but if we dont pagebreak here, then the next paragraph might appear above the table, which is not good.
 \subsubsection{Implementation 1}\label{sec:impl-1}
-\begin{enumerate}
-\item Initialize the population with \textit{\textbf{population\_size}} random individuals that all respect the initially given sudoku tiles. These individuals will start out with random values in the empty tiles. The fitness of each individual is calculated as the sum of the number of unique numbers in each row, column, and 3x3 subgrid. The maximum fitness is 243 (9 unique numbers * 9 rows + 9 columns + 9 subgrids).
-\item The next generation of individuals is created by selecting two parents (or the same one twice) randomly from the top 20\% of the current population. These top parents will create 80\% of the next generation's individuals. The other 20\% of individuals will have parents that are chosen the entire population.
-\item We perform random crossover, iterating over each cell and randomly choosing whether the child inherits the value from the first or second parent.
-\item Afterwards, the child mutates \textit{\textbf{mutation\_amount}} random tiles on the board, changing their value. Any change on the initially given sudoku tiles is not allowed.
-\item Once the new generation is created, we calculate the fitness of each individual and repeat the process from step 2. until a valid solution is found.
-\end{enumerate}
+
+Table \ref{alg:impl-1} gives a brief overview of how the algorithm works. A detailed description of how the fitness function, selection, and mutation work, will be given afterwards.
+
+\begin{algorithm}
+\caption{Genetic Algorithm 1}\label{alg:impl-1}
+\begin{algorithmic}
+\Require initial\_sudoku, population\_size, mutation\_rate, max\_generations
+\Ensure $/$
+\State population $\gets$ PopulateRandomly(initial\_sudoku, population\_size)
+\State generation $\gets 0$
+\State next\_generation $\gets \emptyset$
+\While{generation < max\_generations}
+  \State population $\gets$ sort\_by\_fitness(population, descending)
+  \If{first(population).fitness = $max\_fitness$} \State \Return first(population) \EndIf
+  \State top $\gets$ first 20\% of Population
+  \For{$i\gets 1, population\_size * 0.8$}
+    \State parent1, parent2 $\gets$ sample(top)
+    \State child $\gets$ crossover(parent1, parent2) \Comment{per-cell pick random parent}
+    \State child $\gets$ mutate(child, mutation\_rate, initial\_sudoku) \Comment{change $mutation\_rate$ amount of random cells}
+    \State next\_generation $\gets$ next\_generation + child
+  \EndFor
+  \For{$i\gets 1, population\_size * 0.2$}
+    \State parent1, parent2 $\gets$ sample(population)
+    \State child $\gets$ crossover(parent1, parent2) \Comment{per-cell pick random parent}
+    \State child $\gets$ mutate(child, mutation\_rate, initial\_sudoku) \Comment{change $mutation\_rate$ amount of random cells}
+    \State next\_generation $\gets$ next\_generation + child
+  \EndFor 
+  \State generation $\gets$ generation + 1
+  \State population $\gets$ next\_generation
+\EndWhile
+\State population $\gets$ sort\_by\_fitness(population, descending)
+\State \Return first(population)
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Fitness function} The fitness function evaluates a Sudoku board by summing the number of unique digits in each row, column, and 3$\times$3 block, with a maximum score of 243 for a valid solution.
 
 \paragraph{Selection} In the figure below, two parents (left and middle) of the current generation form an individual of the next generation (right).
 One area for improvement is evident in row 7: Parent~1 contains two occurrences of the digit 7 and Parent~2 contains three. The offspring also has three 7s, while it would have been possible to generate a row with all distinct digits, namely \textbf{286371945}.
@@ -198,6 +228,7 @@ One area for improvement is evident in row 7: Parent~1 contains two occurrences 
   \label{fig:impl-1-mutation}
 \end{figure}
 
+\pagebreak
 \subsubsection{Implementation 2}
 \begin{enumerate}
 \item Initialize the population with \textit{\textbf{population\_size}} number of random individuals that all respect the initially given sudoku tiles. The individuals create a complete board by iterating over the rows and filling in the empty tiles with random numbers that do not already exist in the respective row. The fitness function works counterintuitively, calculating the fitness as the sum of the number of duplicates in each column, and 3x3 subgrid. The minimum fitness is 0 (no duplicates).
