@@ -1,8 +1,17 @@
-\section{Problem this is the problem}
+\section{Sudoku Puzzle Problem}
 \label{sec:problem_description}
-
-\textcolor{red}{The second section should present the problem you tackle using your evolutionary approach. Overall, this section should include:}
-
+\subsection{Problem Description}
+{Sudoku is a Japanese logical game that is played on a $9 \times 9$ grid, that are further divided into $3 \times 3$ subgrids. The objective of the game is to fill the grid with digits from 1 to 9, ensuring that each row, column, and subgrid contains each digit exactly once\cite{Mantere2007}. The puzzle starts with some cells already filled in, and the player must use logic and respect the base rule of the game in order to finish the puzzle.}
+{\newline}
+{\newline Sudoku puzzles can vary in difficulty based on how many numbers they start with, the arrangement of these numbers and even the varying size of the sudoku, since they can go beyond the standard $9 \times 9$ grid, similar to the $25 \times 25$ grid we used to test our algorithm with. Thus we can think of the sudoku problem as a graph coloring problem if it were to be expressed in a mathematical context. The $9 \times 9$ grid can be seen as graph that has 81 vertices, namely one vertex for each cell. Each vertex can be labeled with an ordered pair (x,y), where x and y are integers between 1 and 9 \cite{WikiMathematics}. Two distinct vertices (x1,y1) and (x2,y2) are connected by an edge if and only if they are in the same row, column or subgrid:}
+\begin {itemize}
+    \item $x1 = x2$, which translates as same row
+    \item $y1 = y2$, which translates as same column
+    \item $\lfloor (x1-1)/3 \rfloor = \lfloor (x2-1)/3 \rfloor$ and $\lfloor (y1-1)/3 \rfloor = \lfloor (y2-1)/3 \rfloor$ which translates as same subgrid
+\end {itemize}
+{As previously mentioned, the puzzle is completed when all the vertices have an integer between 1 and 9 assigned to them, in such a way that vertices that are joined by an edge don't have the same number assigned to them. }
+\subsection{Evolutionary Approach}
+{While Sudoku has a deterministic solution, evolutionary algorithms can be used in order to compare their performance with more traditional approaches such as the depth first search algorithm. As it is mentioned in\cite{Moraglio}, they managed to implement an evolutionary algorith that could solve very efficently easy Sudoku puzzles. The downside of their algorithm, was that it wasn't as efficient when it came down to solving medium or hard puzzles.   }
 {\color{red}
 \begin{itemize}
     \item The mathematical formulation considered in your study. Some problems have a clear mathematical model (e.g., Travelling Salesman Problem), while others do not (e.g., $n$-Queens). Based on the problem you chose, search the literature and find a proper way to present the problem.
