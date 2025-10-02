@@ -1,0 +1,814 @@
+2025-10-01 22:52:26 - --------------------------------------------------
+2025-10-01 22:52:29 - Solution found in generation 631! (Execution time: 3.12s)
+2025-10-01 22:52:29 - --------------------------------------------------
+2025-10-01 22:52:49 - Solution found in generation 4093! (Execution time: 20.30s)
+2025-10-01 22:52:49 - --------------------------------------------------
+2025-10-01 22:53:43 - Solution found in generation 10731! (Execution time: 53.70s)
+2025-10-01 22:53:43 - --------------------------------------------------
+2025-10-01 22:53:53 - Solution found in generation 2042! (Execution time: 10.65s)
+2025-10-01 22:53:54 - --------------------------------------------------
+2025-10-01 22:59:33 - Solution found in generation 72575! (Execution time: 339.07s)
+2025-10-01 22:59:33 - --------------------------------------------------
+2025-10-01 23:02:50 - Solution found in generation 42303! (Execution time: 197.00s)
+2025-10-01 23:02:50 - --------------------------------------------------
+2025-10-01 23:02:52 - Solution found in generation 603! (Execution time: 2.82s)
+2025-10-01 23:02:53 - --------------------------------------------------
+2025-10-01 23:03:10 - Solution found in generation 3789! (Execution time: 17.68s)
+2025-10-01 23:03:10 - --------------------------------------------------
+2025-10-01 23:04:48 - Solution found in generation 20874! (Execution time: 97.82s)
+2025-10-01 23:04:48 - --------------------------------------------------
+2025-10-01 23:04:51 - Solution found in generation 663! (Execution time: 3.13s)
+2025-10-01 23:04:51 - --------------------------------------------------
+2025-10-01 23:06:22 - Solution found in generation 19696! (Execution time: 90.58s)
+2025-10-01 23:06:22 - --------------------------------------------------
+2025-10-01 23:14:02 - Maximum generations (100000) reached! (Execution time: 459.21s)
+2025-10-01 23:14:02 - Algorithm appears to be stuck at local minimum.
+2025-10-01 23:14:02 - Best fitness achieved: 2 violations
+2025-10-01 23:14:02 - Generations without improvement: 99361
+2025-10-01 23:14:02 - --------------------------------------------------
+2025-10-01 23:15:57 - Solution found in generation 24760! (Execution time: 115.51s)
+2025-10-01 23:15:57 - --------------------------------------------------
+2025-10-01 23:15:58 - Solution found in generation 90! (Execution time: 0.40s)
+2025-10-01 23:15:58 - --------------------------------------------------
+2025-10-01 23:15:58 - Solution found in generation 156! (Execution time: 0.71s)
+2025-10-01 23:15:58 - --------------------------------------------------
+2025-10-01 23:16:20 - Solution found in generation 4665! (Execution time: 21.47s)
+2025-10-01 23:16:20 - --------------------------------------------------
+2025-10-01 23:16:22 - Solution found in generation 569! (Execution time: 2.66s)
+2025-10-01 23:16:23 - --------------------------------------------------
+2025-10-01 23:16:39 - Solution found in generation 3448! (Execution time: 16.12s)
+2025-10-01 23:16:39 - --------------------------------------------------
+2025-10-01 23:16:54 - Solution found in generation 3377! (Execution time: 15.66s)
+2025-10-01 23:16:54 - --------------------------------------------------
+2025-10-01 23:17:33 - Solution found in generation 8228! (Execution time: 38.40s)
+2025-10-01 23:17:33 - --------------------------------------------------
+2025-10-01 23:17:36 - Solution found in generation 569! (Execution time: 2.70s)
+2025-10-01 23:17:36 - --------------------------------------------------
+2025-10-01 23:18:24 - Solution found in generation 10387! (Execution time: 47.77s)
+2025-10-01 23:18:24 - --------------------------------------------------
+2025-10-01 23:18:36 - Solution found in generation 2660! (Execution time: 12.67s)
+2025-10-01 23:18:36 - --------------------------------------------------
+2025-10-01 23:18:44 - Solution found in generation 1651! (Execution time: 7.94s)
+2025-10-01 23:18:44 - --------------------------------------------------
+2025-10-01 23:19:12 - Solution found in generation 5864! (Execution time: 27.74s)
+2025-10-01 23:19:12 - --------------------------------------------------
+2025-10-01 23:19:42 - Solution found in generation 6429! (Execution time: 30.32s)
+2025-10-01 23:19:43 - --------------------------------------------------
+2025-10-01 23:27:24 - Maximum generations (100000) reached! (Execution time: 461.38s)
+2025-10-01 23:27:24 - Algorithm appears to be stuck at local minimum.
+2025-10-01 23:27:24 - Best fitness achieved: 2 violations
+2025-10-01 23:27:24 - Generations without improvement: 85959
+2025-10-01 23:27:25 - --------------------------------------------------
+2025-10-01 23:35:05 - Maximum generations (100000) reached! (Execution time: 460.24s)
+2025-10-01 23:35:05 - Algorithm appears to be stuck at local minimum.
+2025-10-01 23:35:05 - Best fitness achieved: 2 violations
+2025-10-01 23:35:05 - Generations without improvement: 68904
+2025-10-01 23:35:05 - --------------------------------------------------
+2025-10-01 23:35:16 - Solution found in generation 2255! (Execution time: 10.64s)
+2025-10-01 23:35:17 - --------------------------------------------------
+2025-10-01 23:36:43 - Solution found in generation 18704! (Execution time: 86.15s)
+2025-10-01 23:36:44 - --------------------------------------------------
+2025-10-01 23:37:04 - Solution found in generation 4249! (Execution time: 19.73s)
+2025-10-01 23:37:04 - --------------------------------------------------
+2025-10-01 23:37:14 - Solution found in generation 2209! (Execution time: 10.35s)
+2025-10-01 23:37:14 - --------------------------------------------------
+2025-10-01 23:44:56 - Maximum generations (100000) reached! (Execution time: 462.16s)
+2025-10-01 23:44:56 - Algorithm appears to be stuck at local minimum.
+2025-10-01 23:44:56 - Best fitness achieved: 2 violations
+2025-10-01 23:44:56 - Generations without improvement: 49389
+2025-10-01 23:44:56 - --------------------------------------------------
+2025-10-01 23:46:11 - Solution found in generation 16129! (Execution time: 74.99s)
+2025-10-01 23:46:11 - --------------------------------------------------
+2025-10-01 23:47:54 - Solution found in generation 21649! (Execution time: 102.43s)
+2025-10-01 23:47:54 - --------------------------------------------------
+2025-10-01 23:47:54 - Solution found in generation 50! (Execution time: 0.22s)
+2025-10-01 23:47:54 - --------------------------------------------------
+2025-10-01 23:47:54 - Solution found in generation 47! (Execution time: 0.21s)
+2025-10-01 23:47:55 - --------------------------------------------------
+2025-10-01 23:55:41 - Maximum generations (100000) reached! (Execution time: 465.79s)
+2025-10-01 23:55:41 - Algorithm appears to be stuck at local minimum.
+2025-10-01 23:55:41 - Best fitness achieved: 2 violations
+2025-10-01 23:55:41 - Generations without improvement: 99225
+2025-10-01 23:55:41 - --------------------------------------------------
+2025-10-01 23:58:10 - Solution found in generation 32536! (Execution time: 149.49s)
+2025-10-01 23:58:10 - --------------------------------------------------
+2025-10-01 23:58:11 - Solution found in generation 45! (Execution time: 0.21s)
+2025-10-01 23:58:11 - --------------------------------------------------
+2025-10-01 23:59:55 - Solution found in generation 22306! (Execution time: 104.42s)
+2025-10-01 23:59:55 - --------------------------------------------------
+2025-10-02 00:00:08 - Solution found in generation 2849! (Execution time: 13.23s)
+2025-10-02 00:00:09 - --------------------------------------------------
+2025-10-02 00:01:16 - Solution found in generation 14525! (Execution time: 66.94s)
+2025-10-02 00:01:16 - --------------------------------------------------
+2025-10-02 00:08:58 - Maximum generations (100000) reached! (Execution time: 462.44s)
+2025-10-02 00:08:58 - Algorithm appears to be stuck at local minimum.
+2025-10-02 00:08:58 - Best fitness achieved: 2 violations
+2025-10-02 00:08:58 - Generations without improvement: 97609
+2025-10-02 00:08:58 - --------------------------------------------------
+2025-10-02 00:09:01 - Solution found in generation 712! (Execution time: 3.26s)
+2025-10-02 00:09:02 - --------------------------------------------------
+2025-10-02 00:09:02 - Solution found in generation 85! (Execution time: 0.38s)
+2025-10-02 00:09:02 - --------------------------------------------------
+2025-10-02 00:09:06 - Solution found in generation 839! (Execution time: 3.81s)
+2025-10-02 00:09:06 - --------------------------------------------------
+2025-10-02 00:13:18 - Solution found in generation 54375! (Execution time: 251.87s)
+2025-10-02 00:13:18 - --------------------------------------------------
+2025-10-02 00:13:23 - Solution found in generation 1162! (Execution time: 5.43s)
+2025-10-02 00:13:23 - --------------------------------------------------
+2025-10-02 00:17:25 - Solution found in generation 51645! (Execution time: 241.85s)
+2025-10-02 00:17:25 - --------------------------------------------------
+2025-10-02 00:21:54 - Solution found in generation 57419! (Execution time: 268.34s)
+2025-10-02 00:21:54 - --------------------------------------------------
+2025-10-02 00:22:45 - Solution found in generation 11020! (Execution time: 51.21s)
+2025-10-02 00:22:45 - --------------------------------------------------
+2025-10-02 00:22:46 - Solution found in generation 183! (Execution time: 0.82s)
+2025-10-02 00:22:46 - --------------------------------------------------
+2025-10-02 00:22:46 - Solution found in generation 83! (Execution time: 0.37s)
+2025-10-02 00:22:46 - --------------------------------------------------
+2025-10-02 00:22:49 - Solution found in generation 523! (Execution time: 2.43s)
+2025-10-02 00:22:49 - --------------------------------------------------
+2025-10-02 00:23:13 - Solution found in generation 5138! (Execution time: 24.27s)
+2025-10-02 00:23:13 - --------------------------------------------------
+2025-10-02 00:23:45 - Solution found in generation 6872! (Execution time: 32.27s)
+2025-10-02 00:23:45 - --------------------------------------------------
+2025-10-02 00:30:33 - Solution found in generation 86147! (Execution time: 407.42s)
+2025-10-02 00:30:33 - --------------------------------------------------
+2025-10-02 00:30:33 - Solution found in generation 55! (Execution time: 0.25s)
+2025-10-02 00:30:33 - --------------------------------------------------
+2025-10-02 00:30:41 - Solution found in generation 1643! (Execution time: 7.76s)
+2025-10-02 00:30:41 - --------------------------------------------------
+2025-10-02 00:31:13 - Solution found in generation 6777! (Execution time: 31.96s)
+2025-10-02 00:31:13 - --------------------------------------------------
+2025-10-02 00:31:18 - Solution found in generation 1151! (Execution time: 5.51s)
+2025-10-02 00:31:18 - --------------------------------------------------
+2025-10-02 00:32:54 - Solution found in generation 20084! (Execution time: 95.73s)
+2025-10-02 00:32:54 - --------------------------------------------------
+2025-10-02 00:32:55 - Solution found in generation 134! (Execution time: 0.60s)
+2025-10-02 00:32:55 - --------------------------------------------------
+2025-10-02 00:34:46 - Solution found in generation 23789! (Execution time: 110.71s)
+2025-10-02 00:34:46 - --------------------------------------------------
+2025-10-02 00:35:04 - Solution found in generation 3975! (Execution time: 18.71s)
+2025-10-02 00:35:04 - --------------------------------------------------
+2025-10-02 00:35:23 - Solution found in generation 3914! (Execution time: 18.18s)
+2025-10-02 00:35:23 - --------------------------------------------------
+2025-10-02 00:35:57 - Solution found in generation 7207! (Execution time: 33.91s)
+2025-10-02 00:35:57 - --------------------------------------------------
+2025-10-02 00:40:06 - Solution found in generation 53384! (Execution time: 249.07s)
+2025-10-02 00:40:06 - --------------------------------------------------
+2025-10-02 00:40:40 - Solution found in generation 7205! (Execution time: 33.98s)
+2025-10-02 00:40:40 - --------------------------------------------------
+2025-10-02 00:41:43 - Solution found in generation 13749! (Execution time: 62.97s)
+2025-10-02 00:41:43 - --------------------------------------------------
+2025-10-02 00:49:27 - Maximum generations (100000) reached! (Execution time: 464.16s)
+2025-10-02 00:49:27 - Algorithm appears to be stuck at local minimum.
+2025-10-02 00:49:27 - Best fitness achieved: 2 violations
+2025-10-02 00:49:27 - Generations without improvement: 94450
+2025-10-02 00:49:27 - --------------------------------------------------
+2025-10-02 00:49:28 - Solution found in generation 109! (Execution time: 0.49s)
+2025-10-02 00:49:28 - --------------------------------------------------
+2025-10-02 00:49:53 - Solution found in generation 5311! (Execution time: 25.20s)
+2025-10-02 00:49:53 - --------------------------------------------------
+2025-10-02 00:53:39 - Solution found in generation 48761! (Execution time: 225.71s)
+2025-10-02 00:53:39 - --------------------------------------------------
+2025-10-02 01:01:04 - Solution found in generation 96184! (Execution time: 444.81s)
+2025-10-02 01:01:04 - --------------------------------------------------
+2025-10-02 01:01:32 - Solution found in generation 6094! (Execution time: 27.86s)
+2025-10-02 01:01:32 - --------------------------------------------------
+2025-10-02 01:01:35 - Solution found in generation 620! (Execution time: 2.91s)
+2025-10-02 01:01:35 - --------------------------------------------------
+2025-10-02 01:01:47 - Solution found in generation 2653! (Execution time: 12.55s)
+2025-10-02 01:01:47 - --------------------------------------------------
+2025-10-02 01:02:27 - Solution found in generation 8482! (Execution time: 39.60s)
+2025-10-02 01:02:27 - --------------------------------------------------
+2025-10-02 01:02:30 - Solution found in generation 599! (Execution time: 2.81s)
+2025-10-02 01:02:30 - --------------------------------------------------
+2025-10-02 01:02:30 - Solution found in generation 98! (Execution time: 0.44s)
+2025-10-02 01:02:30 - --------------------------------------------------
+2025-10-02 01:03:36 - Solution found in generation 14235! (Execution time: 66.03s)
+2025-10-02 01:03:36 - --------------------------------------------------
+2025-10-02 01:03:52 - Solution found in generation 3382! (Execution time: 15.91s)
+2025-10-02 01:03:52 - --------------------------------------------------
+2025-10-02 01:03:58 - Solution found in generation 1111! (Execution time: 5.22s)
+2025-10-02 01:03:58 - --------------------------------------------------
+2025-10-02 01:04:00 - Solution found in generation 479! (Execution time: 2.18s)
+2025-10-02 01:04:00 - --------------------------------------------------
+2025-10-02 01:04:36 - Solution found in generation 7789! (Execution time: 36.29s)
+2025-10-02 01:04:36 - --------------------------------------------------
+2025-10-02 01:04:37 - Solution found in generation 144! (Execution time: 0.65s)
+2025-10-02 01:04:37 - --------------------------------------------------
+2025-10-02 01:04:45 - Solution found in generation 1733! (Execution time: 8.15s)
+2025-10-02 01:04:45 - --------------------------------------------------
+2025-10-02 01:05:10 - Solution found in generation 5374! (Execution time: 25.08s)
+2025-10-02 01:05:10 - --------------------------------------------------
+2025-10-02 01:06:58 - Solution found in generation 23309! (Execution time: 108.17s)
+2025-10-02 01:06:59 - --------------------------------------------------
+2025-10-02 01:07:29 - Solution found in generation 6488! (Execution time: 29.96s)
+2025-10-02 01:07:29 - --------------------------------------------------
+2025-10-02 01:07:30 - Solution found in generation 322! (Execution time: 1.45s)
+2025-10-02 01:07:30 - --------------------------------------------------
+2025-10-02 01:07:30 - Solution found in generation 61! (Execution time: 0.29s)
+2025-10-02 01:07:30 - --------------------------------------------------
+2025-10-02 01:07:31 - Solution found in generation 235! (Execution time: 1.04s)
+2025-10-02 01:07:32 - --------------------------------------------------
+2025-10-02 01:07:35 - Solution found in generation 699! (Execution time: 3.22s)
+2025-10-02 01:07:35 - --------------------------------------------------
+2025-10-02 01:07:38 - Solution found in generation 622! (Execution time: 2.91s)
+2025-10-02 01:07:38 - --------------------------------------------------
+2025-10-02 01:09:54 - Solution found in generation 29619! (Execution time: 135.59s)
+2025-10-02 01:09:54 - --------------------------------------------------
+2025-10-02 01:09:54 - Solution found in generation 90! (Execution time: 0.40s)
+2025-10-02 01:09:54 - --------------------------------------------------
+2025-10-02 01:09:55 - Solution found in generation 239! (Execution time: 1.08s)
+2025-10-02 01:09:55 - --------------------------------------------------
+2025-10-02 01:12:29 - Solution found in generation 33024! (Execution time: 153.57s)
+2025-10-02 01:12:29 - --------------------------------------------------
+2025-10-02 01:12:39 - Solution found in generation 2136! (Execution time: 10.11s)
+2025-10-02 01:12:39 - --------------------------------------------------
+2025-10-02 01:13:22 - Solution found in generation 9300! (Execution time: 42.90s)
+2025-10-02 01:13:22 - --------------------------------------------------
+2025-10-02 01:21:02 - Maximum generations (100000) reached! (Execution time: 459.65s)
+2025-10-02 01:21:02 - Algorithm appears to be stuck at local minimum.
+2025-10-02 01:21:02 - Best fitness achieved: 2 violations
+2025-10-02 01:21:02 - Generations without improvement: 99501
+2025-10-02 01:21:02 - --------------------------------------------------
+2025-10-02 01:21:05 - Solution found in generation 590! (Execution time: 2.75s)
+2025-10-02 01:21:05 - --------------------------------------------------
+2025-10-02 01:21:07 - Solution found in generation 564! (Execution time: 2.65s)
+2025-10-02 01:21:07 - --------------------------------------------------
+2025-10-02 01:21:08 - Solution found in generation 95! (Execution time: 0.42s)
+2025-10-02 01:21:08 - --------------------------------------------------
+2025-10-02 01:22:28 - Solution found in generation 17201! (Execution time: 80.22s)
+2025-10-02 01:22:28 - --------------------------------------------------
+2025-10-02 01:22:32 - Solution found in generation 798! (Execution time: 3.68s)
+2025-10-02 01:22:32 - --------------------------------------------------
+2025-10-02 01:28:32 - Solution found in generation 77483! (Execution time: 360.48s)
+2025-10-02 01:28:33 - --------------------------------------------------
+2025-10-02 01:30:56 - Solution found in generation 30715! (Execution time: 142.90s)
+2025-10-02 01:30:56 - --------------------------------------------------
+2025-10-02 01:31:09 - Solution found in generation 2792! (Execution time: 13.02s)
+2025-10-02 01:31:09 - --------------------------------------------------
+2025-10-02 01:31:10 - Solution found in generation 63! (Execution time: 0.28s)
+2025-10-02 01:31:10 - --------------------------------------------------
+2025-10-02 01:31:11 - Solution found in generation 173! (Execution time: 0.78s)
+2025-10-02 01:31:11 - --------------------------------------------------
+2025-10-02 01:36:27 - Solution found in generation 68554! (Execution time: 316.14s)
+2025-10-02 01:36:27 - --------------------------------------------------
+2025-10-02 01:36:28 - Solution found in generation 230! (Execution time: 1.03s)
+2025-10-02 01:36:28 - --------------------------------------------------
+2025-10-02 01:38:41 - Solution found in generation 28838! (Execution time: 133.14s)
+2025-10-02 01:38:41 - --------------------------------------------------
+2025-10-02 01:39:16 - Solution found in generation 7441! (Execution time: 35.21s)
+2025-10-02 01:39:17 - --------------------------------------------------
+2025-10-02 01:41:59 - Solution found in generation 34730! (Execution time: 162.50s)
+2025-10-02 01:41:59 - --------------------------------------------------
+2025-10-02 01:43:36 - Solution found in generation 20902! (Execution time: 97.06s)
+2025-10-02 01:43:36 - --------------------------------------------------
+2025-10-02 01:43:37 - Solution found in generation 71! (Execution time: 0.33s)
+2025-10-02 01:43:37 - --------------------------------------------------
+2025-10-02 01:43:38 - Solution found in generation 311! (Execution time: 1.40s)
+2025-10-02 01:43:38 - --------------------------------------------------
+2025-10-02 01:44:02 - Solution found in generation 5080! (Execution time: 23.75s)
+2025-10-02 01:44:02 - --------------------------------------------------
+2025-10-02 01:44:22 - Solution found in generation 4382! (Execution time: 20.61s)
+2025-10-02 01:44:24 - --------------------------------------------------
+2025-10-02 01:46:43 - Solution found in generation 30108! (Execution time: 139.10s)
+2025-10-02 01:46:43 - --------------------------------------------------
+2025-10-02 01:47:03 - Solution found in generation 4156! (Execution time: 19.83s)
+2025-10-02 01:47:03 - --------------------------------------------------
+2025-10-02 01:47:32 - Solution found in generation 6263! (Execution time: 29.82s)
+2025-10-02 01:47:32 - --------------------------------------------------
+2025-10-02 01:48:09 - Solution found in generation 7747! (Execution time: 36.53s)
+2025-10-02 01:48:09 - --------------------------------------------------
+2025-10-02 01:55:14 - Solution found in generation 90742! (Execution time: 424.41s)
+2025-10-02 01:55:14 - --------------------------------------------------
+2025-10-02 01:55:39 - Solution found in generation 5282! (Execution time: 24.98s)
+2025-10-02 01:55:39 - --------------------------------------------------
+2025-10-02 01:55:55 - Solution found in generation 3554! (Execution time: 16.83s)
+2025-10-02 01:55:55 - --------------------------------------------------
+2025-10-02 01:58:44 - Solution found in generation 36514! (Execution time: 168.39s)
+2025-10-02 01:58:44 - --------------------------------------------------
+2025-10-02 01:58:47 - Solution found in generation 761! (Execution time: 3.55s)
+2025-10-02 01:58:49 - --------------------------------------------------
+2025-10-02 02:06:31 - Maximum generations (100000) reached! (Execution time: 461.53s)
+2025-10-02 02:06:31 - Algorithm appears to be stuck at local minimum.
+2025-10-02 02:06:31 - Best fitness achieved: 2 violations
+2025-10-02 02:06:31 - Generations without improvement: 88085
+2025-10-02 02:06:31 - --------------------------------------------------
+2025-10-02 02:07:14 - Solution found in generation 9048! (Execution time: 43.03s)
+2025-10-02 02:07:14 - --------------------------------------------------
+2025-10-02 02:07:32 - Solution found in generation 3799! (Execution time: 17.78s)
+2025-10-02 02:07:32 - --------------------------------------------------
+2025-10-02 02:07:40 - Solution found in generation 1742! (Execution time: 8.08s)
+2025-10-02 02:07:40 - --------------------------------------------------
+2025-10-02 02:10:11 - Solution found in generation 32168! (Execution time: 151.22s)
+2025-10-02 02:10:11 - --------------------------------------------------
+2025-10-02 02:10:20 - Solution found in generation 1811! (Execution time: 8.40s)
+2025-10-02 02:10:20 - --------------------------------------------------
+2025-10-02 02:10:20 - Solution found in generation 62! (Execution time: 0.27s)
+2025-10-02 02:10:20 - --------------------------------------------------
+2025-10-02 02:18:09 - Maximum generations (100000) reached! (Execution time: 468.64s)
+2025-10-02 02:18:09 - Algorithm appears to be stuck at local minimum.
+2025-10-02 02:18:09 - Best fitness achieved: 2 violations
+2025-10-02 02:18:09 - Generations without improvement: 88122
+2025-10-02 02:18:09 - --------------------------------------------------
+2025-10-02 02:18:30 - Solution found in generation 4483! (Execution time: 21.06s)
+2025-10-02 02:18:30 - --------------------------------------------------
+2025-10-02 02:18:40 - Solution found in generation 2202! (Execution time: 10.35s)
+2025-10-02 02:18:40 - --------------------------------------------------
+2025-10-02 02:19:26 - Solution found in generation 9838! (Execution time: 46.16s)
+2025-10-02 02:19:26 - --------------------------------------------------
+2025-10-02 02:21:48 - Solution found in generation 30297! (Execution time: 141.52s)
+2025-10-02 02:21:48 - --------------------------------------------------
+2025-10-02 02:21:49 - Solution found in generation 146! (Execution time: 0.66s)
+2025-10-02 02:21:49 - --------------------------------------------------
+2025-10-02 02:22:12 - Solution found in generation 5032! (Execution time: 23.35s)
+2025-10-02 02:22:12 - --------------------------------------------------
+2025-10-02 02:22:47 - Solution found in generation 7594! (Execution time: 35.10s)
+2025-10-02 02:22:47 - --------------------------------------------------
+2025-10-02 02:23:00 - Solution found in generation 2738! (Execution time: 12.85s)
+2025-10-02 02:23:01 - --------------------------------------------------
+2025-10-02 02:30:39 - Maximum generations (100000) reached! (Execution time: 458.64s)
+2025-10-02 02:30:39 - Algorithm appears to be stuck at local minimum.
+2025-10-02 02:30:39 - Best fitness achieved: 2 violations
+2025-10-02 02:30:39 - Generations without improvement: 93358
+2025-10-02 02:30:39 - --------------------------------------------------
+2025-10-02 02:30:48 - Solution found in generation 1871! (Execution time: 8.89s)
+2025-10-02 02:30:48 - --------------------------------------------------
+2025-10-02 02:38:28 - Maximum generations (100000) reached! (Execution time: 459.58s)
+2025-10-02 02:38:28 - Algorithm appears to be stuck at local minimum.
+2025-10-02 02:38:28 - Best fitness achieved: 2 violations
+2025-10-02 02:38:28 - Generations without improvement: 98845
+2025-10-02 02:38:28 - --------------------------------------------------
+2025-10-02 02:38:55 - Solution found in generation 5710! (Execution time: 26.93s)
+2025-10-02 02:38:55 - --------------------------------------------------
+2025-10-02 02:41:03 - Solution found in generation 27737! (Execution time: 127.81s)
+2025-10-02 02:41:03 - --------------------------------------------------
+2025-10-02 02:42:15 - Solution found in generation 15131! (Execution time: 71.65s)
+2025-10-02 02:42:15 - --------------------------------------------------
+2025-10-02 02:42:28 - Solution found in generation 2825! (Execution time: 13.15s)
+2025-10-02 02:42:28 - --------------------------------------------------
+2025-10-02 02:42:28 - Solution found in generation 41! (Execution time: 0.19s)
+2025-10-02 02:42:28 - --------------------------------------------------
+2025-10-02 02:44:49 - Solution found in generation 30045! (Execution time: 140.69s)
+2025-10-02 02:44:49 - --------------------------------------------------
+2025-10-02 02:49:51 - Solution found in generation 65713! (Execution time: 302.58s)
+2025-10-02 02:49:51 - --------------------------------------------------
+2025-10-02 02:50:28 - Solution found in generation 7953! (Execution time: 36.56s)
+2025-10-02 02:50:28 - --------------------------------------------------
+2025-10-02 02:51:35 - Solution found in generation 14459! (Execution time: 67.20s)
+2025-10-02 02:51:35 - --------------------------------------------------
+2025-10-02 02:52:03 - Solution found in generation 6026! (Execution time: 27.89s)
+2025-10-02 02:52:04 - --------------------------------------------------
+2025-10-02 02:59:41 - Maximum generations (100000) reached! (Execution time: 457.10s)
+2025-10-02 02:59:41 - Algorithm appears to be stuck at local minimum.
+2025-10-02 02:59:41 - Best fitness achieved: 2 violations
+2025-10-02 02:59:41 - Generations without improvement: 87879
+2025-10-02 02:59:41 - --------------------------------------------------
+2025-10-02 03:01:12 - Solution found in generation 18989! (Execution time: 91.03s)
+2025-10-02 03:01:12 - --------------------------------------------------
+2025-10-02 03:04:53 - Solution found in generation 47425! (Execution time: 220.82s)
+2025-10-02 03:04:53 - --------------------------------------------------
+2025-10-02 03:05:28 - Solution found in generation 7510! (Execution time: 35.29s)
+2025-10-02 03:05:28 - --------------------------------------------------
+2025-10-02 03:06:11 - Solution found in generation 9236! (Execution time: 42.62s)
+2025-10-02 03:06:11 - --------------------------------------------------
+2025-10-02 03:07:26 - Solution found in generation 15973! (Execution time: 74.74s)
+2025-10-02 03:07:26 - --------------------------------------------------
+2025-10-02 03:09:03 - Solution found in generation 20774! (Execution time: 97.12s)
+2025-10-02 03:09:03 - --------------------------------------------------
+2025-10-02 03:11:44 - Solution found in generation 34498! (Execution time: 160.46s)
+2025-10-02 03:11:44 - --------------------------------------------------
+2025-10-02 03:12:55 - Solution found in generation 15022! (Execution time: 70.62s)
+2025-10-02 03:12:55 - --------------------------------------------------
+2025-10-02 03:13:00 - Solution found in generation 1181! (Execution time: 5.51s)
+2025-10-02 03:13:00 - --------------------------------------------------
+2025-10-02 03:16:19 - Solution found in generation 42048! (Execution time: 199.02s)
+2025-10-02 03:16:20 - --------------------------------------------------
+2025-10-02 03:24:02 - Maximum generations (100000) reached! (Execution time: 462.61s)
+2025-10-02 03:24:02 - Algorithm appears to be stuck at local minimum.
+2025-10-02 03:24:02 - Best fitness achieved: 2 violations
+2025-10-02 03:24:02 - Generations without improvement: 99927
+2025-10-02 03:24:02 - --------------------------------------------------
+2025-10-02 03:24:59 - Solution found in generation 12142! (Execution time: 56.44s)
+2025-10-02 03:24:59 - --------------------------------------------------
+2025-10-02 03:25:38 - Solution found in generation 8255! (Execution time: 38.57s)
+2025-10-02 03:25:38 - --------------------------------------------------
+2025-10-02 03:26:50 - Solution found in generation 15265! (Execution time: 72.19s)
+2025-10-02 03:26:50 - --------------------------------------------------
+2025-10-02 03:27:11 - Solution found in generation 4430! (Execution time: 20.58s)
+2025-10-02 03:27:11 - --------------------------------------------------
+2025-10-02 03:34:53 - Maximum generations (100000) reached! (Execution time: 461.56s)
+2025-10-02 03:34:53 - Algorithm appears to be stuck at local minimum.
+2025-10-02 03:34:53 - Best fitness achieved: 2 violations
+2025-10-02 03:34:53 - Generations without improvement: 99911
+2025-10-02 03:34:53 - --------------------------------------------------
+2025-10-02 03:41:32 - Solution found in generation 86254! (Execution time: 399.59s)
+2025-10-02 03:41:32 - --------------------------------------------------
+2025-10-02 03:42:47 - Solution found in generation 15902! (Execution time: 74.43s)
+2025-10-02 03:42:47 - --------------------------------------------------
+2025-10-02 03:43:10 - Solution found in generation 4930! (Execution time: 23.11s)
+2025-10-02 03:43:10 - --------------------------------------------------
+2025-10-02 03:43:10 - Solution found in generation 48! (Execution time: 0.22s)
+2025-10-02 03:43:10 - --------------------------------------------------
+2025-10-02 03:44:22 - Solution found in generation 15408! (Execution time: 71.38s)
+2025-10-02 03:44:22 - --------------------------------------------------
+2025-10-02 03:49:23 - Solution found in generation 64658! (Execution time: 301.44s)
+2025-10-02 03:49:24 - --------------------------------------------------
+2025-10-02 03:49:36 - Solution found in generation 2624! (Execution time: 12.42s)
+2025-10-02 03:49:36 - --------------------------------------------------
+2025-10-02 03:50:06 - Solution found in generation 6239! (Execution time: 29.55s)
+2025-10-02 03:50:06 - --------------------------------------------------
+2025-10-02 03:51:09 - Solution found in generation 13541! (Execution time: 62.96s)
+2025-10-02 03:51:10 - --------------------------------------------------
+2025-10-02 03:58:52 - Maximum generations (100000) reached! (Execution time: 461.88s)
+2025-10-02 03:58:52 - Algorithm appears to be stuck at local minimum.
+2025-10-02 03:58:52 - Best fitness achieved: 2 violations
+2025-10-02 03:58:52 - Generations without improvement: 99948
+2025-10-02 03:58:52 - --------------------------------------------------
+2025-10-02 03:59:45 - Solution found in generation 11345! (Execution time: 52.67s)
+2025-10-02 03:59:45 - --------------------------------------------------
+2025-10-02 03:59:53 - Solution found in generation 1897! (Execution time: 8.72s)
+2025-10-02 03:59:54 - --------------------------------------------------
+2025-10-02 04:00:12 - Solution found in generation 4087! (Execution time: 18.67s)
+2025-10-02 04:00:13 - --------------------------------------------------
+2025-10-02 04:07:52 - Maximum generations (100000) reached! (Execution time: 459.70s)
+2025-10-02 04:07:52 - Algorithm appears to be stuck at local minimum.
+2025-10-02 04:07:52 - Best fitness achieved: 2 violations
+2025-10-02 04:07:52 - Generations without improvement: 96112
+2025-10-02 04:07:52 - --------------------------------------------------
+2025-10-02 04:07:55 - Solution found in generation 601! (Execution time: 2.86s)
+2025-10-02 04:07:55 - --------------------------------------------------
+2025-10-02 04:11:47 - Solution found in generation 49745! (Execution time: 231.99s)
+2025-10-02 04:11:47 - --------------------------------------------------
+2025-10-02 04:11:48 - Solution found in generation 144! (Execution time: 0.65s)
+2025-10-02 04:11:48 - --------------------------------------------------
+2025-10-02 04:15:22 - Solution found in generation 46376! (Execution time: 213.69s)
+2025-10-02 04:15:22 - --------------------------------------------------
+2025-10-02 04:17:39 - Solution found in generation 29277! (Execution time: 137.30s)
+2025-10-02 04:17:39 - --------------------------------------------------
+2025-10-02 04:17:40 - Solution found in generation 191! (Execution time: 0.84s)
+2025-10-02 04:17:40 - --------------------------------------------------
+2025-10-02 04:17:46 - Solution found in generation 1151! (Execution time: 5.47s)
+2025-10-02 04:17:46 - --------------------------------------------------
+2025-10-02 04:17:56 - Solution found in generation 2247! (Execution time: 10.36s)
+2025-10-02 04:17:56 - --------------------------------------------------
+2025-10-02 04:25:43 - Maximum generations (100000) reached! (Execution time: 466.73s)
+2025-10-02 04:25:43 - Algorithm appears to be stuck at local minimum.
+2025-10-02 04:25:43 - Best fitness achieved: 2 violations
+2025-10-02 04:25:43 - Generations without improvement: 94536
+2025-10-02 04:25:43 - --------------------------------------------------
+2025-10-02 04:25:44 - Solution found in generation 279! (Execution time: 1.26s)
+2025-10-02 04:25:44 - --------------------------------------------------
+2025-10-02 04:27:02 - Solution found in generation 16499! (Execution time: 77.12s)
+2025-10-02 04:27:02 - --------------------------------------------------
+2025-10-02 04:34:42 - Maximum generations (100000) reached! (Execution time: 460.21s)
+2025-10-02 04:34:42 - Algorithm appears to be stuck at local minimum.
+2025-10-02 04:34:42 - Best fitness achieved: 2 violations
+2025-10-02 04:34:42 - Generations without improvement: 89353
+2025-10-02 04:34:42 - --------------------------------------------------
+2025-10-02 04:34:42 - Solution found in generation 71! (Execution time: 0.32s)
+2025-10-02 04:34:42 - --------------------------------------------------
+2025-10-02 04:38:12 - Solution found in generation 44355! (Execution time: 209.22s)
+2025-10-02 04:38:12 - --------------------------------------------------
+2025-10-02 04:40:09 - Solution found in generation 24626! (Execution time: 117.06s)
+2025-10-02 04:40:09 - --------------------------------------------------
+2025-10-02 04:41:28 - Solution found in generation 17169! (Execution time: 79.24s)
+2025-10-02 04:41:28 - --------------------------------------------------
+2025-10-02 04:41:29 - Solution found in generation 69! (Execution time: 0.31s)
+2025-10-02 04:41:29 - --------------------------------------------------
+2025-10-02 04:43:41 - Solution found in generation 28909! (Execution time: 132.52s)
+2025-10-02 04:43:41 - --------------------------------------------------
+2025-10-02 04:44:15 - Solution found in generation 7237! (Execution time: 33.83s)
+2025-10-02 04:44:15 - --------------------------------------------------
+2025-10-02 04:44:16 - Solution found in generation 96! (Execution time: 0.43s)
+2025-10-02 04:44:16 - --------------------------------------------------
+2025-10-02 04:44:37 - Solution found in generation 4552! (Execution time: 21.30s)
+2025-10-02 04:44:37 - --------------------------------------------------
+2025-10-02 04:47:33 - Solution found in generation 37545! (Execution time: 175.79s)
+2025-10-02 04:47:33 - --------------------------------------------------
+2025-10-02 04:48:00 - Solution found in generation 5862! (Execution time: 27.24s)
+2025-10-02 04:48:01 - --------------------------------------------------
+2025-10-02 04:48:35 - Solution found in generation 7224! (Execution time: 33.62s)
+2025-10-02 04:48:35 - --------------------------------------------------
+2025-10-02 04:54:27 - Solution found in generation 76146! (Execution time: 351.92s)
+2025-10-02 04:54:27 - --------------------------------------------------
+2025-10-02 04:55:59 - Solution found in generation 19824! (Execution time: 91.85s)
+2025-10-02 04:55:59 - --------------------------------------------------
+2025-10-02 04:58:47 - Solution found in generation 35560! (Execution time: 167.51s)
+2025-10-02 04:58:47 - --------------------------------------------------
+2025-10-02 04:58:58 - Solution found in generation 2532! (Execution time: 11.64s)
+2025-10-02 04:58:58 - --------------------------------------------------
+2025-10-02 04:58:59 - Solution found in generation 85! (Execution time: 0.38s)
+2025-10-02 04:58:59 - --------------------------------------------------
+2025-10-02 04:58:59 - Solution found in generation 81! (Execution time: 0.36s)
+2025-10-02 04:58:59 - --------------------------------------------------
+2025-10-02 05:00:10 - Solution found in generation 14889! (Execution time: 70.62s)
+2025-10-02 05:00:10 - --------------------------------------------------
+2025-10-02 05:02:47 - Solution found in generation 33771! (Execution time: 156.76s)
+2025-10-02 05:02:47 - --------------------------------------------------
+2025-10-02 05:02:50 - Solution found in generation 669! (Execution time: 3.05s)
+2025-10-02 05:02:50 - --------------------------------------------------
+2025-10-02 05:03:30 - Solution found in generation 8579! (Execution time: 40.05s)
+2025-10-02 05:03:30 - --------------------------------------------------
+2025-10-02 05:03:47 - Solution found in generation 3610! (Execution time: 16.89s)
+2025-10-02 05:03:47 - --------------------------------------------------
+2025-10-02 05:03:58 - Solution found in generation 2217! (Execution time: 10.46s)
+2025-10-02 05:03:58 - --------------------------------------------------
+2025-10-02 05:11:45 - Maximum generations (100000) reached! (Execution time: 467.74s)
+2025-10-02 05:11:45 - Algorithm appears to be stuck at local minimum.
+2025-10-02 05:11:45 - Best fitness achieved: 2 violations
+2025-10-02 05:11:45 - Generations without improvement: 99947
+2025-10-02 05:11:45 - --------------------------------------------------
+2025-10-02 05:12:44 - Solution found in generation 12305! (Execution time: 58.29s)
+2025-10-02 05:12:44 - --------------------------------------------------
+2025-10-02 05:14:50 - Solution found in generation 26723! (Execution time: 126.13s)
+2025-10-02 05:14:50 - --------------------------------------------------
+2025-10-02 05:14:51 - Solution found in generation 171! (Execution time: 0.78s)
+2025-10-02 05:14:51 - --------------------------------------------------
+2025-10-02 05:14:54 - Solution found in generation 605! (Execution time: 2.85s)
+2025-10-02 05:14:54 - --------------------------------------------------
+2025-10-02 05:17:01 - Solution found in generation 27193! (Execution time: 126.93s)
+2025-10-02 05:17:01 - --------------------------------------------------
+2025-10-02 05:24:41 - Maximum generations (100000) reached! (Execution time: 460.70s)
+2025-10-02 05:24:41 - Algorithm appears to be stuck at local minimum.
+2025-10-02 05:24:41 - Best fitness achieved: 2 violations
+2025-10-02 05:24:41 - Generations without improvement: 93931
+2025-10-02 05:24:42 - --------------------------------------------------
+2025-10-02 05:28:46 - Solution found in generation 52560! (Execution time: 243.73s)
+2025-10-02 05:28:46 - --------------------------------------------------
+2025-10-02 05:30:03 - Solution found in generation 16785! (Execution time: 77.64s)
+2025-10-02 05:30:03 - --------------------------------------------------
+2025-10-02 05:30:04 - Solution found in generation 109! (Execution time: 0.49s)
+2025-10-02 05:30:04 - --------------------------------------------------
+2025-10-02 05:30:11 - Solution found in generation 1542! (Execution time: 7.25s)
+2025-10-02 05:30:11 - --------------------------------------------------
+2025-10-02 05:30:14 - Solution found in generation 574! (Execution time: 2.72s)
+2025-10-02 05:30:14 - --------------------------------------------------
+2025-10-02 05:30:24 - Solution found in generation 2186! (Execution time: 10.34s)
+2025-10-02 05:30:24 - --------------------------------------------------
+2025-10-02 05:30:37 - Solution found in generation 2756! (Execution time: 13.04s)
+2025-10-02 05:30:37 - --------------------------------------------------
+2025-10-02 05:31:28 - Solution found in generation 10715! (Execution time: 50.57s)
+2025-10-02 05:31:28 - --------------------------------------------------
+2025-10-02 05:35:06 - Solution found in generation 47291! (Execution time: 217.41s)
+2025-10-02 05:35:06 - --------------------------------------------------
+2025-10-02 05:35:53 - Solution found in generation 10200! (Execution time: 47.00s)
+2025-10-02 05:35:53 - --------------------------------------------------
+2025-10-02 05:36:04 - Solution found in generation 2434! (Execution time: 11.47s)
+2025-10-02 05:36:04 - --------------------------------------------------
+2025-10-02 05:36:05 - Solution found in generation 38! (Execution time: 0.17s)
+2025-10-02 05:36:05 - --------------------------------------------------
+2025-10-02 05:36:27 - Solution found in generation 4754! (Execution time: 22.43s)
+2025-10-02 05:36:27 - --------------------------------------------------
+2025-10-02 05:36:28 - Solution found in generation 244! (Execution time: 1.09s)
+2025-10-02 05:36:28 - --------------------------------------------------
+2025-10-02 05:44:10 - Maximum generations (100000) reached! (Execution time: 461.34s)
+2025-10-02 05:44:10 - Algorithm appears to be stuck at local minimum.
+2025-10-02 05:44:10 - Best fitness achieved: 2 violations
+2025-10-02 05:44:10 - Generations without improvement: 99683
+2025-10-02 05:44:10 - --------------------------------------------------
+2025-10-02 05:44:18 - Solution found in generation 1717! (Execution time: 8.12s)
+2025-10-02 05:44:18 - --------------------------------------------------
+2025-10-02 05:44:18 - Solution found in generation 104! (Execution time: 0.47s)
+2025-10-02 05:44:19 - --------------------------------------------------
+2025-10-02 05:46:13 - Solution found in generation 24660! (Execution time: 114.68s)
+2025-10-02 05:46:13 - --------------------------------------------------
+2025-10-02 05:47:14 - Solution found in generation 13116! (Execution time: 60.11s)
+2025-10-02 05:47:14 - --------------------------------------------------
+2025-10-02 05:47:14 - Solution found in generation 55! (Execution time: 0.25s)
+2025-10-02 05:47:14 - --------------------------------------------------
+2025-10-02 05:47:18 - Solution found in generation 929! (Execution time: 4.40s)
+2025-10-02 05:47:18 - --------------------------------------------------
+2025-10-02 05:54:59 - Maximum generations (100000) reached! (Execution time: 461.10s)
+2025-10-02 05:54:59 - Algorithm appears to be stuck at local minimum.
+2025-10-02 05:54:59 - Best fitness achieved: 2 violations
+2025-10-02 05:54:59 - Generations without improvement: 98940
+2025-10-02 05:55:00 - --------------------------------------------------
+2025-10-02 05:59:44 - Solution found in generation 61501! (Execution time: 284.39s)
+2025-10-02 05:59:44 - --------------------------------------------------
+2025-10-02 06:04:48 - Solution found in generation 65587! (Execution time: 303.89s)
+2025-10-02 06:04:48 - --------------------------------------------------
+2025-10-02 06:04:51 - Solution found in generation 701! (Execution time: 3.28s)
+2025-10-02 06:04:51 - --------------------------------------------------
+2025-10-02 06:04:51 - Solution found in generation 30! (Execution time: 0.13s)
+2025-10-02 06:04:51 - --------------------------------------------------
+2025-10-02 06:04:57 - Solution found in generation 1086! (Execution time: 5.18s)
+2025-10-02 06:04:57 - --------------------------------------------------
+2025-10-02 06:04:57 - Solution found in generation 43! (Execution time: 0.20s)
+2025-10-02 06:04:57 - --------------------------------------------------
+2025-10-02 06:05:17 - Solution found in generation 4340! (Execution time: 20.48s)
+2025-10-02 06:05:17 - --------------------------------------------------
+2025-10-02 06:06:40 - Solution found in generation 17279! (Execution time: 82.33s)
+2025-10-02 06:06:40 - --------------------------------------------------
+2025-10-02 06:14:23 - Maximum generations (100000) reached! (Execution time: 463.47s)
+2025-10-02 06:14:23 - Algorithm appears to be stuck at local minimum.
+2025-10-02 06:14:23 - Best fitness achieved: 2 violations
+2025-10-02 06:14:23 - Generations without improvement: 99948
+2025-10-02 06:14:23 - --------------------------------------------------
+2025-10-02 06:14:27 - Solution found in generation 808! (Execution time: 3.77s)
+2025-10-02 06:14:27 - --------------------------------------------------
+2025-10-02 06:15:36 - Solution found in generation 14722! (Execution time: 69.44s)
+2025-10-02 06:15:36 - --------------------------------------------------
+2025-10-02 06:15:44 - Solution found in generation 1585! (Execution time: 7.71s)
+2025-10-02 06:15:44 - --------------------------------------------------
+2025-10-02 06:15:56 - Solution found in generation 2572! (Execution time: 12.11s)
+2025-10-02 06:15:56 - --------------------------------------------------
+2025-10-02 06:16:24 - Solution found in generation 5870! (Execution time: 27.50s)
+2025-10-02 06:16:24 - --------------------------------------------------
+2025-10-02 06:16:51 - Solution found in generation 5920! (Execution time: 27.61s)
+2025-10-02 06:16:52 - --------------------------------------------------
+2025-10-02 06:17:29 - Solution found in generation 8089! (Execution time: 37.51s)
+2025-10-02 06:17:29 - --------------------------------------------------
+2025-10-02 06:17:39 - Solution found in generation 2255! (Execution time: 10.34s)
+2025-10-02 06:17:39 - --------------------------------------------------
+2025-10-02 06:17:53 - Solution found in generation 2921! (Execution time: 13.83s)
+2025-10-02 06:17:53 - --------------------------------------------------
+2025-10-02 06:17:59 - Solution found in generation 1133! (Execution time: 5.36s)
+2025-10-02 06:17:59 - --------------------------------------------------
+2025-10-02 06:17:59 - Solution found in generation 67! (Execution time: 0.31s)
+2025-10-02 06:17:59 - --------------------------------------------------
+2025-10-02 06:17:59 - Solution found in generation 36! (Execution time: 0.16s)
+2025-10-02 06:17:59 - --------------------------------------------------
+2025-10-02 06:19:26 - Solution found in generation 18648! (Execution time: 87.19s)
+2025-10-02 06:19:26 - --------------------------------------------------
+2025-10-02 06:19:32 - Solution found in generation 1255! (Execution time: 5.93s)
+2025-10-02 06:19:32 - --------------------------------------------------
+2025-10-02 06:19:51 - Solution found in generation 4056! (Execution time: 18.89s)
+2025-10-02 06:19:52 - --------------------------------------------------
+2025-10-02 06:21:45 - Solution found in generation 24672! (Execution time: 113.44s)
+2025-10-02 06:21:45 - --------------------------------------------------
+2025-10-02 06:23:25 - Solution found in generation 21367! (Execution time: 100.15s)
+2025-10-02 06:23:25 - --------------------------------------------------
+2025-10-02 06:23:38 - Solution found in generation 2789! (Execution time: 13.06s)
+2025-10-02 06:23:38 - --------------------------------------------------
+2025-10-02 06:27:36 - Solution found in generation 51345! (Execution time: 237.78s)
+2025-10-02 06:27:36 - --------------------------------------------------
+2025-10-02 06:28:08 - Solution found in generation 6354! (Execution time: 31.26s)
+2025-10-02 06:28:08 - --------------------------------------------------
+2025-10-02 06:30:21 - Solution found in generation 26986! (Execution time: 133.76s)
+2025-10-02 06:30:21 - --------------------------------------------------
+2025-10-02 06:31:20 - Solution found in generation 11877! (Execution time: 58.61s)
+2025-10-02 06:31:20 - --------------------------------------------------
+2025-10-02 06:31:34 - Solution found in generation 2834! (Execution time: 13.88s)
+2025-10-02 06:31:34 - --------------------------------------------------
+2025-10-02 06:32:52 - Solution found in generation 15850! (Execution time: 78.01s)
+2025-10-02 06:32:52 - --------------------------------------------------
+2025-10-02 06:38:17 - Solution found in generation 65695! (Execution time: 324.98s)
+2025-10-02 06:38:17 - --------------------------------------------------
+2025-10-02 06:39:26 - Solution found in generation 13932! (Execution time: 69.03s)
+2025-10-02 06:39:26 - --------------------------------------------------
+2025-10-02 06:39:45 - Solution found in generation 3804! (Execution time: 18.80s)
+2025-10-02 06:39:45 - --------------------------------------------------
+2025-10-02 06:39:55 - Solution found in generation 2023! (Execution time: 9.96s)
+2025-10-02 06:39:55 - --------------------------------------------------
+2025-10-02 06:39:55 - Solution found in generation 79! (Execution time: 0.37s)
+2025-10-02 06:39:55 - --------------------------------------------------
+2025-10-02 06:40:14 - Solution found in generation 3801! (Execution time: 18.72s)
+2025-10-02 06:40:14 - --------------------------------------------------
+2025-10-02 06:46:20 - Solution found in generation 75624! (Execution time: 366.36s)
+2025-10-02 06:46:21 - --------------------------------------------------
+2025-10-02 06:46:26 - Solution found in generation 1155! (Execution time: 5.71s)
+2025-10-02 06:46:26 - --------------------------------------------------
+2025-10-02 06:47:24 - Solution found in generation 11695! (Execution time: 57.74s)
+2025-10-02 06:47:24 - --------------------------------------------------
+2025-10-02 06:47:31 - Solution found in generation 1441! (Execution time: 6.91s)
+2025-10-02 06:47:31 - --------------------------------------------------
+2025-10-02 06:48:48 - Solution found in generation 15902! (Execution time: 76.73s)
+2025-10-02 06:48:48 - --------------------------------------------------
+2025-10-02 06:48:48 - Solution found in generation 125! (Execution time: 0.59s)
+2025-10-02 06:48:49 - --------------------------------------------------
+2025-10-02 06:55:06 - Solution found in generation 78461! (Execution time: 377.19s)
+2025-10-02 06:55:06 - --------------------------------------------------
+2025-10-02 06:55:24 - Solution found in generation 3893! (Execution time: 18.33s)
+2025-10-02 06:55:24 - --------------------------------------------------
+2025-10-02 06:55:49 - Solution found in generation 5212! (Execution time: 24.34s)
+2025-10-02 06:55:49 - --------------------------------------------------
+2025-10-02 06:56:16 - Solution found in generation 5828! (Execution time: 27.55s)
+2025-10-02 06:56:16 - --------------------------------------------------
+2025-10-02 06:58:08 - Solution found in generation 23805! (Execution time: 112.25s)
+2025-10-02 06:58:08 - --------------------------------------------------
+2025-10-02 06:58:24 - Solution found in generation 3304! (Execution time: 15.63s)
+2025-10-02 06:58:24 - --------------------------------------------------
+2025-10-02 07:06:07 - Maximum generations (100000) reached! (Execution time: 462.52s)
+2025-10-02 07:06:07 - Algorithm appears to be stuck at local minimum.
+2025-10-02 07:06:07 - Best fitness achieved: 2 violations
+2025-10-02 07:06:07 - Generations without improvement: 96697
+2025-10-02 07:06:07 - --------------------------------------------------
+2025-10-02 07:06:13 - Solution found in generation 1279! (Execution time: 6.10s)
+2025-10-02 07:06:13 - --------------------------------------------------
+2025-10-02 07:06:13 - Solution found in generation 115! (Execution time: 0.52s)
+2025-10-02 07:06:13 - --------------------------------------------------
+2025-10-02 07:06:36 - Solution found in generation 4915! (Execution time: 22.66s)
+2025-10-02 07:06:36 - --------------------------------------------------
+2025-10-02 07:07:07 - Solution found in generation 6796! (Execution time: 31.24s)
+2025-10-02 07:07:08 - --------------------------------------------------
+2025-10-02 07:08:05 - Solution found in generation 12463! (Execution time: 57.56s)
+2025-10-02 07:08:06 - --------------------------------------------------
+2025-10-02 07:11:59 - Solution found in generation 50360! (Execution time: 233.10s)
+2025-10-02 07:11:59 - --------------------------------------------------
+2025-10-02 07:19:45 - Maximum generations (100000) reached! (Execution time: 465.54s)
+2025-10-02 07:19:45 - Algorithm appears to be stuck at local minimum.
+2025-10-02 07:19:45 - Best fitness achieved: 2 violations
+2025-10-02 07:19:45 - Generations without improvement: 40876
+2025-10-02 07:19:45 - --------------------------------------------------
+2025-10-02 07:20:05 - Solution found in generation 4164! (Execution time: 20.21s)
+2025-10-02 07:20:05 - --------------------------------------------------
+2025-10-02 07:25:46 - Solution found in generation 69042! (Execution time: 341.10s)
+2025-10-02 07:25:46 - --------------------------------------------------
+2025-10-02 07:29:26 - Solution found in generation 44103! (Execution time: 219.36s)
+2025-10-02 07:29:26 - --------------------------------------------------
+2025-10-02 07:31:47 - Solution found in generation 28581! (Execution time: 141.40s)
+2025-10-02 07:31:47 - --------------------------------------------------
+2025-10-02 07:38:56 - Solution found in generation 88448! (Execution time: 428.61s)
+2025-10-02 07:38:56 - --------------------------------------------------
+2025-10-02 08:17:39 - Maximum generations (100000) reached! (Execution time: 695.95s)
+2025-10-02 08:17:39 - Algorithm appears to be stuck at local minimum.
+2025-10-02 08:17:39 - Best fitness achieved: 2 violations
+2025-10-02 08:17:39 - Generations without improvement: 98279
+2025-10-02 08:17:39 - --------------------------------------------------
+2025-10-02 08:17:59 - Solution found in generation 4077! (Execution time: 20.04s)
+2025-10-02 08:17:59 - --------------------------------------------------
+2025-10-02 08:18:02 - Solution found in generation 640! (Execution time: 2.98s)
+2025-10-02 08:18:02 - --------------------------------------------------
+2025-10-02 08:25:53 - Maximum generations (100000) reached! (Execution time: 471.05s)
+2025-10-02 08:25:53 - Algorithm appears to be stuck at local minimum.
+2025-10-02 08:25:53 - Best fitness achieved: 2 violations
+2025-10-02 08:25:53 - Generations without improvement: 98812
+2025-10-02 08:25:53 - --------------------------------------------------
+2025-10-02 08:25:53 - Solution found in generation 59! (Execution time: 0.27s)
+2025-10-02 08:25:53 - --------------------------------------------------
+2025-10-02 08:33:36 - Maximum generations (100000) reached! (Execution time: 463.07s)
+2025-10-02 08:33:36 - Algorithm appears to be stuck at local minimum.
+2025-10-02 08:33:36 - Best fitness achieved: 2 violations
+2025-10-02 08:33:36 - Generations without improvement: 93599
+2025-10-02 08:33:36 - --------------------------------------------------
+2025-10-02 08:33:43 - Solution found in generation 1329! (Execution time: 6.29s)
+2025-10-02 08:33:43 - --------------------------------------------------
+2025-10-02 08:33:43 - Solution found in generation 60! (Execution time: 0.27s)
+2025-10-02 08:33:43 - --------------------------------------------------
+2025-10-02 08:36:54 - Solution found in generation 40477! (Execution time: 190.81s)
+2025-10-02 08:36:54 - --------------------------------------------------
+2025-10-02 08:40:55 - Solution found in generation 51422! (Execution time: 240.61s)
+2025-10-02 08:40:55 - --------------------------------------------------
+2025-10-02 08:41:55 - Solution found in generation 12595! (Execution time: 60.35s)
+2025-10-02 08:41:56 - --------------------------------------------------
+2025-10-02 08:46:42 - Solution found in generation 59370! (Execution time: 286.61s)
+2025-10-02 08:46:42 - --------------------------------------------------
+2025-10-02 08:46:59 - Solution found in generation 3426! (Execution time: 16.77s)
+2025-10-02 08:46:59 - --------------------------------------------------
+2025-10-02 08:54:55 - Maximum generations (100000) reached! (Execution time: 475.57s)
+2025-10-02 08:54:55 - Algorithm appears to be stuck at local minimum.
+2025-10-02 08:54:55 - Best fitness achieved: 2 violations
+2025-10-02 08:54:55 - Generations without improvement: 91196
+2025-10-02 08:54:55 - --------------------------------------------------
+2025-10-02 08:55:04 - Solution found in generation 2026! (Execution time: 9.56s)
+2025-10-02 08:55:04 - --------------------------------------------------
+2025-10-02 08:55:45 - Solution found in generation 8327! (Execution time: 40.96s)
+2025-10-02 08:55:45 - --------------------------------------------------
+2025-10-02 08:57:07 - Solution found in generation 17282! (Execution time: 81.66s)
+2025-10-02 08:57:07 - --------------------------------------------------
+2025-10-02 08:57:20 - Solution found in generation 2647! (Execution time: 12.91s)
+2025-10-02 08:57:20 - --------------------------------------------------
+2025-10-02 09:21:58 - --------------------------------------------------
+2025-10-02 09:23:30 - Solution found in generation 19730! (Execution time: 92.32s)
+2025-10-02 09:23:30 - --------------------------------------------------
+2025-10-02 09:23:31 - Solution found in generation 142! (Execution time: 0.64s)
+2025-10-02 09:23:31 - --------------------------------------------------
+2025-10-02 09:24:56 - Solution found in generation 17626! (Execution time: 84.62s)
+2025-10-02 09:24:56 - --------------------------------------------------
+2025-10-02 09:25:32 - Solution found in generation 7391! (Execution time: 36.31s)
+2025-10-02 09:25:32 - --------------------------------------------------
+2025-10-02 09:27:34 - Solution found in generation 24863! (Execution time: 121.44s)
+2025-10-02 09:27:34 - --------------------------------------------------
+2025-10-02 09:35:38 - Maximum generations (100000) reached! (Execution time: 484.25s)
+2025-10-02 09:35:38 - Algorithm appears to be stuck at local minimum.
+2025-10-02 09:35:38 - Best fitness achieved: 2 violations
+2025-10-02 09:35:38 - Generations without improvement: 99112
+2025-10-02 09:35:38 - --------------------------------------------------
+2025-10-02 09:36:58 - Solution found in generation 16032! (Execution time: 79.34s)
+2025-10-02 09:36:58 - --------------------------------------------------
+2025-10-02 09:37:22 - Solution found in generation 4810! (Execution time: 24.18s)
+2025-10-02 09:37:22 - --------------------------------------------------
+2025-10-02 09:42:33 - Solution found in generation 63893! (Execution time: 311.47s)
+2025-10-02 09:42:33 - --------------------------------------------------
+2025-10-02 09:42:36 - Solution found in generation 627! (Execution time: 2.94s)
+2025-10-02 09:42:36 - --------------------------------------------------
+2025-10-02 09:47:07 - Solution found in generation 56054! (Execution time: 270.50s)
+2025-10-02 09:47:07 - --------------------------------------------------
+2025-10-02 09:48:19 - Solution found in generation 15280! (Execution time: 72.02s)
+2025-10-02 09:48:19 - --------------------------------------------------
+2025-10-02 09:48:19 - Solution found in generation 94! (Execution time: 0.42s)
+2025-10-02 09:48:20 - --------------------------------------------------
+2025-10-02 09:49:03 - Solution found in generation 9260! (Execution time: 42.67s)
+2025-10-02 09:49:03 - --------------------------------------------------
+2025-10-02 09:49:06 - Solution found in generation 683! (Execution time: 3.25s)
+2025-10-02 09:49:06 - --------------------------------------------------
+2025-10-02 09:51:37 - Solution found in generation 31284! (Execution time: 150.71s)
+2025-10-02 09:51:37 - --------------------------------------------------
+2025-10-02 09:55:25 - Solution found in generation 48282! (Execution time: 228.63s)
+2025-10-02 09:55:25 - --------------------------------------------------
+2025-10-02 09:55:26 - Solution found in generation 108! (Execution time: 0.50s)
+2025-10-02 09:55:26 - --------------------------------------------------
+2025-10-02 09:59:13 - --------------------------------------------------
+2025-10-02 09:59:13 - Solution found in generation 69! (Execution time: 0.31s)
+2025-10-02 09:59:13 - --------------------------------------------------
