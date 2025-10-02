@@ -21,13 +21,14 @@ class SudokuBayesianOptimization:
     """
     
     def __init__(self, puzzle, puzzle_size: int = 9, max_generations: int = 5000, 
-                 elite_size: int = 10, timeout: float = 300.0):
+                 elite_size: int = 10, timeout: float = 300.0, difficulty: str = 'easy'):
         self.puzzle = puzzle
         self.puzzle_size = puzzle_size
         self.max_generations = max_generations
         self.elite_size = elite_size
         self.timeout = timeout
         self.optimization_history = []
+        self.difficulty = difficulty
         
         # Define the search space, range of mutation rate is silimilar to evolution.py, or it will to random mutation
         self.dimensions = [
@@ -65,7 +66,8 @@ class SudokuBayesianOptimization:
                 elite_size=self.elite_size,
                 mutation_rate=mutation_rate,
                 max_generations=self.max_generations,
-                puzzle_size=self.puzzle_size
+                puzzle_size=self.puzzle_size,
+                difficulty=self.difficulty
             )
             
             start_time = time.perf_counter()
@@ -372,7 +374,8 @@ def run_optimization_example():
     """
     Example of how to use the Bayesian optimization for Sudoku GA.
     """
-    # Choose a Sudoku puzzle
+    
+    'I wanna control variables so only use one board to get the best parameters'
     puzzle = boards.medium_board_2
     
     print("Sudoku Puzzle:")

@@ -27,7 +27,7 @@ def print_sudoku(board, title="Sudoku Board"):
 
 
 class SudokuGA:
-    def __init__(self, puzzle, population_size, elite_size, mutation_rate, max_generations, puzzle_size):
+    def __init__(self, puzzle, population_size, elite_size, mutation_rate, max_generations, puzzle_size, difficulty):
         self.puzzle_size:Annotated[int, "this present the size of grid and has to be set to n^2 * n^2, that block can be sliced to n*n"] = puzzle_size
         self.block_size = int(math.sqrt(puzzle_size))
         self.puzzle = puzzle
@@ -36,7 +36,7 @@ class SudokuGA:
         self.mutation_rate = mutation_rate
         self.original_mutation_rate = mutation_rate
         self.max_generations = max_generations
-        self.difficulty:Annotated[str, "this hyperparamter use to control the log file name"] = 'medium'
+        self.difficulty:Annotated[str, "this hyperparamter use to control the log file name"] = difficulty
         # get location of the given numbers conatin in the board
         self.given_indices = [(r, c) for r in range(self.puzzle_size) for c in range(self.puzzle_size) if self.puzzle[r][c] != 0]
         self.population = self._initialize_population()
@@ -118,6 +118,7 @@ class SudokuGA:
             if self.generations_stuck >= self.pop_stuck:
                 # Keep some worst individuals from current generation using scale, then regenerate the rest
                 
+                'control log here'
                 # self.logger.info(f"Generation {generation}: Population stuck for {self.generations_stuck} generations.")
                 # self.logger.info(f"Keeping worst {self.population_size // self.scale} individuals and regenerating the rest")
                 
@@ -131,7 +132,9 @@ class SudokuGA:
                 # Combine worst kept individuals with new ones
                 self.population = worst_individuals + new_individuals
                 
+                'control log here'
                 # self.logger.info(f"Resetting mutation rate to {self.original_mutation_rate}")
+
                 self.mutation_rate = self.original_mutation_rate
                 self.stagnant_fitness = None
                 self.generations_stuck = 0
@@ -142,6 +145,8 @@ class SudokuGA:
                 old_mutation_rate = self.mutation_rate
                 # for fixed mutation rate, it's better not to go above 0.3
                 self.mutation_rate = min(0.3, self.mutation_rate + self.mutation_increase) 
+
+                'control log here'
                 # self.logger.info(f"Generation {generation}: Fitness stuck for {self.generations_stuck} generations.")
                 # self.logger.info(f"Increasing mutation rate from {old_mutation_rate:.2f} to {self.mutation_rate:.2f}")
 
@@ -176,6 +181,8 @@ class SudokuGA:
                         next_generation.append(self._mutate(child2))
 
             self.population = next_generation
+
+            'control log here'
             # self.logger.info(f"Generation {generation}: Best Fitness = {current_best_fitness}: Mutation Rate = {self.mutation_rate:.3f}")
 
         # If we reach here, max generations exceeded without finding solution
@@ -341,13 +348,15 @@ if __name__ == "__main__":
     ELITE_SIZE = 10
     MUTATION_RATE = 0.18 # the best mutation rate is 0.23 while we have to give some space for the adaptive mutation rate
     MAX_GENERATIONS = 20000
+    DIFFICULTY = 'easy'
 
     ga = SudokuGA(puzzle=puzzle,
                   population_size=POPULATION_SIZE,
                   elite_size=ELITE_SIZE,
                   mutation_rate=MUTATION_RATE,
                   max_generations=MAX_GENERATIONS,
-                  puzzle_size=PUZZLE_SIZE)
+                  puzzle_size=PUZZLE_SIZE,
+                  difficulty=DIFFICULTY)
 
     start_time = time.perf_counter()
     solution = ga.solve()
