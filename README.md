@@ -21,8 +21,8 @@ python3 -m sudoku_2.evolution
 ```
 
 ## Project Structure
-- `sudoku-1`: Contains the first implementation of the genetic algorithm for solving Sudoku puzzles.
-- `sudoku-2`: Contains the second implementation of the genetic algorithm for solving Sudoku puzzles.
+- `sudoku_1`: Contains the first implementation of the genetic algorithm for solving Sudoku puzzles.
+- `sudoku_2`: Contains the second implementation of the genetic algorithm for solving Sudoku puzzles.
 - `search`: Contains search algorithms for solving Sudoku puzzles.
 - `generators`: Contains different Sudoku puzzle generators.
 - `logs`: Contains log files generated during the execution of the algorithms.

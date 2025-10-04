@@ -50,7 +50,7 @@ This section presents and compares different implementations of an evolutionary 
 
 The following sections document these processes and use the Sudoku board shown in \ref{fig:initial-sudoku} as a reference for visualizing the selection and mutation step.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \resizebox{0.5\textwidth}{!}{
   \begin{minipage}{\textwidth}
@@ -71,49 +71,84 @@ The following sections document these processes and use the Sudoku board shown i
 \label{fig:initial-sudoku}
 \end{figure}
 
-\pagebreak % TODO: make sure this is properly formatted, but if we dont pagebreak here, then the next paragraph might appear above the table, which is not good.
-\subsubsection{Implementation 1}\label{sec:impl-1}
+\subsubsection{Baseline}
+Depth-first search (DFS) is used as a deterministic baseline. The solver iteratively scans the board for the first empty cell, attempts candidate values 1\dots n, and backtracks to try alternative values if no candidate leads to a solution. This approach is ensures a solution (given that the puzzle is solvable) and is simple to implement, which makes it a reliable reference for correctness and for measuring runtimes.
+Algorithm \ref{alg:dfs} shows the implementation of the DFS algorithm in pseudo-code.
 
-Table \ref{alg:impl-1} gives a brief overview of how the algorithm works. A detailed description of how the fitness function, selection, and mutation work, will be given afterwards.
-
-\begin{algorithm}
-\caption{Genetic Algorithm 1}\label{alg:impl-1}
+\begin{algorithm}[H]
+\caption{Depth-first search algorithm}\label{alg:dfs}
 \begin{algorithmic}
-\Require initial\_sudoku, population\_size, mutation\_rate, max\_generations
-\Ensure $/$
-\State population $\gets$ PopulateRandomly(initial\_sudoku, population\_size)
-\State generation $\gets 0$
-\State next\_generation $\gets \emptyset$
-\While{generation < max\_generations}
-  \State population $\gets$ sort\_by\_fitness(population, descending)
-  \If{first(population).fitness = $max\_fitness$} \State \Return first(population) \EndIf
-  \State top $\gets$ first 20\% of Population
-  \For{$i\gets 1, population\_size * 0.8$}
-    \State parent1, parent2 $\gets$ sample(top)
-    \State child $\gets$ crossover(parent1, parent2) \Comment{per-cell pick random parent}
-    \State child $\gets$ mutate(child, mutation\_rate, initial\_sudoku) \Comment{change $mutation\_rate$ amount of random cells}
-    \State next\_generation $\gets$ next\_generation + child
+\Require matrix
+\Ensure \textbf{true} if solved, \textbf{false} otherwise
+\State $n \gets$ length(matrix)
+\For{$i \leftarrow 1$ \textbf{to} $n$}
+  \For{$j \leftarrow 1$ \textbf{to} $n$}
+    \If{matrix[$i,j$] = 0}
+      \For{$num \leftarrow 1$ \textbf{to} $n$}
+        \If{is\_valid\_move(matrix, $i$, $j$, $num$)}
+          \State matrix[$i,j$] $\gets$ $num$
+          \If{\Call{DFS}{matrix}} \State \Return \textbf{true} \EndIf
+          \State matrix[$i,j$] $\gets$ 0
+        \EndIf
+      \EndFor
+      \State \Return \textbf{false}
+    \EndIf
   \EndFor
-  \For{$i\gets 1, population\_size * 0.2$}
-    \State parent1, parent2 $\gets$ sample(population)
-    \State child $\gets$ crossover(parent1, parent2) \Comment{per-cell pick random parent}
-    \State child $\gets$ mutate(child, mutation\_rate, initial\_sudoku) \Comment{change $mutation\_rate$ amount of random cells}
-    \State next\_generation $\gets$ next\_generation + child
-  \EndFor 
-  \State generation $\gets$ generation + 1
-  \State population $\gets$ next\_generation
-\EndWhile
-\State population $\gets$ sort\_by\_fitness(population, descending)
-\State \Return first(population)
+\EndFor
+\State \Return \textbf{true}
 \end{algorithmic}
 \end{algorithm}
 
-\paragraph{Fitness function} The fitness function evaluates a Sudoku board by summing the number of unique digits in each row, column, and 3$\times$3 block, with a maximum score of 243 for a valid solution.
+\pagebreak % TODO: make sure this is properly formatted, but if we dont pagebreak here, then the next paragraph might appear above the table, which is not good.
+\subsubsection{Implementation 1}\label{sec:impl-1}
 
-\paragraph{Selection} In the figure below, two parents (left and middle) of the current generation form an individual of the next generation (right).
-One area for improvement is evident in row 7: Parent~1 contains two occurrences of the digit 7 and Parent~2 contains three. The offspring also has three 7s, while it would have been possible to generate a row with all distinct digits, namely \textbf{286371945}.
+Algorithm \ref{alg:impl-1} gives an overview of how the algorithm works. A detailed description of how the fitness function, crossover, and mutation work, will be given afterwards.
 
-\begin{figure}[h]
+\begin{algorithm}[H]
+\caption{Genetic Algorithm 1}\label{alg:impl-1}
+\begin{algorithmic}
+\Require $initial\_sudoku$, $population\_size$, $mutation\_rate$, $max\_generations$
+\Ensure Best individual found
+\State $population \gets$ PopulateRandomly($initial\_sudoku$, $population\_size$)
+\State $generation \gets 0$
+\While{$generation < max\_generations$}
+  \State $population \gets$ SortByFitness($population$) \Comment{descending order}
+  \If{Fitness(first($population$)) = $max\_fitness$}
+    \State \Return first($population$)
+  \EndIf
+  \State $next\_generation \gets \emptyset$
+  \For{$i \gets 1 \ \textbf{to} \ population\_size \times 0.8$}
+    \State $parent_1, parent_2 \gets$ Sample(top 20\% of $population$)
+    \State $child \gets$ Crossover($parent_1$, $parent_2$)
+    \State $child \gets$ Mutate($child$, $mutation\_rate$, $initial\_sudoku$)
+    \State $next\_generation \gets next\_generation \cup \{child\}$
+  \EndFor
+  \For{$i \gets 1 \ \textbf{to} \ population\_size \times 0.2$}
+    \State $parent_1, parent_2 \gets$ Sample($population$)
+    \State $child \gets$ Crossover($parent_1$, $parent_2$)
+    \State $child \gets$ Mutate($child$, $mutation\_rate$, $initial\_sudoku$)
+    \State $next\_generation \gets next\_generation \cup \{child\}$
+  \EndFor
+  \State $population \gets next\_generation$
+  \State $generation \gets generation + 1$
+\EndWhile
+\State $population \gets$ SortByFitness($population$) \Comment{descending order}
+\State \Return first($population$)
+\end{algorithmic}
+\end{algorithm}
+
+
+\paragraph{Fitness function}\label{par:ff-impl1} The fitness function evaluates a Sudoku board by summing the number of unique digits in each row, column, and 3$\times$3 block, with a maximum score of 243 for a valid solution.
+{
+  \color{red} TODO
+}
+\begin{equation}
+    F = \sum_{i=1}^d x_i^2 
+\end{equation}
+
+\paragraph{Crossover} A new individual is creating by crossing over two parents. The crossover process simply iterates over all the tiles that were not given in the initial puzzle and takes the value for that tile from either parent to copy it to the child.
+
+\begin{figure}[H]
   \centering
   {\setlength{\tabcolsep}{-9pt}
   \renewcommand{\arraystretch}{1.5}
@@ -178,7 +213,10 @@ One area for improvement is evident in row 7: Parent~1 contains two occurrences 
   \label{fig:impl-1-selection}
 \end{figure}
 
-\paragraph{Mutation} The \Nameref{fig:impl-1-mutation} illustrates a mutation step with mutation rate \(n=2\); however, only a single tile (row 7, column 7) was actually modified. The other candidate position coincided with a given cell and therefore could not be changed. This behaviour highlights a weakness of the implementation: mutations can be wasted when selected positions are immutable, and a single mutation may decrease fitness by introducing additional conflicts (in this example the row contains three 7s, the column contains one 7 and the corresponding 3$\times$3 block contains two 7s), which lowers the individual’s score.
+In the figure above, two parents (left and middle) of the current generation form an individual of the next generation (right).
+One area for improvement is evident in row 7: Parent~1 contains two occurrences of the digit 7 and Parent~2 contains three. The offspring also has three 7s, while it would have been possible to generate a row with all distinct digits, namely \textbf{286371945}.
+
+\paragraph{Mutation} After the creation of a new individual, it undergoes up to $mutation\_amount$ mutations. A mutation means that a random tile changes its value. If that tile, however, happens to be a given tile from the initial puzzle, it is not altered. 
 
 \begin{figure}[h]
   \centering
@@ -228,19 +266,64 @@ One area for improvement is evident in row 7: Parent~1 contains two occurrences 
   \label{fig:impl-1-mutation}
 \end{figure}
 
-\pagebreak
+Figure \ref{fig:impl-1-mutation} illustrates a mutation step with $mutation\_amount =2$. Meanwhile, only a single tile (row 7, column 7) was actually modified to have the value 7. The other candidate position coincided with a given cell and therefore could not be changed. This example highlights a weakness of the implementation: mutations can be wasted when selected positions are immutable, and a single mutation may decrease fitness significantly by introducing additional conflicts (the number of 7's increased to 4 in the respective row, to 2 in the respective column, and to 3 in the respective grid).
+
+\paragraph{Problem}
+This implementation leads to a situation where the diversity of the population decreases rapidly, resulting in convergence to suboptimal solutions. On many runs, the algorithm creates more than 100,000 generations before finding a valid solution.  
+To counter this problem, we have tried to increase the mutation rate and the population size, as well as introducing new random individuals in each generation. However, these adjustments only led to marginal improvements in performance.
+
 \subsubsection{Implementation 2}
-\begin{enumerate}
-\item Initialize the population with \textit{\textbf{population\_size}} number of random individuals that all respect the initially given sudoku tiles. The individuals create a complete board by iterating over the rows and filling in the empty tiles with random numbers that do not already exist in the respective row. The fitness function works counterintuitively, calculating the fitness as the sum of the number of duplicates in each column, and 3x3 subgrid. The minimum fitness is 0 (no duplicates).
-\item The next generation starts with the top \textit{\textbf{elites\_size}} number of individuals from the current population. Then, a tournament selection is performed to select parents for the remaining individuals in the next generation. In each tournament, \textit{\textbf{K}} individuals are randomly chosen from the population, and the one with the best fitness is selected as a parent. This selection process is repeated until we have \textit{\textbf{population\_size}} number of parents.
-\item The crossover step is done by iterating over all parents in pairs, creating two children from each pair. For each row in the sudoku board, the child inherits that row either from the first or the second parent. This ensures that the children will still respect the uniqueness of numbers in each row.
-\item For mutation, we iterate all rows of an individual and swap two random tiles that both haven't been given in the initial sudoku. We do this with the probability of \textit{\textbf{mutation\_rate}} for each row, once again ensuring the uniqueness of numbers in each row.
-\item Once the new generation is created, we calculate the fitness of each individual and repeat the process from step 2. until a valid solution is found.
-\end{enumerate}
+The second genetic algorithm variant, which uses elitism and tournament selection, is presented in algorithm \ref{alg:impl-2}. 
+Elitism ensures that the best $elite\_size$ individuals from the current generation are directly carried over to the next generation without modification.
+Tournament selection is then applied to select parents for the remaining individuals: in each tournament, $K$ individuals are randomly chosen from the population, and the one with the best fitness is selected as a parent. This process is repeated until $population\_size$ parents have been chosen.
 
-\paragraph{Selection} In contrast to the selection step from the former implementation, this method doesn't introduce more duplicate numbers per row. Figure~\ref{fig:impl-2-selection} shows an example where the very first row is taken from the first parent (left), while row 8 is copied from the second parent (center). Duplicate numbers can now only appear in a column or a 3$\times$3 block, which is an improvement compared to \nameref{sec:impl-1}.
+\begin{algorithm}[H]
+\caption{Genetic Algorithm 2}\label{alg:impl-2}
+\begin{algorithmic}
+\Require $population\_size$, $elite\_size$, $max\_generations$
+\Ensure Best individual found
+\State $population \gets$ PopulateWithUniqueRows($population\_size$)
+\State $best\_individual \gets$ arbitrary element of $population$
+\For{$generation \gets 1 \ \textbf{to} \ max\_generations$}
+  \ForAll{$ind \in population$}
+    \State ComputeFitness($ind$)
+  \EndFor
+  \State $population \gets$ SortByFitness($population$) \Comment{ascending order}
+  \If{Fitness(first($population$)) $<$ Fitness($best\_individual$)}
+    \State $best\_individual \gets$ first($population$)
+  \EndIf
+  \If{Fitness($best\_individual$) = 0}
+    \State \Return $best\_individual$
+  \EndIf
+  \State $next\_generation \gets$ Top($elite\_size$, $population$)
+  \State $parents \gets$ TournamentSelection($population$)
+  \For{$i \gets 1 \ \textbf{to} \ population\_size - elite\_size \ \textbf{step} \ 2$}
+    \State $parent_1 \gets parents[i]$
+    \State $parent_2 \gets parents[i+1]$
+    \State $child_1 \gets$ Crossover($parent_1, parent_2$)
+    \State $next\_generation \gets next\_generation \cup \{child_1\}$
+    \If{$|next\_generation| < population\_size$}
+      \State $child_2 \gets$ Crossover($parent_2, parent_1$)
+      \State $next\_generation \gets next\_generation \cup \{child_2\}$
+    \EndIf
+  \EndFor
+  \State $population \gets next\_generation$
+\EndFor
+\State \Return $best\_individual$
+\end{algorithmic}
+\end{algorithm}
 
-\begin{figure}[h]
+\paragraph{Fitness function} The fitness function works counterintuitively from the \nameref{par:ff-impl1} of implementation 1, calculating the fitness as the sum of the number of duplicates in each column, and 3x3 subgrid. The best fitness an individual can have is 0, meaning that there are no duplicates in the entire board.
+{
+  \color{red} TODO
+}
+\begin{equation}
+    F = \sum_{i=1}^d x_i^2 
+\end{equation}
+
+\paragraph{Crossover} The crossover step is done by iterating through the rows of the sudoku board and copying each row from either parent. This ensures that the children will still respect the uniqueness of numbers in each row.
+
+\begin{figure}[H]
   \centering
   {\setlength{\tabcolsep}{-9pt}
   \renewcommand{\arraystretch}{1.5}
@@ -305,9 +388,11 @@ One area for improvement is evident in row 7: Parent~1 contains two occurrences 
   \label{fig:impl-2-selection}
 \end{figure}
 
-\paragraph{Mutation} The mutation of the individual that resulted from the previous selection is shown in the following figure~\ref{fig:impl-2-mutation}. For this example the mutation rate was set to 20\%, leading to mutations in row 1 and row 5. 
+In figure~\ref{fig:impl-2-selection}, it is easy to see that the very first row is taken from the first parent (left), while row 8 is copied from the second parent (center). Duplicate numbers, as a result of the crossover step, can now only emerge in columns or subgrids, which is an improvement compared to \nameref{sec:impl-1}.
 
-\begin{figure}[h]
+\paragraph{Mutation} For the mutation, we iterate all rows of an individual and swap two random tiles that both haven't been given in the initial sudoku. We do this with the probability of $mutation\_rate$ for each row, once again ensuring the uniqueness of numbers in each row.
+
+\begin{figure}[H]
   \centering
   {\setlength{\tabcolsep}{0pt}
   \renewcommand{\arraystretch}{1.5}
@@ -354,6 +439,10 @@ One area for improvement is evident in row 7: Parent~1 contains two occurrences 
   \caption{Exemplary mutation step according to Implementation 2}
   \label{fig:impl-2-mutation}
 \end{figure}
+
+The mutation of the individual that resulted from the previous crossover is shown in figure~\ref{fig:impl-2-mutation}. For this example, the mutation rate was set to 20\%, leading to mutations in row 1 and row 5. 
+
+\paragraph{Problem} TODO
 
 \subsection{Solution representation}
 The solution representation is an $n \times n$ matrix where each entry is a number in the range from 1 to $n$. The solution is valid if and only if every number in a row, a column, and a respective block is unique.

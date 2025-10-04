@@ -72,10 +72,3 @@ Because of the high number of Sudoku boards needed to accurately evaluate the pe
 First, a solved board is generated using the DFS algorithm. Next, a random number is removed from the grid. The DFS algorithm tries to solve the puzzle again. If it is still solvable, repeat the previous steps until the requirement of given numbers is met for the different complexities of the Sudoku boards. For 9x9 grids, the easy difficulty gives between 40-50 numbers. Medium and hard puzzles have 30-39 and 25-29 givens respectively. (source required?)
 
 Because of the increased complexity, run time and reduced success rate of solving 16x16 and 25x25 puzzles, only ? boards were taken from...
-
-
-\paragraph{Problem with Implementation 1}
-This implementation leads to a situation where the diversity of the population decreases rapidly, resulting in premature convergence to suboptimal solutions. On most of the runs, the algorithm creates more than 100,000 generations before finding a valid solution.  
-To counter this problem, we have tried to increase the mutation rate and the population size, as well as introducing new random individuals in each generation. However, these adjustments only led to marginal improvements in performance.
-
-\paragraph{Problem with Implementation 2} TODO

@@ -17,19 +17,8 @@ DFS using backtracking:
 7. If all cells filled: return True (solved!)
 '''
 
-def sudoku(matrix=None):
-    if matrix is None:
-        raise ValueError("Matrix is required")
-    
-    # check the row and column is 9*9
-    if len(matrix) != 9 or any(len(row) != 9 for row in matrix):
-        raise ValueError("Matrix must be 9x9, plz check your input")
-    
-    return matrix
-
-
 # this is use to check the specific number at position is valid
-def is_valid(matrix, row, column, num):
+def is_valid_move(matrix, row, column, num):
     size=len(matrix)
     box_size=int(math.sqrt(size))
     if num in matrix[row]:
@@ -47,7 +36,7 @@ def is_valid(matrix, row, column, num):
     return True
 
 # this is use to check the whole matrix is valid
-def check_valid(matrix):
+def is_goal_state(matrix):
     # Check rows
     for row in matrix:
         if sum(row) != 45:
@@ -71,8 +60,6 @@ def check_valid(matrix):
     
     return True
 
-
-
 '''
 Recursively solve the sudoku puzzle
 when current cell is empty, try to fill the cell with numbers 1-9
@@ -88,7 +75,7 @@ def DFS_random(matrix,size) -> list[list[int]] | None:
                 nums=list(range(1,size+1))
                 nums=random.sample(nums,len(nums))
                 for num in nums:
-                    if is_valid(matrix, i, j, num):
+                    if is_valid_move(matrix, i, j, num):
                         matrix[i][j] = num
                         
                         # Recursively solve puzzle
@@ -107,7 +94,7 @@ def DFS(matrix):
         for j in range(len(matrix)):
             if (matrix[i][j] == 0):
                 for num in range(1, len(matrix)+1):
-                    if is_valid(matrix, i, j, num):
+                    if is_valid_move(matrix, i, j, num):
                         matrix[i][j] = num
 
                         # Recursively solve puzzle
@@ -118,6 +105,7 @@ def DFS(matrix):
                         matrix[i][j] = 0
                 return False
     return True
+
 '''test the DFS function'''
 if __name__ == "__main__":
     matrix = [
@@ -136,7 +124,12 @@ if __name__ == "__main__":
     for row in matrix:
         print(row)
 
-    sudoku(matrix)
+    if matrix is None:
+        raise ValueError("Matrix is required")
+    
+    # check the row and column is 9*9
+    if len(matrix) != 9 or any(len(row) != 9 for row in matrix):
+        raise ValueError("Matrix must be 9x9, plz check your input")
     
     import copy
     filled_matrix = copy.deepcopy(matrix)
@@ -153,6 +146,6 @@ if __name__ == "__main__":
         print("\nFilled matrix:")
         for row in filled_matrix:
             print(row)
-        print("\nIs filled matrix valid?", check_valid(filled_matrix))
+        print("\nIs filled matrix valid?", is_goal_state(filled_matrix))
     else:
         print("No solution found for this Sudoku puzzle")

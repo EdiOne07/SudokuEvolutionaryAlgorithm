@@ -196,7 +196,7 @@ class SudokuPuzzleGenerator:
                 if board[i][j] == 0:
                     # Try numbers 1-9
                     for num in range(1, 10):
-                        if dfs.is_valid(board, i, j, num):
+                        if dfs.is_valid_move(board, i, j, num):
                             board[i][j] = num
                             
                             # Recursively solve
