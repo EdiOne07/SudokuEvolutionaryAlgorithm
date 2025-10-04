@@ -11,25 +11,18 @@
 \end {itemize}
 {As previously mentioned, the puzzle is completed when all the vertices have an integer between 1 and 9 assigned to them, in such a way that vertices that are joined by an edge don't have the same number assigned to them. }
 \subsection{Evolutionary Approach}
-{While Sudoku has a deterministic solution, evolutionary algorithms can be used in order to compare their performance with more traditional approaches such as the depth first search algorithm. As it is mentioned in\cite{Moraglio}, they managed to implement an evolutionary algorith that could solve very efficently easy Sudoku puzzles. The downside of their algorithm, was that it wasn't as efficient when it came down to solving medium or hard puzzles.   }
-{\color{red}
-\begin{itemize}
-    \item The mathematical formulation considered in your study. Some problems have a clear mathematical model (e.g., Travelling Salesman Problem), while others do not (e.g., $n$-Queens). Based on the problem you chose, search the literature and find a proper way to present the problem.
-    \item One paragraph that briefly presents at least 3 published academic works where any evolutionary approach is used to solve the problem. It would be wise to cite here works that influenced your algorithm. This practice saves you time from looking for additional academic resources. You can find more information about reading and searching in the literature in \cite{zobel2014reading}.
-    \item The motivation behind the evolutionary approach you decided to develop. A good practice would be to align the motivation with some literature gap found in the academic works you presented above. However, this is not mandatory. You can motivate your selection on the characteristics of the algorithm making it proper for the problem.
-\end{itemize}
-}
-
-\textcolor{red}{\textbf{Note:} Change the section's title to match the name of the problem you chose for your assignment.}
-
----
-
-- This section presents the problem this paper solves with the use of evolutionary algorithm approach. 
-
-- Math in solving Sudokus? Maybe rather introducing quickly a sudoku, how to solve it and describing the steep increase of difficulty with increasing sizes of sudoku puzzles
-
-- Cite 3 published papers. Cite where our idea is from\cite{Mantere2007}. Another Paper\cite{Amil2019}.
-
-- Motivation behind evolutionary approach.
-
+{While Sudoku has a deterministic solution, evolutionary algorithms can be used in order to compare their performance with more traditional approaches such as the depth first search algorithm. As it is mentioned in\cite{Moraglio}, they managed to implement an evolutionary algorithm that could solve very efficently easy Sudoku puzzles. The downside of their algorithm, was that it wasn't as efficient when it came down to solving medium or hard puzzles.
+The way, they approached the algorithm \cite{Moraglio} was to test constraints on different sets of spaces, namely the Hamming space and the Row Swap space. The drawn conclusions were that even though the Hamming space had a smoother fitness landscape, in the end the Row Swap space was more efficient and produced more optimal results.}
+{\newline}
+{\newline Another approach was taken in the paper \cite{Amil2019}, where pre-processing was involved. The pre-processing involved filling some sure numbers in the sudoku, through different methods, such as the naked single method, hidden single method, full house and lone rangers. The way in which a method was selected to be used was based on the type of puzzle, since each method has different efficency depending on the case.
+After the pre-processing was done, different evolutionary algorithms were tested, such as a genetic algorithm that uses crossover and mutation operators, another one that firstly pre-processes the board and then applies the said genetic algorithm and finally even a genetic algorithm that uses an ant colony optimization.The fitness function used in this paper is made of three components: first one minimizes missing digits into rows and columns, the second one uses a sort of aging penalty, in order to prevent the same best individual persisting over generations. Finally, the third one penalizes violations where a candidate digit conflicts with a given clue in its row or column.
+The conclusion they arrived to was that solving the sudoku puzzle was faster when pre-processing was involved and that a hybrid algorithm between genetic algorithm and ant colony optimization was the most efficient with every type of sudoku puzzle.  }
+{\newline}
+{\newline Lastly, the paper that influenced our approach the most was \cite{Mantere2007}, which uses the genetic algorithm with Darwinian evolution as its inspiration. This implies that each individual in the population is tested against a fitness function, that further decides whether the individual should be removed from the population or used as a parent to get closer to the desired result.
+New individuals are created through the use of crossover and mutation. Mutations is restricted to sub-blocks, using swap mutation as the primary operator. Further on, it was observed in the paper that using a cataclysmic mutation, specifically a restart of the population, every 2000 generation brought the best results when no solution was found. Similar to our project, the authours experimented with different fitness functions, but ended up using a function that counts missing or duplicate digits in each row and column, assigning penalties. This being said, the optimal value of the fitness function would be 0. On top of that, the authors introduced an aging penalty, adding $+1$ to the fitness of the best solution if it remains unchanged.
+The conclusion the paper arrived to was that the genetic algorithm could solve sudoku puzzles quite efficiently, and even if there were better performing algorithms, they sometimes would fail at puzzles that the genetic algorithm could solve.}
+{\newline}
+{\newline The motivation for our project is quite straightforward. We want to explore if a streamlined evolutionary algorithm with carefully chosen operators can achieve better perfromances than already existing and efficient search algorithms, such as the depth first search algorithm. As previously mentioned our main inspiration for the evolutionary algorithm was the paper \cite{Mantere2007}, thus we implemented an evolutionary algorithm that uses mutation and crossover operators, while also taking an elitist approach regarding the selection of the parents.
+On top of that, we also wanted to investigate the scalability of our evolutionary algorithm, thus we also tested it on a $16 \times 16$ puzzle. Evolutionary algorithms are well suited for this type of problem, because they can handle large solution spaces effectively, balance exploration and explotation, and adapt by integrating problem-specific heuristics.
+All being considered, we believe that the Sudoku problem is a great choice for analyzing all those key aspects of evolutionary algorithms.}
 
