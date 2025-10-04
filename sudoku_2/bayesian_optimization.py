@@ -6,7 +6,7 @@ from skopt.space import Integer, Real
 from skopt.utils import use_named_args
 import matplotlib.pyplot as plt
 from evolution import SudokuGA
-import sudoku.boards as boards
+import generators.boards as boards
 
 
 class SudokuBayesianOptimization:
@@ -88,6 +88,7 @@ class SudokuBayesianOptimization:
                 print(f"✓ SOLVED in {solving_time:.2f}s!")
             else:
                 # Partial solution - penalize based on violations and time
+                assert isinstance(final_fitness, int), "expected int fitness"
                 score = final_fitness * 100 + solving_time  # Heavy penalty for violations
                 print(f"✗ Not solved. Violations: {final_fitness}, Time: {solving_time:.2f}s")
             
@@ -195,7 +196,7 @@ class SudokuBayesianOptimization:
         
         return optimization_results
     
-    def plot_optimization_history(self, results: Dict, save_path: str = None):
+    def plot_optimization_history(self, results: Dict, save_path: str | None = None):
         """
         Plot the optimization history and parameter relationships.
         
@@ -315,7 +316,8 @@ class SudokuBayesianOptimization:
                 elite_size=self.elite_size,
                 mutation_rate=results['best_mutation_rate'],
                 max_generations=self.max_generations,
-                puzzle_size=self.puzzle_size
+                puzzle_size=self.puzzle_size,
+                difficulty="test"
             )
             
             start_time = time.perf_counter()

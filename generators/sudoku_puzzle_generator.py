@@ -17,7 +17,7 @@ import sys
 import os
 
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
-import search
+from search import dfs
 
 
 class SudokuPuzzleGenerator:
@@ -98,7 +98,7 @@ class SudokuPuzzleGenerator:
         board = [[0 for _ in range(9)] for _ in range(9)]
         
         # Use the existing DFS_random function to fill the board
-        solution = search.DFS_random(board, 9)
+        solution = dfs.DFS_random(board, 9)
         return solution
     
     def _remove_numbers_strategically(self, solution, target_clues):
@@ -196,7 +196,7 @@ class SudokuPuzzleGenerator:
                 if board[i][j] == 0:
                     # Try numbers 1-9
                     for num in range(1, 10):
-                        if search.is_valid(board, i, j, num):
+                        if dfs.is_valid(board, i, j, num):
                             board[i][j] = num
                             
                             # Recursively solve

@@ -1,10 +1,9 @@
 from evolution import *
-from sudoku_puzzle_generator import SudokuPuzzleGenerator
+from generators.sudoku_puzzle_generator import SudokuPuzzleGenerator
 import time
 import os
 import glob
 import re
-from datetime import datetime
 import matplotlib.pyplot as plt
 import numpy as np
 

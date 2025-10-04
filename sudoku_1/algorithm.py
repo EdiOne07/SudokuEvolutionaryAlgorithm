@@ -1,8 +1,8 @@
 import random
 import copy
 import time
-from sudoku import boards
-from sudoku.heuristic import HeuristicMatrix
+from generators import boards
+from sudoku_1.heuristic import HeuristicMatrix
 
 class Sudoku:
     """A class to represent a Sudoku board."""
@@ -64,7 +64,7 @@ class SudokuEvolutionaryAlgorithm:
         self._population_size = population_size
         self._mutation_rate = mutation_rate
         self._generation = 0
-        self._solution = None
+        self._solution = Sudoku(initial_sudoku.board)
         self._population = []
         self._max_gens = max_gens
 
@@ -216,13 +216,15 @@ class SudokuEvolutionaryAlgorithm:
         return self._population[0] 
 
 if __name__ == "__main__":
-    initial_board = Sudoku(boards.get_random_board())
+    initial_board = Sudoku(boards.generate_random_board(9))
     evolutionary_algorithm = SudokuEvolutionaryAlgorithm(initial_board, population_size=100, mutation_rate=5)
     
     start_time = time.time()
     solution = evolutionary_algorithm.solve()
     end_time = time.time()
 
+    print("Initial board:")
+    print(initial_board.visualize())
     print(f"Final result with a score of {solution.heuristic_matrix.score}:")
     print(solution.visualize())
     print(f"This run took {end_time - start_time:.2f} seconds.")

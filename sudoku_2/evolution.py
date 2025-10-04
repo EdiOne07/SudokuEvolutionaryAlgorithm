@@ -3,9 +3,8 @@ import time
 import logging
 import os
 from typing import Annotated
-import sudoku.boards as boards
 import math
-from sudoku_puzzle_generator import SudokuPuzzleGenerator
+from generators.sudoku_puzzle_generator import SudokuPuzzleGenerator
 
 
 def print_sudoku(board, title="Sudoku Board"):

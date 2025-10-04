@@ -1,7 +1,6 @@
 import random
 import time
 import math
-from typing import Annotated
 
 '''
 how to solve:
@@ -79,10 +78,10 @@ Recursively solve the sudoku puzzle
 when current cell is empty, try to fill the cell with numbers 1-9
 if the number is valid, recursively solve the rest of the puzzle
 if the number is not valid, backtrack and try the next number
-if all numbers are tried and no solution is found, return False
+if all numbers are tried and no solution is found, return None
 if all cells are filled, return True
 '''
-def DFS_random(matrix,size):
+def DFS_random(matrix,size) -> list[list[int]] | None:
     for i in range(size):
         for j in range(size):
             if (matrix[i][j] == 0):
@@ -99,7 +98,7 @@ def DFS_random(matrix,size):
                         # Backtrack
                         matrix[i][j] = 0
                 
-                # If no number works, return False
+                # If no number works, return None
                 return None
     return matrix
 
