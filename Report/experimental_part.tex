@@ -11,38 +11,17 @@ This section describes the setup of experiments \cite{zobel2014experimentation}:
 \end{itemize}
 }
 
-Hardware: Macbook pro M1 max
-Software: Python (VS Code)
-----
-we have algorithm
-now we want hyperparamter -> bayesian optimization (paper)
-give us best population and mutation rate
-with these hp we run the algrothm easy, medium, hard and 16x16 and 25x25
-we track execution time, number of generations to solution (or max of 10.000 gens with best fitness, no gen without improvement)
-Run default DFS and track time and solution 
-
-----
-random boards for data
-using DFS we generate a solved board for the desired size
-randomly remove number and try to solve again. repeat, if we cannot solve it we restart
-9x9 remove until difficulty is met (easy: range of 40.50, med: 30-39, hard 25-29) (cite something?)
-16x16: from the internet?
-25x25: from internet? ask Eddie (where from)
-big ones taken because generating them takes a lot of time, only test with one board because of complexity
-
-----------------------
-
 This section describes the setup of the experiments run to study the efficiency of solving Sudoku puzzles with GA approaches.
 
 The test will be run on a Macbook pro M1 max.
 
 \subsection{Choosing hyperparameters}
-Chapter 3 discusses the algorithm used for the experiments in detail. However, before the algorithm can be run, the hyperparameters for \textit{\textbf{population\_size}}, \textit{\textbf{mutation\_rate}} and \textit{\textbf{elite\_size}} need to be chosen. The solution quality of a stochastic algorithm strongly depends on choosing the correct hyperparameters. Previous studies show that configuring hyperparameters of GAs using Bayesian Optimization leads to significantly better results than choosing them at random while keeping the computational time low\cite{Ruether}.
+Chapter 3 discusses the algorithm used for the experiments in detail. However, before the algorithm can be run, the hyperparameters for \textit{\textbf{population\_size}} and \textit{\textbf{mutation\_rate}} need to be chosen. The solution quality of a stochastic algorithm strongly depends on choosing the correct hyperparameters. Previous studies show that configuring hyperparameters of GAs using Bayesian Optimization leads to significantly better results than choosing them at random while keeping the computational time low\cite{Ruether}.
 
-The Bayesian Optimization evaluates the optimal hyperparamters of the GA as follows...
+Using Bayesian Optimization, the optimal values for the hyperparamters \textit{\textbf{population\_size}} and \textit{\textbf{mutation\_rate}} of the GA are evaluated as follows. First a search space is defined. It specifies the lower and upper bounds of the hyperparameters. Next, the \textit{\textbf{objective\_function}} tries to solve a Sudoku using the GA. It measures solving time and the final fitness. These measurements calculate are score. The \textit{\textbf{optimize}} method tries to minimize the score by fitting a Gaussian Process model to predict performance across the parameter space. It iteratively chooses new parameter sets that are either promising or not well explored. This process is repeated for a set number of iterations. The result is the best found population size and mutation rate. 
 
 \subsection{Running the experiment}
-Next the GA is run 1000 times for a maximum of 10.000 generations for Sudoku puzzles of easy, medium and hard difficulty of 9x9 boards. Because of the drastic jump in complexity with 16x16 and 25x25 boards, the GA is only run ? times for these puzzles. For the evaluation of the performance the following properties of the experiment are tracked:
+The GA is run 1000 times for a maximum of 10.000 generations for Sudoku puzzles of easy, medium and hard difficulty of 9x9 boards. Because of the drastic jump in complexity with 16x16 and 25x25 boards, the GA is only run ? times for these puzzles. For the evaluation of the performance the following properties of the experiment are tracked:
 \begin{enumerate}
 	\item Number of successfully solved boards
 	\item Execution time
