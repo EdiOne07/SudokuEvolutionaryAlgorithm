@@ -1,4 +1,4 @@
-from evolution import *
+from sudoku_2.evolution import *
 from generators.sudoku_puzzle_generator import SudokuPuzzleGenerator
 import time
 import os
@@ -17,7 +17,7 @@ class Analysis:
         self.max_generations = 100000
         self.difficulty:Annotated[
             str, 
-            "this hyperparamter use to control the log file name and randomly difficulty for borad"
+            "this hyperparameter use to control the log file name and randomly difficulty for the board"
             ] = 'hard'
 
     # it's same with evolution main function

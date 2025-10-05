@@ -138,13 +138,15 @@ Algorithm \ref{alg:impl-1} gives an overview of how the algorithm works. A detai
 \end{algorithm}
 
 
-\paragraph{Fitness function}\label{par:ff-impl1} The fitness function evaluates a Sudoku board by summing the number of unique digits in each row, column, and 3$\times$3 block, with a maximum score of 243 for a valid solution.
-{
-  \color{red} TODO
-}
-\begin{equation}
-    F = \sum_{i=1}^d x_i^2 
-\end{equation}
+\paragraph{Fitness function}\label{par:ff-impl1} Let $R_i$, $C_j$ and $B_b$ denote the sets of distinct, non-zero digits present in row $i$, column $j$, and block $b$, respectively. Using zero-based indices $(i,j\in\{0,\dots,8\})$ the block index is
+\[
+b \;=\; 3\Big\lfloor\frac{i}{3}\Big\rfloor \;+\; \Big\lfloor\frac{j}{3}\Big\rfloor .
+\]
+The fitness of a board is the total number of distinct digits across all rows, columns and 3\(\times\)3 blocks:
+\[
+F \;=\; \sum_{i=0}^{8} |R_i| \;+\; \sum_{j=0}^{8} |C_j| \;+\; \sum_{b=0}^{8} |B_b|.
+\]
+This definition results in a maximum fitness score of $243$ for 9$\times$9 boards.
 
 \paragraph{Crossover} A new individual is creating by crossing over two parents. The crossover process simply iterates over all the tiles that were not given in the initial puzzle and takes the value for that tile from either parent to copy it to the child.
 
@@ -313,13 +315,11 @@ Tournament selection is then applied to select parents for the remaining individ
 \end{algorithmic}
 \end{algorithm}
 
-\paragraph{Fitness function} The fitness function works counterintuitively from the \nameref{par:ff-impl1} of implementation 1, calculating the fitness as the sum of the number of duplicates in each column, and 3x3 subgrid. The best fitness an individual can have is 0, meaning that there are no duplicates in the entire board.
-{
-  \color{red} TODO
-}
-\begin{equation}
-    F = \sum_{i=1}^d x_i^2 
-\end{equation}
+\paragraph{Fitness function} Let \(C_j\) and \(B_b\) denote the sets of distinct, non-zero digits in column \(j\) and block \(b\), respectively, and let \(n\) be the board size. The fitness function counts the number of duplicates in each column, and 3x3 subgrid:
+\[
+F \;=\; \sum_{j=0}^{n-1} \bigl(n - |C_j|\bigr) \;+\; \sum_{b=0}^{n-1} \bigl(n - |B_b|\bigr).
+\]
+A value \(F=0\) indicates a valid solution.
 
 \paragraph{Crossover} The crossover step is done by iterating through the rows of the sudoku board and copying each row from either parent. This ensures that the children will still respect the uniqueness of numbers in each row.
 
@@ -442,7 +442,10 @@ In figure~\ref{fig:impl-2-selection}, it is easy to see that the very first row 
 
 The mutation of the individual that resulted from the previous crossover is shown in figure~\ref{fig:impl-2-mutation}. For this example, the mutation rate was set to 20\%, leading to mutations in row 1 and row 5. 
 
-\paragraph{Problem} TODO
+\paragraph{Problem}
+The second genetic algorithm also often converges to local optima and loses diversity, which limits further improvement. One solution was to apply adaptive mutation rates in order to increase the diversity, but that did not solve all local optima problems. Another approach would be to inject new genetic material (e.g. periodically replace most of the population), but that measure was not implemented due to time constraints. Furthermore, scalability is an issue: larger boards increase the combinatorial search space and therefore require proportionally larger populations and/or more generations to retain a comparable probability of finding a solution. 
+
+Despite these limitations, Implementation~2 performs much better in practice than Implementation~1, but the problems with premature convergence apply to both implementations and to genetic algorithms in general.
 
 \subsection{Solution representation}
 The solution representation is an $n \times n$ matrix where each entry is a number in the range from 1 to $n$. The solution is valid if and only if every number in a row, a column, and a respective block is unique.

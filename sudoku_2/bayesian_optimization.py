@@ -12,7 +12,7 @@ import generators.boards as boards
 class SudokuBayesianOptimization:
     """
     how this works overview:
-    - define a function: f(x) = GA performance, where x is the mutaion rate and population size, the performance is the best fitness achieved after like 10000 generations\
+    - define a function: f(x) = GA performance, where x is the mutation rate and population size, the performance is the best fitness achieved after like 10000 generations\
         Uses Gaussian Process models to predict performance, which can tells where the good regions probably are and where are uncertain.\
             Every time running GA is costly and noisy, GP models the function smoothly. account for uncertainty.
     - try a few random hyperparameters, like 100 population and 0.1 mutation rate
