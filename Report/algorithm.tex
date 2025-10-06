@@ -1,54 +1,48 @@
-\section{Genetic Algorithm}
-\label{sec:algorithm}
+\section{Genetic Algorithm}\label{sec:algorithm}
+This chapter describes the implementations of two algorithms used to solve Sudoku puzzles.
+It starts out by briefly introducing depth-first search as the baseline measure, and then goes on to explain how each of the genetic algorithms work.
 
-\textcolor{red}{The third section should present the evolutionary approach you developed. You can divide this section into subsection. In any case, you should mention the following details:}
+\subsection{Baseline}
+Depth-first search (DFS) is used as a deterministic baseline. It iteratively scans the board for the first empty cell, attempts candidate values 1\dots n, and backtracks to try alternative values if no candidate leads to a solution. This approach is ensures a solution (given that the puzzle is solvable) and is simple to implement, which makes it a reliable reference for correctness and for measuring runtimes.
 
-\textcolor{red}{\textbf{Evolutionary approach.} Clearly describe the algorithm you developed. You should clearly explain the evolutionary operators you used and what modifications you did to match the problem. It is extremely important to present also a pseudocode of your algorithm. An example is given in \ref{alg:pseudocode_example}, below. For more insight into presentation of algorithms, you can advise \cite{zobel2014algorithms}.}
+Algorithm \ref{alg:dfs} shows the implementation of the DFS algorithm in pseudo-code.
 
-{
-\color{red}To typeset pseudocode in \LaTeX\ you can use one of the following options:
-\begin{itemize}
-    \item Choose ONE of the (\texttt{algpseudocode} OR \texttt{algcompatible} OR \texttt{algorithmic}) packages to typeset algorithm bodies, and the algorithm package for captioning the algorithm.
-    \item The \texttt{algorithm2e} package.
-\end{itemize}
-You can find more information here: \url{https://www.overleaf.com/learn/latex/Algorithms}
-}
-
-\begin{algorithm}
-\caption{Example of an algorithm's pseudocode}\label{alg:pseudocode_example}
+\begin{algorithm}[H]
+\caption{Depth-first search algorithm}\label{alg:dfs}
+\begin{adjustbox}{width=1\textwidth,left}
+\begin{minipage}{\textwidth}
 \begin{algorithmic}
-\Require $n \geq 0$
-\Ensure $y = x^n$
-\State $y \gets 1$
-\State $X \gets x$
-\State $N \gets n$
-\While{$N \neq 0$}
-\If{$N$ is even}
-    \State $X \gets X \times X$
-    \State $N \gets \frac{N}{2}$  \Comment{This is a comment}
-\ElsIf{$N$ is odd}
-    \State $y \gets y \times X$
-    \State $N \gets N - 1$
-\EndIf
-\EndWhile
+\Require matrix
+\Ensure \textbf{true} if solved, \textbf{false} otherwise
+\State $n \gets$ length(matrix)
+\For{$i \leftarrow 1$ \textbf{to} $n$}
+  \For{$j \leftarrow 1$ \textbf{to} $n$}
+    \If{matrix[$i,j$] = 0}
+      \For{$num \leftarrow 1$ \textbf{to} $n$}
+        \If{is\_valid\_move(matrix, $i$, $j$, $num$)}
+          \State matrix[$i,j$] $\gets$ $num$
+          \If{\Call{DFS}{matrix}} \State \Return \textbf{true} \EndIf
+          \State matrix[$i,j$] $\gets$ 0
+        \EndIf
+      \EndFor
+      \State \Return \textbf{false}
+    \EndIf
+  \EndFor
+\EndFor
+\State \Return \textbf{true}
 \end{algorithmic}
+\end{minipage}
+\end{adjustbox}
 \end{algorithm}
 
-\textcolor{red}{\textbf{Solution representation.} Clearly describe the solution representation you used. You can use figures to improve the comprehensibility of this part.}
-
-\textcolor{red}{\textbf{Fitness function.} It is also very important to mention the fitness function you used. In many cases, the objective function of the problem is not the same as the fitness function used in an evolutionary algorithm. An example, following the principles of \cite{zobel2014mathematics}, is given below.}
-
-\begin{equation}
-    F = \sum_{i=1}^d x_i^2 
-\end{equation}
-where $x_i$ is the $i$-th gene (i.e., decision variable) in the solution and $d$ corresponds to the number of decision variables in the problem.
-
-\textcolor{red}{\textbf{Note:} Change the section's title to match the name of the algorithm you developed for your assignment.}
-
 \subsection{Implementations}
-This section presents and compares different implementations of an evolutionary algorithm designed to solve Sudoku puzzles. Each implementation varies in its approach to selection, crossover, mutation strategies, and fitness evaluation.
+This section presents and compares two genetic algorithms designed to solve Sudoku puzzles. Each implementation varies in its approach to selection, crossover, mutation strategies, and fitness evaluation.
 
-The following sections document these processes and use the Sudoku board shown in \ref{fig:initial-sudoku} as a reference for visualizing the selection and mutation step.
+The first GA implementation originated from initial project discussions and represents our first practical attempt to apply standard genetic operators to Sudoku. The second implementation builds on that design and performs better in general, which is why we use it as the representative GA in the following chapters.
+
+Nevertheless, we decided not to omit the first GA from this paper, because it represents the iterative approach to finding an optimized solution, and it shows which algorithms tend to not work as good for Sudoku compared to the algorithms in the latter implementation.
+
+The following sections document these algorithms and use the Sudoku board shown in \ref{fig:initial-sudoku} as a reference for visualizing the selection and mutation step.
 
 \begin{figure}[H]
 \centering
@@ -71,38 +65,11 @@ The following sections document these processes and use the Sudoku board shown i
 \label{fig:initial-sudoku}
 \end{figure}
 
-\subsubsection{Baseline}
-Depth-first search (DFS) is used as a deterministic baseline. The solver iteratively scans the board for the first empty cell, attempts candidate values 1\dots n, and backtracks to try alternative values if no candidate leads to a solution. This approach is ensures a solution (given that the puzzle is solvable) and is simple to implement, which makes it a reliable reference for correctness and for measuring runtimes.
-Algorithm \ref{alg:dfs} shows the implementation of the DFS algorithm in pseudo-code.
-
-\begin{algorithm}[H]
-\caption{Depth-first search algorithm}\label{alg:dfs}
-\begin{algorithmic}
-\Require matrix
-\Ensure \textbf{true} if solved, \textbf{false} otherwise
-\State $n \gets$ length(matrix)
-\For{$i \leftarrow 1$ \textbf{to} $n$}
-  \For{$j \leftarrow 1$ \textbf{to} $n$}
-    \If{matrix[$i,j$] = 0}
-      \For{$num \leftarrow 1$ \textbf{to} $n$}
-        \If{is\_valid\_move(matrix, $i$, $j$, $num$)}
-          \State matrix[$i,j$] $\gets$ $num$
-          \If{\Call{DFS}{matrix}} \State \Return \textbf{true} \EndIf
-          \State matrix[$i,j$] $\gets$ 0
-        \EndIf
-      \EndFor
-      \State \Return \textbf{false}
-    \EndIf
-  \EndFor
-\EndFor
-\State \Return \textbf{true}
-\end{algorithmic}
-\end{algorithm}
-
-\pagebreak % TODO: make sure this is properly formatted, but if we dont pagebreak here, then the next paragraph might appear above the table, which is not good.
 \subsubsection{Implementation 1}\label{sec:impl-1}
+Algorithm \ref{alg:impl-1} initializes a population by randomly filling empty cells and then iteratively evolves it using selection, per-cell crossover and mutation for up to a fixed number of generations.
+Most offspring are produced by top parents of the previous generation. Then, the population is replaced by the offspring, and eventually the best individual is returned.
 
-Algorithm \ref{alg:impl-1} gives an overview of how the algorithm works. A detailed description of how the fitness function, crossover, and mutation work, will be given afterwards.
+A detailed description of how the fitness function, crossover, and mutation work, will be given afterwards.
 
 \begin{algorithm}[H]
 \caption{Genetic Algorithm 1}\label{alg:impl-1}
@@ -275,9 +242,9 @@ This implementation leads to a situation where the diversity of the population d
 To counter this problem, we have tried to increase the mutation rate and the population size, as well as introducing new random individuals in each generation. However, these adjustments only led to marginal improvements in performance.
 
 \subsubsection{Implementation 2}
-The second genetic algorithm variant, which uses elitism and tournament selection, is presented in algorithm \ref{alg:impl-2}. 
-Elitism ensures that the best $elite\_size$ individuals from the current generation are directly carried over to the next generation without modification.
-Tournament selection is then applied to select parents for the remaining individuals: in each tournament, $K$ individuals are randomly chosen from the population, and the one with the best fitness is selected as a parent. This process is repeated until $population\_size$ parents have been chosen.
+Algorithm \ref{alg:impl-2} creates a population with unique rows and improves it using elitism, tournament selection, row-wise crossover and swap-based mutation. Each generation the population is evaluated, the best \(elite\_size\) individuals are carried over unchanged, and the remaining offspring are produced from parents chosen by tournament; children copy whole rows from parents to preserve row validity and then undergo mutations that swap non-given tiles within rows. The algorithm terminates when a perfect solution is found or the maximum number of generations is reached.
+
+A description of the fitness function, crossover, and mutation will once again be given afterwards.
 
 \begin{algorithm}[H]
 \caption{Genetic Algorithm 2}\label{alg:impl-2}
@@ -443,7 +410,7 @@ In figure~\ref{fig:impl-2-selection}, it is easy to see that the very first row 
 The mutation of the individual that resulted from the previous crossover is shown in figure~\ref{fig:impl-2-mutation}. For this example, the mutation rate was set to 20\%, leading to mutations in row 1 and row 5. 
 
 \paragraph{Problem}
-The second genetic algorithm also often converges to local optima and loses diversity, which limits further improvement. One solution was to apply adaptive mutation rates in order to increase the diversity, but that did not solve all local optima problems. Another approach would be to inject new genetic material (e.g. periodically replace most of the population), but that measure was not implemented due to time constraints. Furthermore, scalability is an issue: larger boards increase the combinatorial search space and therefore require proportionally larger populations and/or more generations to retain a comparable probability of finding a solution. 
+The second genetic algorithm also often converges to local optima and loses diversity, which limits further improvement. We added adaptive mutation rates and replaced most of the population when fitness stagnated across multiple generations. These measures helped but did not completely eliminate local optima problems. Furthermore, scalability is an issue: larger boards increase the combinatorial search space and therefore require proportionally larger populations and/or more generations to retain a comparable probability of finding a solution. 
 
 Despite these limitations, Implementation~2 performs much better in practice than Implementation~1, but the problems with premature convergence apply to both implementations and to genetic algorithms in general.
 

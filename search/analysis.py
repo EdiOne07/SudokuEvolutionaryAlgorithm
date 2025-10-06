@@ -7,15 +7,17 @@ import os
 import glob
 import re
 import numpy as np
+import matplotlib.pyplot as plt
+from math import pi
 
 class Analysis:
-    def __init__(self):
-        self.runs = 1000
+    def __init__(self, runs, difficulty = "hard"):
+        self.runs = runs
         self.puzzle_size = 9
         self.difficulty:Annotated[
             str, 
             "this hyperparameter use to control the log file name and randomly difficulty for the board"
-            ] = 'hard'
+            ] = difficulty
         
         # logging
         self.logger = logging.getLogger('SudokuDFS')
@@ -44,10 +46,10 @@ class Analysis:
             solved = dfs.DFS(puzzle)
             end_time = time.perf_counter()
             if solved:
-                self.logger.info(f"Solution found in {end_time - start_time:.2f} seconds")
+                self.logger.info(f"Solution found in {end_time - start_time:.4f} seconds")
             else:
-                self.logger.info(f"No solution found and spent {end_time - start_time:.2f} seconds")
-    
+                raise Exception("DFS failed to solve this puzzle:", puzzle)
+
     def _parse_log_content(self, content):
         """Parse log content and extract key metrics"""
         lines = content.strip().split('\n')
@@ -91,9 +93,32 @@ class Analysis:
             print("number of runs:", len(log_results))
             print("fastest time:", a.min())
             print("longest time:", a.max())
-            print("median:", np.median(a)) 
+            print("median:", np.median(a))
+            print("mean:", a.mean())
+            print("standard deviation:", a.std(ddof=0))
+
+            mean = a.mean()
+            std = a.std(ddof=0)
+
+            # Simple histogram (counts) with 25 bins
+            plt.figure(figsize=(8, 4))
+            plt.hist(a, bins=100, color='C0', edgecolor='k', alpha=0.75)
+            plt.axvline(mean, color='k', linestyle='-', linewidth=1, label=f'mean={mean:.3f}s')
+            plt.axvline(mean + std, color='k', linestyle=':', linewidth=1, label=f'std={std:.3f}s')
+            plt.axvline(mean - std, color='k', linestyle=':', linewidth=1)
+            plt.xlabel('Execution time (s)')
+            plt.ylabel('Count')
+            plt.title(f'DFS execution time ({len(a)} runs) — {os.path.basename(log_file)}')
+            plt.legend()
+            plt.grid(alpha=0.3, axis='y')
+            plt.tight_layout()
+
+            out_png = os.path.splitext(log_file)[0] + '_histogram.png'
+            plt.savefig(out_png, dpi=200)
+            print("Saved histogram to", out_png)
+            plt.show() 
 
 if __name__ == "__main__":
-    analysis = Analysis()
-    #analysis.run()
+    analysis = Analysis(1000, "hard")
+    analysis.run()
     analysis.detailed_log_analysis()
