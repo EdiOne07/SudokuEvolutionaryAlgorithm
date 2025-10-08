@@ -27,7 +27,7 @@ From the third chart, we can see muation rate between 0.05 and 0.15 have many ti
 
 From the fourth chart, the best population size is 142 and the best mutation rate is 0.230. This result is based on the best score shows in first chart.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{resources/bayesian_optimization_results.png}
 \caption{Bayesian optimization results.}
@@ -43,14 +43,14 @@ We test easy, medium and hard difficulty in same setting, and it's costly to tes
 The charts below shows the performance of the GA with easy difficulty. There are more than 500 times find solution in less than 0.5 seconds. only around $1/20$ solutions were reached very slow which is more than 20s.
 Additionly, the average execution time is 5s-ish, which is a good performance. Moreover, the execution time and generation have linear relationship. It means that if algorithm need more generations to get the solution, the more execution time it will cost.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{resources/generation_vs_execution_time_easy.png}
 \caption{Generation vs execution time for easy difficulty puzzles.}
 \label{fig:generation_vs_execution_time_easy}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{resources/generation_execution_time_bars_easy.png}
 \caption{Generation and execution time distribution for easy difficulty puzzles.}
@@ -63,14 +63,14 @@ The charts below shows the performance of the GA with medium difficulty, the tim
 However, the proportion of the getting solution in very slow is $60\%$, which is much higher comparing with easy difficulty.
 Meanwhile, the execution time and generation still remain a linear relationship.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{resources/generation_vs_execution_time_medium.png}
 \caption{Generation vs execution time for medium difficulty puzzles.}
 \label{fig:generation_vs_execution_time_medium}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{resources/generation_execution_time_bars_medium.png}
 \caption{Generation and execution time distribution for medium difficulty puzzles.}
@@ -82,14 +82,14 @@ Meanwhile, the execution time and generation still remain a linear relationship.
 The charts below shows the performance of the GA with hard difficulty, the proportion of the getting solution in very slow is $97\%$, which is much higher comparing with easy and medium difficulty.
 Meanwhile, the execution time and generation still remain a linear relationship.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{resources/generation_vs_execution_time_hard.png}
 \caption{Generation vs execution time for hard difficulty puzzles.}
 \label{fig:generation_vs_execution_time_hard}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{resources/generation_execution_time_bars_hard.png}
 \caption{Generation and execution time distribution for hard difficulty puzzles.}
@@ -100,24 +100,24 @@ Meanwhile, the execution time and generation still remain a linear relationship.
 
 We test the performace of the rule based algorithm with easy, medium and hard difficulty.
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{resources/sudoku_dfs_log_easy_histogram.png}
-\caption{sudoku_dfs_log_easy_histogram.}
+\caption{sudoku\_dfs\_log\_easy\_histogram.}
 \label{fig:sudoku_dfs_log_easy_histogram}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{resources/sudoku_dfs_log_medium_histogram.png}
-\caption{sudoku_dfs_log_medium_histogram.}
+\caption{sudoku\_dfs\_log\_medium\_histogram.}
 \label{fig:sudoku_dfs_log_medium_histogram}
 \end{figure}
 
-\begin{figure}[h]
+\begin{figure}[H]
 \centering
 \includegraphics[width=0.8\textwidth]{resources/sudoku_dfs_log_hard_histogram.png}
-\caption{sudoku_dfs_log_hard_histogram.}
+\caption{sudoku\_dfs\_log\_hard\_histogram.}
 \label{fig:sudoku_dfs_log_hard_histogram}
 \end{figure}
 
