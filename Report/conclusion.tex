@@ -3,4 +3,12 @@
 
 \textcolor{red}{In this section you should provide a concise summary of what has been done, the obtained results and some recommendations on how this study could be extended.}
 
-\lipsum[4]
+This paper studied the efficiency of solving Sudoku puzzles with GA approaches of different complexities. The results show that the performance on 9x9 boards varies drastically. While most easy boards can be solved fast, the algorithm struggles on medium and hard boards. Only 14\% of medium boards can be solved in under 2 second. For puzzles of hard difficulties the algorithm did not achieve a single solve in under 2 seconds. Additionally, the success rate of the GA in finding a solution to the puzzle decreased with increasing complexity of the problem. While 100\% of the easy boards were solved, only x\% and y\% of boards were solved of medium and hard complexity respectively. 
+
+The naive search algorithm DFS found solutions for every puzzle of every difficulty. Furthermore, the mean solving time of the boards of hard difficulty is 0.112 seconds, while easier puzzles were solved even faster. 
+
+These results show that while GAs can be used to solve Sudoku puzzles, they do not outperform naive search approaches. This is the case in the Sudoku context because there is only one optimal solution (solving the board without any duplicates). GAs are not optimal. They perform well in finding solutions that are "good enough". When solving Sudokus however, only the optimal solution is relevant. The algorithm finds local maxima quickly, but then gets stuck in those in many cases. The algorithm reacts by soft resetting the population. This is done by generating a new population and combining it with some of the worst performing individuals. This helps the algorithm to get out of a local maximum, but I doesn't guarantee to find the optimal solution next. This is the reason why y\% of hard difficulty boards could not be solved.
+
+This led to the decision of not evaluating the performance of the bigger 16x16 and 25x25 boards in this paper. It is expected that the performance of bigger grids is even worse, especially because the increase in complexity is far greater when increasing the size of the boards compared reducing given numbers in a 9x9 puzzle.
+
+Future research may consist of combining GAs with different optimization approaches. If a significant increase in performance on 9x9 boards can be achieved, these hybrid GAs may be suitable for solving bigger 16x16 and 25x25 Sudoku puzzles.
