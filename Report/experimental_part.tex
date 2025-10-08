@@ -21,7 +21,7 @@ Chapter 3 discusses the algorithm used for the experiments in detail. However, b
 Using Bayesian Optimization, the optimal values for the hyperparamters \textit{\textbf{population\_size}} and \textit{\textbf{mutation\_rate}} of the GA are evaluated as follows. First a search space is defined. It specifies the lower and upper bounds of the hyperparameters. Next, an \textit{objective function} tries to solve a Sudoku using the GA. It measures solving time and the final fitness. These measurements calculate are score. An \textit{optimize} method tries to minimize the score by fitting a Gaussian Process model to predict performance across the parameter space. It iteratively chooses new parameter sets that are either promising or not well explored. This process is repeated for a set number of iterations. The result is the best found population size and mutation rate. 
 
 \subsection{Running the experiment}
-The GA is run 1000 times for a maximum of 10.000 generations for Sudoku puzzles of easy, medium and hard difficulty of 9x9 boards. Because of the drastic jump in complexity with 16x16 and 25x25 boards, the GA is only run ? times for these puzzles. For the evaluation of the performance the following properties of the experiment are tracked:
+The GA is run 1000, 400 and 100 times for a maximum of 20.000 generations for Sudoku puzzles of easy, medium and hard difficulty of 9x9 boards. Because of the drastic jump in complexity with 16x16 and 25x25 boards, the GA is run even less times for these puzzles. For the evaluation of the performance the following properties of the experiment are tracked:
 \begin{enumerate}
 	\item Number of successfully solved boards
 	\item Execution time

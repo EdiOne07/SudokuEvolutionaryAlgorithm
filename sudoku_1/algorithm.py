@@ -79,7 +79,6 @@ class SudokuEvolutionaryAlgorithm:
 
             randomly_filled_sudoku.heuristic_matrix.initialize()
             self._population.append(randomly_filled_sudoku)
-        print("Initial population created.")
 
     def __sort_and_check(self) -> bool:
         """Sorts the population and checks whether a solution has been found in the current population.
@@ -91,6 +90,7 @@ class SudokuEvolutionaryAlgorithm:
         """
         self._population.sort(key=lambda x: x.heuristic_matrix.score, reverse=True) 
         best_individual = self._population[0]
+        print(f"Generation {self._generation}: Best fitness = {best_individual.heuristic_matrix.score}")
         if best_individual.heuristic_matrix.score == 243:
             self._solution = best_individual
             return True
@@ -131,7 +131,6 @@ class SudokuEvolutionaryAlgorithm:
         
         self._population = next_generation
         self._generation += 1
-        print(f"Generation {self._generation} created.")
         return True
 
     def __crossover(self, parent1: Sudoku, parent2: Sudoku) -> Sudoku:
@@ -164,22 +163,12 @@ class SudokuEvolutionaryAlgorithm:
     def __mutate(self, individual: Sudoku) -> Sudoku:
         """Randomly mutates the number of tiles given by the mutation_rate parameter of 
         the evolutionary algorithm of the given Sudoku that is not given by the initial board.
-        # TODO: There are many ways to go about mutation. We should test around with different implementations. 
 
         Parameters
         ----------
         individual: Sudoku
             The individual to mutate.
         """
-        positions = []
-        #     position = random.randint(0, 80)
-        #     position_tuple = [position // 9, position % 9]
-        #     if self._initial_sudoku.board[position_tuple[0]][position_tuple[1]] == 0:
-        #         positions.append(position_tuple)
-        #     # Else don't mutate for now I guess?
-        # for position in positions:
-        #     individual.board[position[0]][position[1]] = random.randint(1, 9)
-        
 
         for mutation in range(self._mutation_rate):
             row = random.randint(0, 8)
