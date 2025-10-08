@@ -88,7 +88,7 @@ Structure Presentation:
         - selection: tournament function (2 random individuals, better one gets selected)
         (- 10 elites will also be taken over without change)
         - mutation: only in row
-        - fitness: only calculate violations, so 0 means solution found
+        (- fitness: only calculate violations, so 0 means solution found, no need to calculate row)
         - extra: if generations stuck (500 without improvement), generate some completely new boards and combine with worst of stuck generation
         - mutation rate is also increased if stuck
     - Bayesian Optimazaion (Moritz):
