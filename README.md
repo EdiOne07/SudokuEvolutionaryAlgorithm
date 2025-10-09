@@ -10,8 +10,24 @@ Install the required packages using pip:
 pip install -r requirements.txt
 ```
 
-Each folder with the implementations of the different algorithms has a analaysis.py. Run this file to get detailed statistics over
-multiple runs (difficulty and number of runs can be set).
+To run the first genetic algorithm, use:
+```
+python3 -m sudoku_1.algorithm
+```
+
+To run the second (main) genetic algorithm, use:
+```
+python3 -m sudoku_2.evolution
+python3 -m analysis
+```
+
+To run the DFS algorithm, use:
+```
+python3 -m dfs.py
+python3 -m analysis
+```
+
+Folder search and sudoku_2 have analaysis.py files. Run these files to get detailed statistics over multiple runs (difficulty and number of runs can be set).
 Run algorithm.py / dfs.py for individual run.
 
 ## Project Structure
