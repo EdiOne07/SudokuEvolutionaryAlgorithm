@@ -10,16 +10,6 @@ Install the required packages using pip:
 pip install -r requirements.txt
 ```
 
-To run the first genetic algorithm, use:
-```
-python3 -m sudoku_1.algorithm
-```
-
-To run the second (main) genetic algorithm, use:
-```
-python3 -m sudoku_2.evolution
-```
-
 ## Project Structure
 - `sudoku_1`: Contains the first implementation of the genetic algorithm for solving Sudoku puzzles.
 - `sudoku_2`: Contains the second implementation of the genetic algorithm for solving Sudoku puzzles. This implementation generally performs much better than the first one.
