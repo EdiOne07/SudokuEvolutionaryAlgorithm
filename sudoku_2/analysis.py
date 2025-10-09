@@ -268,7 +268,7 @@ class Analysis:
     def visualize_performance(self):
         """Create visualization of execution time vs generation from logs"""
         logs_dir = 'logs'
-        logs = glob.glob(os.path.join(logs_dir, 'sudoku_ga_log_*.txt'))
+        logs = glob.glob(os.path.join(logs_dir, f'sudoku_ga_log_{self.difficulty}.txt'))
         
         if not logs:
             print("No log files found for visualization!")
@@ -312,9 +312,9 @@ class Analysis:
             plt.legend()
         
         plt.tight_layout()
-        plt.savefig('generation_vs_execution_time.png', dpi=300, bbox_inches='tight')
+        plt.savefig(f'generation_vs_execution_time_{self.difficulty}.png', dpi=300, bbox_inches='tight')
         plt.show()
-        print("Visualization saved as 'generation_vs_execution_time.png'")
+        print(f"Visualization saved as 'generation_vs_execution_time_{self.difficulty}.png'")
     
     def visualize_performance_bars(self):
         """Create bar chart showing generation ranges vs execution time ranges"""
@@ -436,14 +436,14 @@ class Analysis:
 
 if __name__ == "__main__":
     analysis = Analysis()
-    analysis.run()
+    # analysis.run()
     
-    # print("=== DETAILED LOG ANALYSIS ===")
-    # results = analysis.detailed_log_analysis()
+    print("=== DETAILED LOG ANALYSIS ===")
+    results = analysis.detailed_log_analysis()
     
-    # if results:
-    #     print("\n=== CREATING SCATTER PLOT ===")
-    #     analysis.visualize_performance()
+    if results:
+        print("\n=== CREATING SCATTER PLOT ===")
+        analysis.visualize_performance()
         
-    #     print("\n=== CREATING BAR CHART ===")
-    #     analysis.visualize_performance_bars()
+        print("\n=== CREATING BAR CHART ===")
+        analysis.visualize_performance_bars()
