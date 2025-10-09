@@ -10,6 +10,10 @@ Install the required packages using pip:
 pip install -r requirements.txt
 ```
 
+Each folder with the implementations of the different algorithms has a analaysis.py. Run this file to get detailed statistics over
+multiple runs (difficulty and number of runs can be set).
+Run algorithm.py / dfs.py for individual run.
+
 ## Project Structure
 - `sudoku_1`: Contains the first implementation of the genetic algorithm for solving Sudoku puzzles.
 - `sudoku_2`: Contains the second implementation of the genetic algorithm for solving Sudoku puzzles. This implementation generally performs much better than the first one.
