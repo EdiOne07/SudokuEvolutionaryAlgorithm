@@ -85,3 +85,33 @@ Generations without improvement - Avg: 85181.0, Min: 610, Max: 99894
 Successful runs - Avg time: 183.11s
 Failed runs - Avg time: 465.85s
 Time difference: 282.75s (failed runs take longer)
+
+--------------------------------------------------
+
+=== Analyzing logs/sudoku_dfs_log_hard.txt ===
+number of runs: 1000
+fastest time: 0.0002
+longest time: 22.5302
+median: 0.0213
+mean: 0.1117
+standard deviation: 0.7599
+
+--------------------------------------------------
+
+=== Analyzing logs/sudoku_dfs_log_medium.txt ===
+number of runs: 1000
+fastest time: 0.0001
+longest time: 0.3011
+median: 0.0011
+mean: 0.0051
+standard deviation: 0.0158
+
+--------------------------------------------------
+
+=== Analyzing logs/sudoku_dfs_log_easy.txt ===
+number of runs: 1000
+fastest time: 0.0001
+longest time: 0.0037
+median: 0.0002
+mean: 0.0002
+standard deviation: 0.0002

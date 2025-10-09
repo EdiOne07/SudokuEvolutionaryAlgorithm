@@ -98,8 +98,8 @@ class Analysis:
             print("fastest time:", a.min())
             print("longest time:", a.max())
             print("median:", np.median(a))
-            print("mean:", a.mean())
-            print("standard deviation:", a.std(ddof=0))
+            print("mean:", f"{a.mean():.4f}")
+            print("standard deviation:", f"{a.std(ddof=0):.4f}")
 
             mean = a.mean()
             std = a.std(ddof=0)
@@ -123,6 +123,5 @@ class Analysis:
             plt.show() 
 
 if __name__ == "__main__":
-    analysis = Analysis(1000, "hard")
-    analysis.run()
+    analysis = Analysis(1000, "easy")
     analysis.detailed_log_analysis()
