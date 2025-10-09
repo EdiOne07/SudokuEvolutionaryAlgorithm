@@ -3,7 +3,7 @@ This chapter describes the implementations of two algorithms used to solve Sudok
 It starts out by briefly introducing depth-first search as the baseline measure, and then goes on to explain how each of the genetic algorithms work.
 
 \subsection{Baseline}
-Depth-first search (DFS) is used as a deterministic baseline. It iteratively scans the board for the first empty cell, attempts candidate values 1\dots n, and backtracks to try alternative values if no candidate leads to a solution. This approach is ensures a solution (given that the puzzle is solvable) and is simple to implement, which makes it a reliable reference for correctness and for measuring runtimes.
+Depth-first search (DFS) is used as a deterministic baseline. It iteratively scans the board for the first empty cell, attempts candidate values 1\dots n, and backtracks to try alternative values if no candidate leads to a solution. This approach ensures a solution (given that the puzzle is solvable) and is simple to implement, which makes it a reliable reference for correctness and for measuring runtimes.
 
 Algorithm \ref{alg:dfs} shows the implementation of the DFS algorithm in pseudo-code.
 
@@ -117,7 +117,7 @@ This definition results in a maximum fitness score of $243$ for 9$\times$9 board
 
 Our fitness function is inspired by prior work that sums distinct digits per row and column \cite{Sato2011}; we extend that idea by also counting distinct digits in each 3$\times$3 block to better reflect Sudoku constraints.
 
-\paragraph{Crossover} A new individual is creating by crossing over two parents. The crossover process simply iterates over all the tiles that were not given in the initial puzzle and takes the value for that tile from either parent to copy it to the child.
+\paragraph{Crossover} A new individual is created by crossing over two parents. The crossover process simply iterates over all the tiles that were not given in the initial puzzle and takes the value for that tile from either parent to copy it to the child.
 
 \begin{figure}[H]
   \centering
@@ -187,7 +187,7 @@ Our fitness function is inspired by prior work that sums distinct digits per row
 In the figure above, two parents (left and middle) of the current generation form an individual of the next generation (right).
 One area for improvement is evident in row 7: Parent~1 contains two occurrences of the digit 7 and Parent~2 contains three. The offspring also has three 7s, while it would have been possible to generate a row with all distinct digits, namely \textbf{286371945}.
 
-\paragraph{Mutation} After the creation of a new individual, it undergoes up to $mutation\_amount$ mutations. A mutation means that a random tile changes its value. If that tile, however, happens to be a given tile from the initial puzzle, it is not altered. 
+\paragraph{Mutation} After the creation, the new individual undergoes up to $mutation\_amount$ mutations. A mutation means that a random tile changes its value. If that tile, however, happens to be a given tile from the initial puzzle, it is not altered. 
 
 \begin{figure}[h]
   \centering
@@ -288,7 +288,7 @@ A description of the fitness function, crossover, and mutation will once again b
 \[
 F \;=\; \sum_{j=0}^{n-1} \bigl(n - |C_j|\bigr) \;+\; \sum_{b=0}^{n-1} \bigl(n - |B_b|\bigr).
 \]
-A value \(F=0\) indicates a valid solution. This formulation is similar to that of previous work \cite{Wang2024}, which also iterates over columns and sub-blocks but assigns a value of 0 when a unit is valid and 1 when it contains any violation; by contrast, our fitness counts the number of duplicate digits per column and block, giving a more fine-grained penalty (e.g. a column with three duplicated entries contributes 3 rather than 1).
+A value \(F=0\) indicates a valid solution. This formulation is similar to that of the previous work , which also iterates over columns and sub-blocks but assigns a value of 0 when a unit is valid and 1 when it contains any violation\cite{Wang2024}. By contrast, our fitness function counts the number of duplicate digits per column and block, giving a more fine-grained penalty (e.g. a column with three duplicated entries contributes 3 rather than 1).
 
 \paragraph{Crossover} The crossover step is done by iterating through the rows of the sudoku board and copying each row from either parent. This ensures that the children will still respect the uniqueness of numbers in each row.
 
@@ -359,7 +359,7 @@ A value \(F=0\) indicates a valid solution. This formulation is similar to that 
 
 In figure~\ref{fig:impl-2-selection}, it is easy to see that the very first row is taken from the first parent (left), while row 8 is copied from the second parent (center). Duplicate numbers, as a result of the crossover step, can now only emerge in columns or subgrids, which is an improvement compared to \nameref{sec:impl-1}.
 
-\paragraph{Mutation} For the mutation, we iterate all rows and select two non-given tiles in that row to swap their values with probability \(mutation\_rate\). This row-wise swap was inspired by swap-mutations within subgrids \cite{Sato2011, Mantere2007} and is also consistent with other work that performs swap mutations inside random rows to ensure row constraints are preserved \cite{Wang2024}. The cited paper \cite{Wang2024} additionally applies a reinitialisation mutation step, but in our implementation we only adopt the row-swap component of the mutation logic.
+\paragraph{Mutation} For the mutation, we iterate all rows and select two non-given tiles in that row to swap their values with probability \(mutation\_rate\). This row-wise swap was inspired by swap-mutations within subgrids and is also consistent with other work that performs swap mutations inside random rows to ensure row constraints are preserved \cite{Wang2024, Sato2011, Mantere2007}. The cited paper additionally applies a reinitialisation mutation step, but in our implementation we only adopt the row-swap component of the mutation logic.
 
 To increase diversity when the fitness stagnates over $generations\_stuck$ generations, we also introduce an adaptive mutation rate, which increases the mutation rate temporarily until progress resumes. The mutation rate is capped at a maximum of \(0.3\), which alignes with the value used in related work \cite{Sato2011}.
 
@@ -414,7 +414,7 @@ To increase diversity when the fitness stagnates over $generations\_stuck$ gener
 Figure~\ref{fig:impl-2-mutation} shows a mutation step with a rate of 20\%, leading to swap-mutations in row 1 and row 5. 
 
 \paragraph{Problem}
-The second genetic algorithm also often converges to local optima and loses diversity, limiting further improvement. To overcome stagnation we reinitialised a large portion of the population after the fitness has stopped decreasing, which is related to the cataclysmic mutation/restart procedure discussed in \cite{Mantere2007}. This strategy often restored search progress but did not fully eliminate premature convergence. Furthermore, scalability remains an issue: larger boards increase the combinatorial search space and therefore require proportionally larger populations and/or more generations to retain a comparable probability of finding a solution.
+The second genetic algorithm also often converges to local optima and loses diversity, limiting further improvement. To overcome stagnation we reinitialised a large portion of the population after the fitness has stopped decreasing, which is related to the cataclysmic mutation/restart procedure discussed in \textit{Solving, rating and generating sudoku puzzles with GA}\cite{Mantere2007}. This strategy often restored search progress but did not fully eliminate premature convergence. Furthermore, scalability remains an issue: larger boards increase the combinatorial search space and therefore require proportionally larger populations and/or more generations to retain a comparable probability of finding a solution.
 
 Despite these limitations, Implementation~2 performs much better in practice than Implementation~1, but the problems with premature convergence apply to both implementations and to genetic algorithms in general.
 

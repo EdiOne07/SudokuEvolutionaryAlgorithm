@@ -1,16 +1,6 @@
 \section{Experimental part}
 \label{sec:experimentation}
 
-{\color{red}
-This section describes the setup of experiments \cite{zobel2014experimentation}:
-
-\begin{itemize}
-    \item Provide the details of the hardware and software that you used.
-    \item Describe the steps you carried out during your experiments.
-    \item Detail the data you used for the evaluation of your algorithm.
-\end{itemize}
-}
-
 This section describes the setup of the experiments run to study the efficiency of solving Sudoku puzzles with GA approaches.
 
 The test will be run on a Macbook pro M1 max.
@@ -18,10 +8,10 @@ The test will be run on a Macbook pro M1 max.
 \subsection{Choosing hyperparameters}
 Chapter 3 discusses the algorithm used for the experiments in detail. However, before the algorithm can be run, the hyperparameters for \textit{\textbf{population\_size}} and \textit{\textbf{mutation\_rate}} need to be chosen. The solution quality of a stochastic algorithm strongly depends on choosing the correct hyperparameters. Previous studies show that configuring hyperparameters of GAs using Bayesian Optimization leads to significantly better results than choosing them at random while keeping the computational time low\cite{Ruether}.
 
-Using Bayesian Optimization, the optimal values for the hyperparamters \textit{\textbf{population\_size}} and \textit{\textbf{mutation\_rate}} of the GA are evaluated as follows. First a search space is defined. It specifies the lower and upper bounds of the hyperparameters. Next, an \textit{objective function} tries to solve a Sudoku using the GA. It measures solving time and the final fitness. These measurements calculate are score. An \textit{optimize} method tries to minimize the score by fitting a Gaussian Process model to predict performance across the parameter space. It iteratively chooses new parameter sets that are either promising or not well explored. This process is repeated for a set number of iterations. The result is the best found population size and mutation rate. 
+Using Bayesian Optimization, the optimal values for the hyperparamters \textit{\textbf{population\_size}} and \textit{\textbf{mutation\_rate}} of the GA are evaluated as follows. First, a search space is defined. It specifies the lower and upper bounds of the hyperparameters. Next, an \textit{objective function} tries to solve a Sudoku using the GA. It measures solving time and the final fitness. These measurements calculate a score. An \textit{optimize} method tries to minimize the score by fitting a Gaussian Process model to predict performance across the parameter space. It iteratively chooses new parameter sets that are either promising or not well explored. This process is repeated for a set number of iterations. The result is the best found population size and mutation rate. 
 
 \subsection{Running the experiment}
-The GA is run 1000, 400 and 100 times for a maximum of 20.000 generations for Sudoku puzzles of easy, medium and hard difficulty of 9x9 boards. Because of the drastic jump in complexity with 16x16 and 25x25 boards, the GA is run even less times for these puzzles. For the evaluation of the performance the following properties of the experiment are tracked:
+The GA is run 1000, 400 and 100 times for a maximum of 20.000 generations for 9x9 Sudoku puzzles of easy, medium and hard difficulty. Because of the drastic jump in complexity with 16x16 and 25x25 boards, the GA is run even less times for these puzzles. For the evaluation of the performance the following properties of the experiment are tracked:
 \begin{enumerate}
 	\item Number of successfully solved boards
 	\item Execution time
@@ -50,4 +40,4 @@ To compare the performance of the GA, a DFS algorithm is run on Sudoku boards of
 Because of the high number of Sudoku boards needed to accurately evaluate the performance of the stochastic algorithm, the Sudoku grids are generated randomly as part of the experiment. The boards are generated in the following way. 
 First, a solved board is generated using the DFS algorithm. Next, a random number is removed from the grid. The DFS algorithm tries to solve the puzzle again. If it is still solvable, repeat the previous steps until the requirement of given numbers is met for the different complexities of the Sudoku boards. For 9x9 grids, the easy difficulty gives between 40-50 numbers. Medium and hard puzzles have 30-39 and 25-29 givens respectively.
 
-Because of the increased complexity, run time and reduced success rate of solving 16x16 and 25x25 puzzles, the algorithm will be run fewer times only on three 16x16 boards taken from \cite{Sudoku16} and one 25x25 board taken from \cite{Sudoku25}.
+Because of the increased complexity, run time and reduced success rate of solving 16x16 and 25x25 puzzles, the algorithm will be run fewer times only on three 16x16 boards taken and one 25x25 board taken from \cite{Sudoku16,Sudoku25}.
