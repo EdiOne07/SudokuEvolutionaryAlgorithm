@@ -7,25 +7,27 @@
 
 % \textcolor{red}{To display tables, the \texttt{booktabs} package might be useful. For example, Table~\ref{tab:results_example} shows how you should increase the  size of $n$, when running your code. You can advice \cite{zobel2014graphs} to see a few examples of proper tables.}
 
+This chapter presents the performance of the GA on the boards of different complexities.
+
 \subsection{Bayesian optimization results}
 
-We use Bayesian optimization to find the optimal population size and mutation rate for the GA. The results are shown in Figure~\ref{fig:bayesian_optimization_results}.
+As mentioned in chapter \ref{sec:experimentation}, Bayesian Optimization is used to find the optimal population size and mutation rate for the GA. The results are shown in Figure~\ref{fig:bayesian_optimization_results}.
 
 \subsubsection{Optimization progress}
 
-From the first chart, the difference between the best score and the worst score is small. It means that the GA is stable and the hyperparameters are good.
+Chart one of Figure~\ref{fig:bayesian_optimization_results} shows that the difference between the best and the worst score is minimal, meaning that the GA is stable and the hyperparameters are selected well.
 
 \subsubsection{Population size vs Performance}
 
-From the second chart, we can see population size around 100 and 900 can find the solution in a short time, while score is more discrete at 900 population size. Thus, the average time of solving puzzle at 900 population size is costlier than 150 population size.
+From chart two of Figure~\ref{fig:bayesian_optimization_results} we can see a population size of around 100 and 900 can find solutions in a shorter time while the score is more discrete at population size 900. Thus, the average time of solving puzzles at population size 900 is costlier than at population size 150.
 
 \subsubsection{Mutation rate vs Performance}
 
-From the third chart, we can see that the muation rate between 0.05 and 0.15 has for many times not found the solution, however the score of failure cases became lower and no solution events happened less frequently when the mutation rate is past 0.20.
+Chart three of Figure~\ref{fig:bayesian_optimization_results} presents that the mutation rate between 0.05 and 0.15 could often times not find a solution. When mutation rate reaches over 0.20, the number of failure cases decreased and no solution events happened less frequently.
 
 \subsubsection{Parameter space exploration}
 
-From the fourth chart, the best population size is 142 and the best mutation rate is 0.230. This result is based on the best score shown in the first chart.
+Chart four of Figure~\ref{fig:bayesian_optimization_results} shows that the best population size is 142 and the best mutation rate is 0.230. This result is based on the best score shown in the first chart.
 
 \begin{figure}[H]
 \centering
@@ -34,14 +36,14 @@ From the fourth chart, the best population size is 142 and the best mutation rat
 \label{fig:bayesian_optimization_results}
 \end{figure}
 
-\subsection{Test the performance of the GA with varied difficulty}
+\subsection{Performance of the GA}
 
-We test easy, medium and hard difficulty puzzles in the same setting, but it's costly to test 1000 times for each difficulty. Thus, we only test the easy difficulty for 1000 times, the medium one for around 400 times, and the hard one for 100 times.
+We test easy, medium and hard difficulty puzzles in the same setting, but as mentioned in chapter \ref{sec:experimentation} it is costly to test each difficulty 1000 times. Thus, we only test the easy difficulty for 1000 times, the medium one for around 400 times, and the hard one for 100 times.
 
 \subsubsection{Easy difficulty}
 
-The charts below shows the performance of the GA with easy difficulty puzzles. For more than 500 times we find a solution in less than 0.5 seconds. only around \(\frac{1}{20}\) solutions being reached very slow which is more than 20s.
-Additionally, the average execution time is 5s, which is a good performance. Moreover, the execution time and generation have linear relationship, which means that if the algorithm need more generations to find the solution, the more execution time it will cost.
+The charts below shows the performance of the GA with easy difficulty puzzles. For every single board a solution was found by the GA. In over 500 times we find a solution in less than 0.5 seconds. Only around \(\frac{1}{20}\) of the solutions are reached very slow which is more than 20s.
+Additionally, the average execution time is 5s, which is a good performance. Moreover, the execution time and generation have linear relationship which means that if the algorithm needs more generations to find the solution, the more execution time it will cost.
 
 \begin{figure}[H]
 \centering
@@ -93,8 +95,8 @@ Failed Runs Violations & 0 (constant) \\
 
 \subsubsection{Medium difficulty}
 
-The charts below shows the performance of the GA with medium difficulty, the time cost of finding a solution at quick and medium time only plays a small role in the total cases.
-However, the proportion of the getting solution in very slow is $60\%$, which is much higher comparing with easy difficulty.
+The charts below shows the performance of the GA with medium difficulty. At 91,4\%, a solution for most of the boards could be found. The time cost of finding a solution at quick and medium time only plays a small role in the total cases.
+Additionally, the proportion of the getting solution in very slow is $60\%$, which is much higher compared to easy difficulty.
 Meanwhile, the execution time and generation still remain a linear relationship.
 
 \begin{figure}[H]
@@ -147,7 +149,7 @@ Failed Runs Violations & 2.0 (constant) \\
 
 \subsubsection{Hard difficulty}
 
-The charts below shows the performance of the GA with hard difficulty, the proportion of getting the solution in very slow is $97\%$, which is much higher compared with easy and medium difficulty.
+The charts below shows the performance of the GA with hard difficulty. The number of solutions found decreased drastically. Only 45\% of boards could be solved. The proportion of getting the solution in very slow is $97\%$ which is much higher compared to easy and medium difficulty.
 Meanwhile, the execution time and generation still remain a linear relationship.
 
 \begin{figure}[H]
@@ -207,7 +209,7 @@ The results reveal significant challenges as difficulty increases the performanc
     \item Average of 85,181 generations without improvement in failed runs which is better than the medium level (91661.1).
 \end{itemize}
 
-\subsection{Test the performace by rule based algorithm}
+\subsection{Performance of DFS}
 
 We test the performace of the rule based algorithm with easy, medium and hard difficulty.
 
@@ -232,4 +234,4 @@ We test the performace of the rule based algorithm with easy, medium and hard di
 \label{fig:sudoku_dfs_log_hard_histogram}
 \end{figure}
 
-The charts illustrate that no matter how hard the puzzle is, the rule based algorithm can solve it in a short time. Moreover, the execution time is very stable, only taking 0.001s-0.002s to solve each puzzle.
+The charts illustrate that no matter how hard the puzzle is, the rule based algorithm can solve it in a short time. Moreover, the execution time is very stable, only taking 0.001s-0.002s to solve each puzzle. It is immediately apparent that the DFS algorithm drastically outperforms the implemented GA algorithm.

@@ -1,9 +1,9 @@
 \section{Experimental part}
 \label{sec:experimentation}
 
-This section describes the setup of the experiments run to study the efficiency of solving Sudoku puzzles with GA approaches.
+This chapter describes the setup of the experiments run to study the efficiency of solving Sudoku puzzles with \nameref{sec:impl-2}.
 
-The test will be run on a Macbook pro M1 max.
+The tests will be run on a Macbook pro M1 max.
 
 \subsection{Choosing hyperparameters}
 Chapter \ref{sec:algorithm} discusses the algorithm used for the experiments in detail. However, before the algorithm can be run, the hyperparameters for \textit{\textbf{population\_size}} and \textit{\textbf{mutation\_rate}} need to be chosen. The solution quality of a stochastic algorithm strongly depends on choosing the correct hyperparameters. Previous studies show that configuring hyperparameters of GAs using Bayesian Optimization leads to significantly better results than choosing them at random while keeping the computational time low\cite{Ruether}.
@@ -12,7 +12,7 @@ Using Bayesian Optimization, the optimal values for the hyperparamters \textit{\
 \newpage
 
 \subsection{Running the experiment}
-The GA is run around 1000, 400 and 100 times for a maximum of 100.000 generations for 9x9 Sudoku puzzles of easy, medium and hard difficulty. Because of the drastic jump in complexity with 16x16 and 25x25 boards, the GA is run even less times for these puzzles. For the evaluation of the performance the following properties of the experiment are tracked:
+The GA is run around 1000, 400 and 100 times for a maximum of 100.000 generations for $9 \times 9$ Sudoku puzzles of easy, medium and hard difficulty. Because of the drastic jump in complexity with $16 \times 16$ and $25 \times 25$ boards, the GA is run even less times for these puzzles. For the evaluation of the performance the following statistic of the algorithm are tracked:
 
 \begin{enumerate}
 	\item Number of successfully solved boards
@@ -29,7 +29,6 @@ To compare the performance of the GA, a DFS algorithm is run on Sudoku boards of
 
 \subsection{Sudoku boards used in the experiment}
 Because of the high number of Sudoku boards needed to accurately evaluate the performance of the stochastic algorithm, the Sudoku grids are generated randomly as part of the experiment. The boards are generated in the following way. 
-First, a solved board is generated using the DFS algorithm. Next, a random number is removed from the grid. The DFS algorithm tries to solve the puzzle again. If it is still solvable, repeat the previous steps until the requirement of given numbers is met for the different complexities of the Sudoku boards. For 9x9 grids, the easy difficulty gives between 40-50 numbers. Medium and hard puzzles have 30-39 and 25-29 givens respectively.
+First, a solved board is generated using the DFS algorithm. Next, a random number is removed from the grid. The DFS algorithm tries to solve the puzzle again. If it is still solvable, repeat the previous steps until the requirement of given numbers is met for the different complexities of the Sudoku boards. For $9 \times 9$ grids, the easy difficulty gives between 40-50 numbers. Medium and hard puzzles have 30-39 and 25-29 givens respectively. The DFS algorithm works well for generating the boards because it has a very low run time on $9 \times 9$ grids. Additionally, it is a complete algorithm, meaning a solution will be found if it exists.
 
-Because of the increased complexity, run time and reduced success rate of solving 16x16 and 25x25 puzzles, the algorithm will be run fewer times only on three 16x16 boards taken and one 25x25 board taken from \cite{Sudoku16,Sudoku25}.
-Because of the increased complexity, run time and reduced success rate of solving $16 \times 16$ and $25 \times 25$ puzzles, the algorithm will be run on only three $16 \times 16$ boards taken from \cite{Sudoku16} and one $25 \times 25$ board taken from \cite{Sudoku25}.
+Because of the increased complexity, run time and reduced success rate of solving $16 \times 16$ and $25 \times 25$ puzzles, the algorithm will be run only on three $16 \times 16$ boards and one $25 \times 25$ board taken from \cite{Sudoku16,Sudoku25}.
