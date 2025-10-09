@@ -1,0 +1,365 @@
+2025-10-02 11:21:17 - --------------------------------------------------
+2025-10-02 11:22:47 - Solution found in generation 18781! (Execution time: 89.69s)
+2025-10-02 11:22:47 - --------------------------------------------------
+2025-10-02 11:23:15 - Solution found in generation 6069! (Execution time: 28.63s)
+2025-10-02 11:23:16 - --------------------------------------------------
+2025-10-02 11:27:41 - Solution found in generation 55714! (Execution time: 265.48s)
+2025-10-02 11:27:47 - --------------------------------------------------
+2025-10-02 11:35:32 - Maximum generations (100000) reached! (Execution time: 464.85s)
+2025-10-02 11:35:32 - Algorithm appears to be stuck at local minimum.
+2025-10-02 11:35:32 - Best fitness achieved: 2 violations
+2025-10-02 11:35:32 - Generations without improvement: 98597
+2025-10-02 11:35:32 - --------------------------------------------------
+2025-10-02 11:43:19 - Maximum generations (100000) reached! (Execution time: 466.14s)
+2025-10-02 11:43:19 - Algorithm appears to be stuck at local minimum.
+2025-10-02 11:43:19 - Best fitness achieved: 2 violations
+2025-10-02 11:43:19 - Generations without improvement: 94439
+2025-10-02 11:44:28 - --------------------------------------------------
+2025-10-02 11:52:01 - Maximum generations (100000) reached! (Execution time: 453.41s)
+2025-10-02 11:52:01 - Algorithm appears to be stuck at local minimum.
+2025-10-02 11:52:01 - Best fitness achieved: 2 violations
+2025-10-02 11:52:01 - Generations without improvement: 78551
+2025-10-02 11:52:16 - --------------------------------------------------
+2025-10-02 11:59:57 - Maximum generations (100000) reached! (Execution time: 460.82s)
+2025-10-02 11:59:57 - Algorithm appears to be stuck at local minimum.
+2025-10-02 11:59:57 - Best fitness achieved: 2 violations
+2025-10-02 11:59:57 - Generations without improvement: 84619
+2025-10-02 11:59:57 - --------------------------------------------------
+2025-10-02 12:00:31 - Solution found in generation 7316! (Execution time: 33.70s)
+2025-10-02 12:00:32 - --------------------------------------------------
+2025-10-02 12:02:01 - Solution found in generation 19102! (Execution time: 88.61s)
+2025-10-02 12:02:01 - --------------------------------------------------
+2025-10-02 12:05:10 - Solution found in generation 40868! (Execution time: 188.66s)
+2025-10-02 12:05:14 - --------------------------------------------------
+2025-10-02 12:12:48 - Maximum generations (100000) reached! (Execution time: 453.93s)
+2025-10-02 12:12:48 - Algorithm appears to be stuck at local minimum.
+2025-10-02 12:12:48 - Best fitness achieved: 2 violations
+2025-10-02 12:12:48 - Generations without improvement: 82941
+2025-10-02 12:12:50 - --------------------------------------------------
+2025-10-02 12:20:23 - Maximum generations (100000) reached! (Execution time: 453.12s)
+2025-10-02 12:20:23 - Algorithm appears to be stuck at local minimum.
+2025-10-02 12:20:23 - Best fitness achieved: 2 violations
+2025-10-02 12:20:23 - Generations without improvement: 98980
+2025-10-02 12:20:23 - --------------------------------------------------
+2025-10-02 12:28:02 - Maximum generations (100000) reached! (Execution time: 458.33s)
+2025-10-02 12:28:02 - Algorithm appears to be stuck at local minimum.
+2025-10-02 12:28:02 - Best fitness achieved: 2 violations
+2025-10-02 12:28:02 - Generations without improvement: 88354
+2025-10-02 12:28:02 - --------------------------------------------------
+2025-10-02 12:29:14 - Solution found in generation 15872! (Execution time: 71.84s)
+2025-10-02 12:29:20 - --------------------------------------------------
+2025-10-02 12:34:11 - Solution found in generation 62275! (Execution time: 290.36s)
+2025-10-02 12:34:11 - --------------------------------------------------
+2025-10-02 12:38:59 - Solution found in generation 62981! (Execution time: 287.48s)
+2025-10-02 12:38:59 - --------------------------------------------------
+2025-10-02 12:46:41 - Maximum generations (100000) reached! (Execution time: 462.25s)
+2025-10-02 12:46:41 - Algorithm appears to be stuck at local minimum.
+2025-10-02 12:46:41 - Best fitness achieved: 2 violations
+2025-10-02 12:46:41 - Generations without improvement: 52486
+2025-10-02 12:46:43 - --------------------------------------------------
+2025-10-02 12:48:57 - Solution found in generation 29809! (Execution time: 134.51s)
+2025-10-02 12:48:58 - --------------------------------------------------
+2025-10-02 12:50:11 - Solution found in generation 16087! (Execution time: 73.31s)
+2025-10-02 12:50:51 - --------------------------------------------------
+2025-10-02 12:58:22 - Maximum generations (100000) reached! (Execution time: 450.61s)
+2025-10-02 12:58:22 - Algorithm appears to be stuck at local minimum.
+2025-10-02 12:58:22 - Best fitness achieved: 2 violations
+2025-10-02 12:58:22 - Generations without improvement: 87390
+2025-10-02 12:58:23 - --------------------------------------------------
+2025-10-02 13:05:57 - Maximum generations (100000) reached! (Execution time: 453.69s)
+2025-10-02 13:05:57 - Algorithm appears to be stuck at local minimum.
+2025-10-02 13:05:57 - Best fitness achieved: 2 violations
+2025-10-02 13:05:57 - Generations without improvement: 77782
+2025-10-02 13:05:57 - --------------------------------------------------
+2025-10-02 13:13:31 - Maximum generations (100000) reached! (Execution time: 454.48s)
+2025-10-02 13:13:31 - Algorithm appears to be stuck at local minimum.
+2025-10-02 13:13:31 - Best fitness achieved: 2 violations
+2025-10-02 13:13:31 - Generations without improvement: 86564
+2025-10-02 13:13:32 - --------------------------------------------------
+2025-10-02 13:13:49 - Solution found in generation 3749! (Execution time: 17.14s)
+2025-10-02 13:13:50 - --------------------------------------------------
+2025-10-02 13:19:34 - Solution found in generation 75436! (Execution time: 343.43s)
+2025-10-02 13:19:35 - --------------------------------------------------
+2025-10-02 13:20:23 - Solution found in generation 10224! (Execution time: 48.23s)
+2025-10-02 13:20:24 - --------------------------------------------------
+2025-10-02 13:28:06 - Maximum generations (100000) reached! (Execution time: 461.54s)
+2025-10-02 13:28:06 - Algorithm appears to be stuck at local minimum.
+2025-10-02 13:28:06 - Best fitness achieved: 2 violations
+2025-10-02 13:28:06 - Generations without improvement: 76705
+2025-10-02 13:28:06 - --------------------------------------------------
+2025-10-02 13:35:18 - Solution found in generation 93801! (Execution time: 431.32s)
+2025-10-02 13:35:19 - --------------------------------------------------
+2025-10-02 13:41:51 - Solution found in generation 85908! (Execution time: 391.99s)
+2025-10-02 13:41:51 - --------------------------------------------------
+2025-10-02 13:49:30 - Maximum generations (100000) reached! (Execution time: 459.27s)
+2025-10-02 13:49:30 - Algorithm appears to be stuck at local minimum.
+2025-10-02 13:49:30 - Best fitness achieved: 2 violations
+2025-10-02 13:49:30 - Generations without improvement: 78758
+2025-10-02 13:49:40 - --------------------------------------------------
+2025-10-02 13:57:15 - Maximum generations (100000) reached! (Execution time: 454.76s)
+2025-10-02 13:57:15 - Algorithm appears to be stuck at local minimum.
+2025-10-02 13:57:15 - Best fitness achieved: 2 violations
+2025-10-02 13:57:15 - Generations without improvement: 49308
+2025-10-02 13:57:16 - --------------------------------------------------
+2025-10-02 13:58:16 - Solution found in generation 13267! (Execution time: 60.79s)
+2025-10-02 13:58:17 - --------------------------------------------------
+2025-10-02 14:06:02 - Maximum generations (100000) reached! (Execution time: 465.20s)
+2025-10-02 14:06:02 - Algorithm appears to be stuck at local minimum.
+2025-10-02 14:06:02 - Best fitness achieved: 2 violations
+2025-10-02 14:06:02 - Generations without improvement: 79355
+2025-10-02 14:06:02 - --------------------------------------------------
+2025-10-02 14:13:44 - Maximum generations (100000) reached! (Execution time: 461.45s)
+2025-10-02 14:13:44 - Algorithm appears to be stuck at local minimum.
+2025-10-02 14:13:44 - Best fitness achieved: 2 violations
+2025-10-02 14:13:44 - Generations without improvement: 93796
+2025-10-02 14:13:45 - --------------------------------------------------
+2025-10-02 14:20:58 - Solution found in generation 94974! (Execution time: 432.35s)
+2025-10-02 14:21:08 - --------------------------------------------------
+2025-10-02 14:28:52 - Maximum generations (100000) reached! (Execution time: 463.12s)
+2025-10-02 14:28:52 - Algorithm appears to be stuck at local minimum.
+2025-10-02 14:28:52 - Best fitness achieved: 2 violations
+2025-10-02 14:28:52 - Generations without improvement: 87973
+2025-10-02 14:28:55 - --------------------------------------------------
+2025-10-02 14:36:32 - Maximum generations (100000) reached! (Execution time: 456.76s)
+2025-10-02 14:36:32 - Algorithm appears to be stuck at local minimum.
+2025-10-02 14:36:32 - Best fitness achieved: 2 violations
+2025-10-02 14:36:32 - Generations without improvement: 70541
+2025-10-02 14:36:38 - --------------------------------------------------
+2025-10-02 14:44:11 - Maximum generations (100000) reached! (Execution time: 453.32s)
+2025-10-02 14:44:11 - Algorithm appears to be stuck at local minimum.
+2025-10-02 14:44:11 - Best fitness achieved: 2 violations
+2025-10-02 14:44:11 - Generations without improvement: 88397
+2025-10-02 14:44:14 - --------------------------------------------------
+2025-10-02 14:52:01 - Maximum generations (100000) reached! (Execution time: 467.44s)
+2025-10-02 14:52:01 - Algorithm appears to be stuck at local minimum.
+2025-10-02 14:52:01 - Best fitness achieved: 2 violations
+2025-10-02 14:52:01 - Generations without improvement: 98177
+2025-10-02 14:52:01 - --------------------------------------------------
+2025-10-02 14:59:33 - Solution found in generation 98368! (Execution time: 451.60s)
+2025-10-02 14:59:34 - --------------------------------------------------
+2025-10-02 15:00:53 - Solution found in generation 17234! (Execution time: 79.44s)
+2025-10-02 15:00:54 - --------------------------------------------------
+2025-10-02 15:08:30 - Maximum generations (100000) reached! (Execution time: 456.60s)
+2025-10-02 15:08:30 - Algorithm appears to be stuck at local minimum.
+2025-10-02 15:08:30 - Best fitness achieved: 2 violations
+2025-10-02 15:08:30 - Generations without improvement: 610
+2025-10-02 15:08:31 - --------------------------------------------------
+2025-10-02 15:16:06 - Maximum generations (100000) reached! (Execution time: 455.50s)
+2025-10-02 15:16:06 - Algorithm appears to be stuck at local minimum.
+2025-10-02 15:16:06 - Best fitness achieved: 2 violations
+2025-10-02 15:16:06 - Generations without improvement: 93734
+2025-10-02 15:16:07 - --------------------------------------------------
+2025-10-02 15:17:08 - Solution found in generation 13180! (Execution time: 60.99s)
+2025-10-02 15:17:08 - --------------------------------------------------
+2025-10-02 15:17:35 - Solution found in generation 5927! (Execution time: 26.85s)
+2025-10-02 15:17:38 - --------------------------------------------------
+2025-10-02 15:25:09 - Maximum generations (100000) reached! (Execution time: 451.30s)
+2025-10-02 15:25:09 - Algorithm appears to be stuck at local minimum.
+2025-10-02 15:25:09 - Best fitness achieved: 2 violations
+2025-10-02 15:25:09 - Generations without improvement: 98216
+2025-10-02 15:25:10 - --------------------------------------------------
+2025-10-02 15:26:46 - Solution found in generation 20813! (Execution time: 95.19s)
+2025-10-02 15:26:46 - --------------------------------------------------
+2025-10-02 15:34:22 - Maximum generations (100000) reached! (Execution time: 455.64s)
+2025-10-02 15:34:22 - Algorithm appears to be stuck at local minimum.
+2025-10-02 15:34:22 - Best fitness achieved: 2 violations
+2025-10-02 15:34:22 - Generations without improvement: 95899
+2025-10-02 15:34:22 - --------------------------------------------------
+2025-10-02 16:44:30 - Maximum generations (100000) reached! (Execution time: 636.92s)
+2025-10-02 16:44:30 - Algorithm appears to be stuck at local minimum.
+2025-10-02 16:44:30 - Best fitness achieved: 2 violations
+2025-10-02 16:44:30 - Generations without improvement: 51727
+2025-10-02 16:44:32 - --------------------------------------------------
+2025-10-02 16:52:27 - Maximum generations (100000) reached! (Execution time: 475.37s)
+2025-10-02 16:52:27 - Algorithm appears to be stuck at local minimum.
+2025-10-02 16:52:27 - Best fitness achieved: 2 violations
+2025-10-02 16:52:27 - Generations without improvement: 93913
+2025-10-02 16:52:27 - --------------------------------------------------
+2025-10-02 16:52:54 - Solution found in generation 5573! (Execution time: 26.59s)
+2025-10-02 16:53:11 - --------------------------------------------------
+2025-10-02 17:01:01 - Maximum generations (100000) reached! (Execution time: 469.59s)
+2025-10-02 17:01:01 - Algorithm appears to be stuck at local minimum.
+2025-10-02 17:01:01 - Best fitness achieved: 2 violations
+2025-10-02 17:01:01 - Generations without improvement: 98097
+2025-10-02 17:01:01 - --------------------------------------------------
+2025-10-02 17:03:31 - Solution found in generation 30713! (Execution time: 149.28s)
+2025-10-02 17:03:31 - --------------------------------------------------
+2025-10-02 17:11:27 - Maximum generations (100000) reached! (Execution time: 476.00s)
+2025-10-02 17:11:27 - Algorithm appears to be stuck at local minimum.
+2025-10-02 17:11:27 - Best fitness achieved: 2 violations
+2025-10-02 17:11:27 - Generations without improvement: 83335
+2025-10-02 17:11:30 - --------------------------------------------------
+2025-10-02 17:15:49 - Solution found in generation 54095! (Execution time: 259.52s)
+2025-10-02 17:15:50 - --------------------------------------------------
+2025-10-02 17:24:07 - Maximum generations (100000) reached! (Execution time: 497.60s)
+2025-10-02 17:24:07 - Algorithm appears to be stuck at local minimum.
+2025-10-02 17:24:07 - Best fitness achieved: 2 violations
+2025-10-02 17:24:07 - Generations without improvement: 85884
+2025-10-02 17:24:09 - --------------------------------------------------
+2025-10-02 17:32:19 - Maximum generations (100000) reached! (Execution time: 490.65s)
+2025-10-02 17:32:19 - Algorithm appears to be stuck at local minimum.
+2025-10-02 17:32:19 - Best fitness achieved: 2 violations
+2025-10-02 17:32:19 - Generations without improvement: 98574
+2025-10-02 17:32:20 - --------------------------------------------------
+2025-10-02 17:36:14 - Solution found in generation 49592! (Execution time: 234.06s)
+2025-10-02 17:36:15 - --------------------------------------------------
+2025-10-02 17:40:59 - Solution found in generation 60537! (Execution time: 284.01s)
+2025-10-02 17:40:59 - --------------------------------------------------
+2025-10-02 17:48:48 - Maximum generations (100000) reached! (Execution time: 468.84s)
+2025-10-02 17:48:48 - Algorithm appears to be stuck at local minimum.
+2025-10-02 17:48:48 - Best fitness achieved: 2 violations
+2025-10-02 17:48:48 - Generations without improvement: 99253
+2025-10-02 17:48:49 - --------------------------------------------------
+2025-10-02 17:50:29 - Solution found in generation 21127! (Execution time: 100.22s)
+2025-10-02 17:50:33 - --------------------------------------------------
+2025-10-02 17:58:15 - Maximum generations (100000) reached! (Execution time: 461.37s)
+2025-10-02 17:58:15 - Algorithm appears to be stuck at local minimum.
+2025-10-02 17:58:15 - Best fitness achieved: 2 violations
+2025-10-02 17:58:15 - Generations without improvement: 94228
+2025-10-02 17:58:15 - --------------------------------------------------
+2025-10-02 17:59:41 - Solution found in generation 18423! (Execution time: 85.98s)
+2025-10-02 17:59:46 - --------------------------------------------------
+2025-10-02 18:07:26 - Maximum generations (100000) reached! (Execution time: 459.36s)
+2025-10-02 18:07:26 - Algorithm appears to be stuck at local minimum.
+2025-10-02 18:07:26 - Best fitness achieved: 2 violations
+2025-10-02 18:07:26 - Generations without improvement: 96601
+2025-10-02 18:07:26 - --------------------------------------------------
+2025-10-02 18:07:29 - Solution found in generation 705! (Execution time: 3.22s)
+2025-10-02 18:07:42 - --------------------------------------------------
+2025-10-02 18:09:46 - Solution found in generation 27290! (Execution time: 123.82s)
+2025-10-02 18:09:47 - --------------------------------------------------
+2025-10-02 18:10:11 - Solution found in generation 5173! (Execution time: 24.03s)
+2025-10-02 18:10:14 - --------------------------------------------------
+2025-10-02 18:17:28 - Solution found in generation 95457! (Execution time: 433.88s)
+2025-10-02 18:17:36 - --------------------------------------------------
+2025-10-02 18:25:09 - Maximum generations (100000) reached! (Execution time: 453.09s)
+2025-10-02 18:25:09 - Algorithm appears to be stuck at local minimum.
+2025-10-02 18:25:09 - Best fitness achieved: 2 violations
+2025-10-02 18:25:09 - Generations without improvement: 87301
+2025-10-02 18:25:10 - --------------------------------------------------
+2025-10-02 18:32:43 - Maximum generations (100000) reached! (Execution time: 452.14s)
+2025-10-02 18:32:43 - Algorithm appears to be stuck at local minimum.
+2025-10-02 18:32:43 - Best fitness achieved: 2 violations
+2025-10-02 18:32:43 - Generations without improvement: 89548
+2025-10-02 18:32:43 - --------------------------------------------------
+2025-10-02 18:34:52 - Solution found in generation 28096! (Execution time: 129.09s)
+2025-10-02 18:34:52 - --------------------------------------------------
+2025-10-02 18:41:44 - Solution found in generation 88585! (Execution time: 411.89s)
+2025-10-02 18:41:48 - --------------------------------------------------
+2025-10-02 18:49:25 - Maximum generations (100000) reached! (Execution time: 457.41s)
+2025-10-02 18:49:25 - Algorithm appears to be stuck at local minimum.
+2025-10-02 18:49:25 - Best fitness achieved: 2 violations
+2025-10-02 18:49:25 - Generations without improvement: 89015
+2025-10-02 18:49:26 - --------------------------------------------------
+2025-10-02 18:57:08 - Maximum generations (100000) reached! (Execution time: 462.59s)
+2025-10-02 18:57:08 - Algorithm appears to be stuck at local minimum.
+2025-10-02 18:57:08 - Best fitness achieved: 2 violations
+2025-10-02 18:57:08 - Generations without improvement: 90567
+2025-10-02 18:57:09 - --------------------------------------------------
+2025-10-02 19:01:53 - Solution found in generation 62350! (Execution time: 284.01s)
+2025-10-02 19:01:53 - --------------------------------------------------
+2025-10-02 19:09:33 - Maximum generations (100000) reached! (Execution time: 459.84s)
+2025-10-02 19:09:33 - Algorithm appears to be stuck at local minimum.
+2025-10-02 19:09:33 - Best fitness achieved: 2 violations
+2025-10-02 19:09:33 - Generations without improvement: 97739
+2025-10-02 19:09:34 - --------------------------------------------------
+2025-10-02 19:17:13 - Maximum generations (100000) reached! (Execution time: 459.01s)
+2025-10-02 19:17:13 - Algorithm appears to be stuck at local minimum.
+2025-10-02 19:17:13 - Best fitness achieved: 2 violations
+2025-10-02 19:17:13 - Generations without improvement: 81535
+2025-10-02 19:17:13 - --------------------------------------------------
+2025-10-02 19:24:52 - Maximum generations (100000) reached! (Execution time: 459.11s)
+2025-10-02 19:24:52 - Algorithm appears to be stuck at local minimum.
+2025-10-02 19:24:52 - Best fitness achieved: 2 violations
+2025-10-02 19:24:52 - Generations without improvement: 94386
+2025-10-02 19:24:52 - --------------------------------------------------
+2025-10-02 19:32:38 - Maximum generations (100000) reached! (Execution time: 465.75s)
+2025-10-02 19:32:38 - Algorithm appears to be stuck at local minimum.
+2025-10-02 19:32:38 - Best fitness achieved: 2 violations
+2025-10-02 19:32:38 - Generations without improvement: 89119
+2025-10-02 19:32:41 - --------------------------------------------------
+2025-10-02 19:36:39 - Solution found in generation 50629! (Execution time: 238.23s)
+2025-10-02 19:36:39 - --------------------------------------------------
+2025-10-02 19:36:53 - Solution found in generation 2949! (Execution time: 14.03s)
+2025-10-02 19:36:54 - --------------------------------------------------
+2025-10-02 19:44:42 - Maximum generations (100000) reached! (Execution time: 468.21s)
+2025-10-02 19:44:42 - Algorithm appears to be stuck at local minimum.
+2025-10-02 19:44:42 - Best fitness achieved: 2 violations
+2025-10-02 19:44:42 - Generations without improvement: 98228
+2025-10-02 19:44:42 - --------------------------------------------------
+2025-10-02 19:52:24 - Maximum generations (100000) reached! (Execution time: 461.70s)
+2025-10-02 19:52:24 - Algorithm appears to be stuck at local minimum.
+2025-10-02 19:52:24 - Best fitness achieved: 2 violations
+2025-10-02 19:52:24 - Generations without improvement: 97491
+2025-10-02 19:52:25 - --------------------------------------------------
+2025-10-02 20:00:07 - Maximum generations (100000) reached! (Execution time: 461.78s)
+2025-10-02 20:00:07 - Algorithm appears to be stuck at local minimum.
+2025-10-02 20:00:07 - Best fitness achieved: 2 violations
+2025-10-02 20:00:07 - Generations without improvement: 99894
+2025-10-02 20:00:09 - --------------------------------------------------
+2025-10-02 20:08:03 - Maximum generations (100000) reached! (Execution time: 473.50s)
+2025-10-02 20:08:03 - Algorithm appears to be stuck at local minimum.
+2025-10-02 20:08:03 - Best fitness achieved: 2 violations
+2025-10-02 20:08:03 - Generations without improvement: 15509
+2025-10-02 20:08:03 - --------------------------------------------------
+2025-10-02 20:10:57 - Solution found in generation 36477! (Execution time: 173.89s)
+2025-10-02 20:11:11 - --------------------------------------------------
+2025-10-02 20:18:54 - Maximum generations (100000) reached! (Execution time: 463.27s)
+2025-10-02 20:18:54 - Algorithm appears to be stuck at local minimum.
+2025-10-02 20:18:54 - Best fitness achieved: 2 violations
+2025-10-02 20:18:54 - Generations without improvement: 91937
+2025-10-02 20:18:57 - --------------------------------------------------
+2025-10-02 20:25:54 - Solution found in generation 88791! (Execution time: 417.29s)
+2025-10-02 20:25:55 - --------------------------------------------------
+2025-10-02 20:33:44 - Maximum generations (100000) reached! (Execution time: 468.19s)
+2025-10-02 20:33:44 - Algorithm appears to be stuck at local minimum.
+2025-10-02 20:33:44 - Best fitness achieved: 2 violations
+2025-10-02 20:33:44 - Generations without improvement: 96556
+2025-10-02 20:33:45 - --------------------------------------------------
+2025-10-02 20:41:37 - Maximum generations (100000) reached! (Execution time: 472.07s)
+2025-10-02 20:41:37 - Algorithm appears to be stuck at local minimum.
+2025-10-02 20:41:37 - Best fitness achieved: 2 violations
+2025-10-02 20:41:37 - Generations without improvement: 56109
+2025-10-02 20:41:37 - --------------------------------------------------
+2025-10-02 20:44:45 - Solution found in generation 39264! (Execution time: 187.60s)
+2025-10-02 20:44:45 - --------------------------------------------------
+2025-10-02 20:47:12 - Solution found in generation 31560! (Execution time: 146.89s)
+2025-10-02 20:47:16 - --------------------------------------------------
+2025-10-02 20:54:50 - Solution found in generation 97288! (Execution time: 454.32s)
+2025-10-02 20:54:56 - --------------------------------------------------
+2025-10-02 21:02:49 - Maximum generations (100000) reached! (Execution time: 472.93s)
+2025-10-02 21:02:49 - Algorithm appears to be stuck at local minimum.
+2025-10-02 21:02:49 - Best fitness achieved: 2 violations
+2025-10-02 21:02:49 - Generations without improvement: 77970
+2025-10-02 21:02:49 - --------------------------------------------------
+2025-10-02 21:10:37 - Maximum generations (100000) reached! (Execution time: 468.13s)
+2025-10-02 21:10:37 - Algorithm appears to be stuck at local minimum.
+2025-10-02 21:10:37 - Best fitness achieved: 2 violations
+2025-10-02 21:10:37 - Generations without improvement: 98283
+2025-10-02 21:10:42 - --------------------------------------------------
+2025-10-02 21:18:23 - Maximum generations (100000) reached! (Execution time: 460.79s)
+2025-10-02 21:18:23 - Algorithm appears to be stuck at local minimum.
+2025-10-02 21:18:23 - Best fitness achieved: 2 violations
+2025-10-02 21:18:23 - Generations without improvement: 98507
+2025-10-02 21:18:23 - --------------------------------------------------
+2025-10-02 21:26:20 - Maximum generations (100000) reached! (Execution time: 477.29s)
+2025-10-02 21:26:20 - Algorithm appears to be stuck at local minimum.
+2025-10-02 21:26:20 - Best fitness achieved: 2 violations
+2025-10-02 21:26:20 - Generations without improvement: 98531
+2025-10-02 21:26:21 - --------------------------------------------------
+2025-10-02 21:27:27 - Solution found in generation 13948! (Execution time: 66.38s)
+2025-10-02 21:27:28 - --------------------------------------------------
+2025-10-02 21:35:12 - Maximum generations (100000) reached! (Execution time: 464.25s)
+2025-10-02 21:35:12 - Algorithm appears to be stuck at local minimum.
+2025-10-02 21:35:12 - Best fitness achieved: 2 violations
+2025-10-02 21:35:12 - Generations without improvement: 99191
+2025-10-02 21:36:08 - --------------------------------------------------
+2025-10-02 21:43:44 - Maximum generations (100000) reached! (Execution time: 455.97s)
+2025-10-02 21:43:44 - Algorithm appears to be stuck at local minimum.
+2025-10-02 21:43:44 - Best fitness achieved: 2 violations
+2025-10-02 21:43:44 - Generations without improvement: 98137
+2025-10-02 21:43:49 - --------------------------------------------------
+2025-10-02 21:51:25 - Maximum generations (100000) reached! (Execution time: 455.71s)
+2025-10-02 21:51:25 - Algorithm appears to be stuck at local minimum.
+2025-10-02 21:51:25 - Best fitness achieved: 2 violations
+2025-10-02 21:51:25 - Generations without improvement: 956172025-10-09 10:42:24 - Maximum generations (100000) reached! (Execution time: 487.65s)
