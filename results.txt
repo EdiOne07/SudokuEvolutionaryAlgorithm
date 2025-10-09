@@ -1,3 +1,5 @@
+========== Genetic Algorithm ==========
+
 === Analyzing logs/sudoku_ga_log_easy.txt ===
 Found 1002 solution records
 Total runs: 1002
@@ -86,7 +88,9 @@ Successful runs - Avg time: 183.11s
 Failed runs - Avg time: 465.85s
 Time difference: 282.75s (failed runs take longer)
 
---------------------------------------------------
+__________________________________________________
+
+========== DFS ==========
 
 === Analyzing logs/sudoku_dfs_log_hard.txt ===
 number of runs: 1000
