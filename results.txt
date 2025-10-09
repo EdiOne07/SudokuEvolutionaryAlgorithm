@@ -1,0 +1,87 @@
+=== Analyzing logs/sudoku_ga_log_easy.txt ===
+Found 1002 solution records
+Total runs: 1002
+Successful: 1002 (100.0%)
+Failed: 0 (0.0%)
+Execution time range: 0.03s - 488.11s
+Average generation: 1200.1
+Average execution time: 5.98s
+Average generations per second: 204.56
+
+=== COMPARISON ACROSS RUNS ===
+Generations - Avg: 1200.1, Min: 6, Max: 96862
+Execution Time - Avg: 5.98s, Min: 0.03s, Max: 488.11s
+Violations - Avg: 0.0, Min: 0, Max: 0
+Success Rate: 100.0%
+
+--------------------------------------------------
+
+=== Analyzing logs/sudoku_ga_log_medium.txt ===
+Found 1358 solution records
+Total runs: 1358
+Successful: 1261 (92.9%)
+Failed: 97 (7.1%)
+Execution time range: 0.13s - 144809.67s
+Average generation: 20964.8
+Average execution time: 208.53s
+Average generations per second: 205.56
+
+=== FAILED RUNS ANALYSIS ===
+Runs stuck at local minimum: 97
+Best fitness achieved in failed runs: 2 - 4 violations
+Average violations in failed runs: 2.0
+Generations without improvement: 40876 - 99948
+Average generations without improvement: 91613.7
+
+=== COMPARISON ACROSS RUNS ===
+Generations - Avg: 20964.8, Min: 28, Max: 100000
+Execution Time - Avg: 208.53s, Min: 0.13s, Max: 144809.67s
+Violations - Avg: 0.1, Min: 0, Max: 4
+Success Rate: 92.9%
+
+=== FAILURE ANALYSIS ===
+Total failed runs: 97
+Runs stuck at local minimum: 97 (100.0% of failures)
+Failed runs violations - Avg: 2.0, Min: 2, Max: 4
+Generations without improvement - Avg: 91613.7, Min: 40876, Max: 99948
+
+=== TIME COMPARISON ===
+Successful runs - Avg time: 72.80s
+Failed runs - Avg time: 1973.07s
+Time difference: 1900.28s (failed runs take longer)
+
+--------------------------------------------------
+
+=== Analyzing logs/sudoku_ga_log_hard.txt ===
+Found 100 solution records
+Total runs: 100
+Successful: 45 (45.0%)
+Failed: 55 (55.0%)
+Execution time range: 3.22s - 636.92s
+Average generation: 72763.8
+Average execution time: 338.62s
+Average generations per second: 215.18
+
+=== FAILED RUNS ANALYSIS ===
+Runs stuck at local minimum: 55
+Best fitness achieved in failed runs: 2 - 2 violations
+Average violations in failed runs: 2.0
+Generations without improvement: 610 - 99894
+Average generations without improvement: 85181.0
+
+=== COMPARISON ACROSS RUNS ===
+Generations - Avg: 72763.8, Min: 705, Max: 100000
+Execution Time - Avg: 338.62s, Min: 3.22s, Max: 636.92s
+Violations - Avg: 1.1, Min: 0, Max: 2
+Success Rate: 45.0%
+
+=== FAILURE ANALYSIS ===
+Total failed runs: 55
+Runs stuck at local minimum: 55 (100.0% of failures)
+Failed runs violations - Avg: 2.0, Min: 2, Max: 2
+Generations without improvement - Avg: 85181.0, Min: 610, Max: 99894
+
+=== TIME COMPARISON ===
+Successful runs - Avg time: 183.11s
+Failed runs - Avg time: 465.85s
+Time difference: 282.75s (failed runs take longer)
