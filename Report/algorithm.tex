@@ -115,6 +115,8 @@ F \;=\; \sum_{i=0}^{8} |R_i| \;+\; \sum_{j=0}^{8} |C_j| \;+\; \sum_{b=0}^{8} |B_
 \]
 This definition results in a maximum fitness score of $243$ for 9$\times$9 boards.
 
+Our fitness function is inspired by prior work that sums distinct digits per row and column \cite{Sato2011}; we extend that idea by also counting distinct digits in each 3$\times$3 block to better reflect Sudoku constraints.
+
 \paragraph{Crossover} A new individual is creating by crossing over two parents. The crossover process simply iterates over all the tiles that were not given in the initial puzzle and takes the value for that tile from either parent to copy it to the child.
 
 \begin{figure}[H]
@@ -239,7 +241,7 @@ Figure \ref{fig:impl-1-mutation} illustrates a mutation step with $mutation\_amo
 
 \paragraph{Problem}
 This implementation leads to a situation where the diversity of the population decreases rapidly, resulting in convergence to suboptimal solutions. On many runs, the algorithm creates more than 100,000 generations before finding a valid solution.  
-To counter this problem, we have tried to increase the mutation rate and the population size, as well as introducing new random individuals in each generation. However, these adjustments only led to marginal improvements in performance.
+To counter this problem, we have tried to adjust the mutation rate and the population size, as well as introducing new random individuals in each generation. However, these adjustments only led to marginal improvements in performance.
 
 \subsubsection{Implementation 2}
 Algorithm \ref{alg:impl-2} creates a population with unique rows and improves it using elitism, tournament selection, row-wise crossover and swap-based mutation. Each generation the population is evaluated, the best \(elite\_size\) individuals are carried over unchanged, and the remaining offspring are produced from parents chosen by tournament; children copy whole rows from parents to preserve row validity and then undergo mutations that swap non-given tiles within rows. The algorithm terminates when a perfect solution is found or the maximum number of generations is reached.
@@ -357,7 +359,9 @@ A value \(F=0\) indicates a valid solution.
 
 In figure~\ref{fig:impl-2-selection}, it is easy to see that the very first row is taken from the first parent (left), while row 8 is copied from the second parent (center). Duplicate numbers, as a result of the crossover step, can now only emerge in columns or subgrids, which is an improvement compared to \nameref{sec:impl-1}.
 
-\paragraph{Mutation} For the mutation, we iterate all rows of an individual and swap two random tiles that both haven't been given in the initial sudoku. We do this with the probability of $mutation\_rate$ for each row, once again ensuring the uniqueness of numbers in each row.
+\paragraph{Mutation} For the mutation, we iterate all rows and select two non-given tiles in that row to swap their values with probability \(mutation\_rate\). This row-wise swap was inspired by swap-mutations within subgrids \cite{Sato2011, Mantere2007}; we adapted the idea to rows to maintain row validity by construction.
+
+To increase diversity when the fitness stagnates over $generations_stuck$ generations, we also introduce an adaptive mutation rate, which increases the mutation rate temporarily until progress resumes. The mutation rate is capped at a maximum of \(0.3\), which alignes with the value used in related work \cite{Sato2011}.
 
 \begin{figure}[H]
   \centering
@@ -407,10 +411,10 @@ In figure~\ref{fig:impl-2-selection}, it is easy to see that the very first row 
   \label{fig:impl-2-mutation}
 \end{figure}
 
-The mutation of the individual that resulted from the previous crossover is shown in figure~\ref{fig:impl-2-mutation}. For this example, the mutation rate was set to 20\%, leading to mutations in row 1 and row 5. 
+Figure~\ref{fig:impl-2-mutation} shows a mutation step with a rate of 20\%, leading to swap-mutations in row 1 and row 5. 
 
 \paragraph{Problem}
-The second genetic algorithm also often converges to local optima and loses diversity, which limits further improvement. We added adaptive mutation rates and replaced most of the population when fitness stagnated across multiple generations. These measures helped but did not completely eliminate local optima problems. Furthermore, scalability is an issue: larger boards increase the combinatorial search space and therefore require proportionally larger populations and/or more generations to retain a comparable probability of finding a solution. 
+The second genetic algorithm also often converges to local optima and loses diversity, limiting further improvement. To overcome stagnation we reinitialised a large portion of the population after the fitness has stopped decreasing, which is related to the cataclysmic mutation/restart procedure discussed in \cite{Mantere2007}. This strategy often restored search progress but did not fully eliminate premature convergence. Furthermore, scalability remains an issue: larger boards increase the combinatorial search space and therefore require proportionally larger populations and/or more generations to retain a comparable probability of finding a solution.
 
 Despite these limitations, Implementation~2 performs much better in practice than Implementation~1, but the problems with premature convergence apply to both implementations and to genetic algorithms in general.
 
