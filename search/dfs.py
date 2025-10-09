@@ -68,7 +68,7 @@ if the number is not valid, backtrack and try the next number
 if all numbers are tried and no solution is found, return None
 if all cells are filled, return True
 '''
-def DFS_random(matrix,size) -> list[list[int]] | None:
+def DFS_random(matrix,size):
     for i in range(size):
         for j in range(size):
             if (matrix[i][j] == 0):

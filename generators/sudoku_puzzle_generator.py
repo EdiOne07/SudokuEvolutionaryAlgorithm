@@ -16,7 +16,7 @@ import copy
 import sys
 import os
 
-sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from search import dfs
 
 
@@ -303,7 +303,7 @@ def main():
     """
     Demo function showing how to use the SudokuPuzzleGenerator.
     """
-    print("=== Sudoku Puzzle Generator Demo ===\n")
+    print("=== Sudoku Puzzle Generator Test ===\n")
     
     generator = SudokuPuzzleGenerator()
     
